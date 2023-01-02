@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home';
 import Signup from './components/Signup';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
           <Route path='/signup' element={<Signup/>}/>
         </Routes>
       </Router>
+
+      <Footer/>
     </>
   );
 }

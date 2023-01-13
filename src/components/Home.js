@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import video from './video/video8.mp4' // 1450px X 620px
 import image from './img/Haboutus.jpg'
 
+
 export default function Home() {
   return (
     <div className='mb-10'>
@@ -90,9 +91,13 @@ export default function Home() {
         {/* Card End */}
 
         {/* View Job Button */}
-        <button type="button" className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-base  px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800">
-          View Job
-        </button>
+        <div className='jobButton'>
+          <Link to="/job" >
+            <button type="button" className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-base  px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800">
+              View Job
+            </button>
+          </Link>
+        </div>
       </div>
       {/* FEATURED JOBS End */}
 
@@ -117,7 +122,7 @@ export default function Home() {
           <p className='mr-36 ml-36 '>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore deleniti voluptas enim! Provident consectetur id earum ducimus facilis, aspernatur hic, alias, harum rerum velit voluptas, voluptate enim! Eos, sunt, quidem.</p>
 
           <p className='mr-36 ml-36'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto nulla quo cum officia laboriosam. Amet tempore, aliquid quia eius commodi, doloremque omnis delectus laudantium dolor reiciendis non nulla! Doloremque maxime quo eum in culpa mollitia similique eius doloribus voluptatem facilis! Voluptatibus, eligendi, illum. Distinctio, non!</p>
-          
+
         </div>
         {/* About Us Info End */}
 
@@ -133,13 +138,13 @@ export default function Home() {
 
         <div>
 
-        <a href='/' >
-          <button type="button" className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-base  px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800">
-          Contact Us
-          </button>
-        </a>
+          <a href='/' >
+            <button type="button" className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-base  px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800">
+              Contact Us
+            </button>
+          </a>
         </div>
-        
+
       </div>
       {/* Send US Message End */}
 

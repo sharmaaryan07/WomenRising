@@ -15,5 +15,5 @@ app.use(express.json());
 app.use('/api/sell', require('./routes/product'))
 
 app.listen(port, () => {
-  console.log(`Example app listening on port http://localhost:${port}`)
+  console.log(`WomensRising backend app listening on port http://localhost:${port}`)
 })

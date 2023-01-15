@@ -8,6 +8,8 @@ mongoconnect();
 const app = express()
 const port = 3000
 
+// Using Middleware
+app.use(express.json());
 
 // Available Routes
 app.use('/api/sell', require('./routes/product'))

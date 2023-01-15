@@ -6,7 +6,7 @@ const express = require('express')
 mongoconnect();
 
 const app = express()
-const port = 3000
+const port = 5000
 
 // Using Middleware
 app.use(express.json());

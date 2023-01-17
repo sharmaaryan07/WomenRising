@@ -14,7 +14,7 @@ export default function Productitems(props) {
                     </div>
                     <div className="px-8 -mt-5 pb-4">
                         <div className='productInfo'>
-                            <h5 className="text-base font-semibold tracking-tight text-gray-900 ">{product.name}</h5>
+                            <h5 className="text-base font-semibold tracking-tight text-gray-900 ">{product.title}</h5>
                         </div>
 
                         <div className='productInfo'>

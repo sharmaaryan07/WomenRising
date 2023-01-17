@@ -25,6 +25,10 @@ const sellSchema = new Schema({
         type: Number, 
         required: true 
     },
+
+    phone: { 
+        type: Number, 
+    },
 });
 
 // Exporting Schema

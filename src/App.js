@@ -12,6 +12,7 @@ import Signup from './components/Signup';
 import Job from './components/Job';
 import Product from './components/Product';
 import ProductState from './context/product/ProductState';
+import Sellproduct from './components/Sellproduct';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path='/signup' element={<Signup />} />
             <Route path='/job' element={<Job />} />
             <Route path='/product' element={<Product />} />
+            <Route path='/sellproduct' element={<Sellproduct/>} />
           </Routes>
         </Router>
 

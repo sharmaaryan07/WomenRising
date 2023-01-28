@@ -13,6 +13,7 @@ import Job from './components/Job';
 import Product from './components/Product';
 import ProductState from './context/product/ProductState';
 import Sellproduct from './components/Sellproduct';
+import Productdetail from './components/Productdetail';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             <Route path='/job' element={<Job />} />
             <Route path='/product' element={<Product />} />
             <Route path='/sellproduct' element={<Sellproduct/>} />
+            <Route path='/productdetail' element={<Productdetail/>} />
           </Routes>
         </Router>
 

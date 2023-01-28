@@ -10,25 +10,25 @@ const sellSchema = new Schema({
         type: String, 
         required: true, 
     },
-
-    // required: true
-    image: { 
-        type: String,
+    title: { 
+        type: String, 
+        required: true, 
     },
-    
+    // required: true
     description: { 
         type: String, 
-        required: true 
     },
-
     price: { 
         type: Number, 
-        required: true 
     },
-
-    phone: { 
-        type: Number, 
+    phone: { Number, 
     },
+    email: { 
+        type: String, 
+    },
+    image: {
+        type: String,
+      },
 });
 
 // Exporting Schema

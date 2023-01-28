@@ -5,6 +5,14 @@ const sellProduct =require('../models/Sell')
 // importing Router form Express
 const router = express.Router();
 
+// Fetching Products
+router.get('/fetchproduct', async (req, res)=>{
+    const fetchProduct= await sellProduct.find({user: req.user});
+    res.json(fetchProduct);
+    
+})
+
+
 // Creating Routes for selling product '/api/sell'
 router.post('/update', (req, res)=>{
     

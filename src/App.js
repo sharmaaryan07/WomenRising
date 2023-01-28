@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import Home from './components/Home';
 import Signup from './components/Signup';
-// import Footer from './components/Footer';
+import Footer from './components/Footer';
 import Job from './components/Job';
 import Product from './components/Product';
 import ProductState from './context/product/ProductState';
@@ -30,7 +30,7 @@ function App() {
           </Routes>
         </Router>
 
-        {/* <Footer/> */}
+        <Footer/>
       </ProductState>
     </>
   );

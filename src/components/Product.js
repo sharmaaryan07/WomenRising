@@ -1,4 +1,5 @@
-import React, { useContext } from 'react'
+
+import React, { useContext, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import productContext from '../context/product/productContext'
 import jobImg from './img/job.jpg'
@@ -7,8 +8,11 @@ import Productitems from './Productitems'
 
 export default function Product() {
   const Context = useContext(productContext)
-  const { products} = Context;
+  const { products, getproduct } = Context;
 
+  useEffect(() => {
+    getproduct();
+  })
   return (
     <div className='pb-9'>
       {/* productBanner Start */}
@@ -34,7 +38,7 @@ export default function Product() {
 
       <div className="productContainer grid grid-cols-3  mt-6 ml-6 gap-4">
         {products.map((product) => {
-          return <Productitems key={product.name} product={product} />
+          return <Productitems  product={product} />
         })}
 
       </div>

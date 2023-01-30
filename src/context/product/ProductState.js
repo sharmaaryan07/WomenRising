@@ -4,7 +4,7 @@ import productContext from "./productContext";
 
 const ProductState = (props) => {
     const host="http://localhost:5000";
-    const productInitial = []
+    const productInitial = [{"name": "Mikasha",}]
     const [products, setProducts] = useState(productInitial)
 
     //Route 1: fetch all Product

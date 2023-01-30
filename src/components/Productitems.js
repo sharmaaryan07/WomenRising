@@ -1,15 +1,16 @@
-import React from 'react'
-import {
-    Link,
-  } from "react-router-dom";
+import  { React, useContext } from 'react'
+import { Link } from "react-router-dom";
+import productContext from '../context/product/productContext'
+
 
 export default function Productitems(props) {
-
+    const Context = useContext(productContext)
+    const { products, getproduct } = Context;
     const { product } = props;
     return (
         <div>
             {/* Product Card Start */}
-            <Link to="/productdetail">
+           <Link to='/productdetail' state={{product: products}}>
                 {/* Card 1 Start */}
                 <section className="text-gray-600 body-font  rounded-sm">
                     <div className="container px-5 py-4 mx-auto shadow-sm">
@@ -27,9 +28,8 @@ export default function Productitems(props) {
                         </div>
                     </div>
                 </section>
-
+                </Link> 
                 {/* Card 1 End */}
-            </Link>
             {/* Product Card End */}
         </div>
     )

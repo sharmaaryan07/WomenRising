@@ -1,6 +1,6 @@
 // importing Express 
 const express = require('express')
-const sellProduct =require('../models/Sell')
+const sellProduct =require('../models/ProductSchema')
 
 // importing Router form Express
 const router = express.Router();

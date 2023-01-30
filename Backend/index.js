@@ -17,6 +17,7 @@ app.use(express.json());
 
 // Available Routes
 app.use('/api/sell', require('./routes/product'))
+app.use('/api/auth', require('./routes/auth'))
 
 app.listen(port, () => {
   console.log(`WomensRising backend app listening on port http://localhost:${port}`)

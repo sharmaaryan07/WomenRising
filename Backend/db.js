@@ -1,11 +1,11 @@
-const mongoose=require('mongoose');
+const mongoose = require('mongoose');
 
-mongoURL='mongodb://localhost:27017/?directConnection=true&tls=false&readPreference=primary';
+mongoURL = 'mongodb://localhost:27017/WomensRisingDB?directConnection=true&tls=false&readPreference=primary';
 
-const mongoconnect=()=>{
-    mongoose.connect(mongoURL, ()=>{
+const mongoconnect = () => {
+    mongoose.connect(mongoURL, () => {
         console.log("MongoDB Connected!!");
     });
 };
 
-module.exports=mongoconnect;
+module.exports = mongoconnect;

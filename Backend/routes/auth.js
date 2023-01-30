@@ -8,6 +8,9 @@ const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 // Imported JsonWebToken
 const jwt = require('jsonwebtoken');
+
+
+const fetchuser = require('../middleware/fetchuser');
 // importing Router form Express
 const router = express.Router();
 
@@ -16,7 +19,7 @@ const jwtSecret = "screctforauthen$ication";
 
 
 
-// create User 
+// ROUTE 1: create User 
 router.post('/createuser', [
     // Using Validation
     body('name', 'Enter Name min 3 character').isLength({ min: 3 }),
@@ -68,7 +71,7 @@ router.post('/createuser', [
 })
 
 
-// Authenticate User---- Login
+//ROUTE 2:  Authenticate User---- Login
 
 router.post('/login', [
     // Using Validation
@@ -86,15 +89,15 @@ router.post('/login', [
     const { email, password } = req.body;
     try {
 
-        let user =await User.findOne({ email });
+        let user = await User.findOne({ email });
         if (!user) {
             return res.status(400).json({ error: "Please try to login with correct credentials" });
         }
 
         // Comparing password
         //const passwordCompare = bcrypt.compare(it will compare 'password enter by user' , and 'actual users password');
-        const passwordCompare =await bcrypt.compare(password, user.password);
-        if(!passwordCompare){
+        const passwordCompare = await bcrypt.compare(password, user.password);
+        if (!passwordCompare) {
             return res.status(400).json({ error: "Please try to login with correct credentials" });
         }
 
@@ -114,6 +117,20 @@ router.post('/login', [
 
 });
 
+
+
+// ROUTE 3: get Loggin user details
+router.post('/getuser', fetchuser ,async (req, res) => {
+
+    try {
+        userID=req.user.id;
+        const user=await User.findById(userID).select("-password")
+        res.send(user);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Some Internal Server Error Occured!!")
+    }
+});
 
 // Exporting Router
 module.exports = router

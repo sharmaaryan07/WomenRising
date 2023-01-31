@@ -2,11 +2,14 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import video from './video/video8.mp4' // 1450px X 620px
 import image from './img/Haboutus.jpg'
+import Navbar from './Navbar';
 
 
 export default function Home() {
   return (
     <div className='mb-10'>
+          <Navbar />
+
 
       {/* Top banner start */}
       <div className="banner bg-gray-900 text-white ">

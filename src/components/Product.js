@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import productContext from '../context/product/productContext'
 import jobImg from './img/job.jpg'
 import Productitems from './Productitems'
+import Navbar from './Navbar';
 
 
 export default function Product() {
@@ -15,6 +16,8 @@ export default function Product() {
   })
   return (
     <div className='pb-9'>
+
+      <Navbar />
       {/* productBanner Start */}
       <div className='productBanner'>
         <div className=' bg-gray-900 text-white'>
@@ -38,7 +41,7 @@ export default function Product() {
 
       <div className="productContainer grid grid-cols-3  mt-6 ml-6 gap-4">
         {products.map((product) => {
-          return <Productitems  product={product} />
+          return <Productitems product={product} />
         })}
 
       </div>

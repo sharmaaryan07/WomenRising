@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 // import image from './img/login22.jpg'
 
-export default function Login() {
+export default function Login(props) {
 	const [credentials, setCredentials] = useState({ email: "", password: ""})
 
 	let navigate = useNavigate();
@@ -23,8 +23,10 @@ export default function Login() {
 			// save the auth token and redirect
 			localStorage.setItem('token', json.authtoken);
 			navigate("/home")
+			props.showAlert("Successfully Logged in", "bg-green-500", "Login Successful");
+
 		  }else{
-			alert("Invalid Credentials");
+			props.showAlert("Enter Valid Credentials", "bg-red-500", "Login Failed");
 		  }
 	}
 
@@ -58,7 +60,7 @@ export default function Login() {
         </div>
       </div> */}
 			<form onSubmit={handlesubmit}>
-				<div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12 ml-[28rem] mt-9">
+				<div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12 ml-[34rem] mt-9">
 					<div className="relative py-3 sm:max-w-xl sm:mx-auto">
 						<div
 							className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">

@@ -14,20 +14,37 @@ import Product from './components/Product';
 import ProductState from './context/product/ProductState';
 import Sellproduct from './components/Sellproduct';
 import Productdetail from './components/Productdetail';
+import Alert from './components/Alert';
+import { useState } from 'react';
 
 function App() {
+  const [alert, setAlert] = useState(null)
+  const showAlert = (message, type, messageType) => {
+    setAlert(
+      {
+        message: message,
+        type: type,
+        mssgType: messageType
+      }
+    )
+
+    setTimeout(() => {
+      setAlert(null);
+    }, 2500);
+  };
   return (
     <>
       <ProductState>
         <Router>
+          <Alert alert={alert} />
           <Routes>
-            <Route path='/home' element={<Home />} />
-            <Route path='/' element={<Login />} />
-            <Route path='/signup' element={<Signup />} />
+            <Route path='/home'  element={<Home />} />
+            <Route path='/'  element={<Login showAlert={showAlert} />} />
+            <Route path='/signup' element={<Signup showAlert={showAlert} />} />
             <Route path='/job' element={<Job />} />
-            <Route path='/product' element={<Product />} />
-            <Route path='/sellproduct' element={<Sellproduct/>} />
-            <Route path='/productdetail' element={<Productdetail/>} />
+            <Route path='/product'  element={<Product />} />
+            <Route path='/sellproduct'  element={<Sellproduct showAlert={showAlert} />} />
+            <Route path='/productdetail'  element={<Productdetail/>} />
           </Routes>
         </Router>
 

@@ -2,7 +2,7 @@ import { React, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 // import signupimg from './img/character1.png'
 
-export default function Signup() {
+export default function Signup(props) {
 
     const [credentials, setCredentials] = useState({ name: "", email: "", password: "", confirm_password: "" })
 
@@ -26,8 +26,10 @@ export default function Signup() {
             // save the auth token and redirect
             localStorage.setItem('token', json.authtoken);
             navigate("/")
+            props.showAlert("SignUp Successfull","bg-green-500","SignUp Successful")
+
         } else {
-            alert("Invalid Credentials");
+            props.showAlert("User Already Exists","bg-red-500","SignUp Failed")
         }
     }
 

@@ -27,10 +27,11 @@ router.post('/createuser', [
     body('password', 'Enter password min 4 character').isLength({ min: 4 }),
 
 ], async (req, res) => {
+    let success=false;
     // It will send Error if input is not correctly given
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
+        return res.status(400).json({ success, errors: errors.array() });
     }
 
     try {
@@ -38,7 +39,7 @@ router.post('/createuser', [
         // Check Whether the user already exists
         let user = await User.findOne({ email: req.body.email });
         if (user) {
-            return res.status(400).json({ error: 'User Already Exists!!' })
+            return res.status(400).json({ success, error: 'User Already Exists!!' })
         }
 
         // Encrypting Password by doing hashing and salting
@@ -60,7 +61,8 @@ router.post('/createuser', [
         const authToken = jwt.sign(data, jwtSecret);
 
         // It will give OP as authToken
-        res.json({ authToken });
+        success=true;
+        res.json({ success, authToken });
         // res.json(user);
     } catch (error) {
         console.error(error.message);

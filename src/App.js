@@ -44,7 +44,7 @@ function App() {
             <Route path='/job' element={<Job />} />
             <Route path='/product'  element={<Product />} />
             <Route path='/sellproduct'  element={<Sellproduct showAlert={showAlert} />} />
-            <Route path='/productdetail'  element={<Productdetail/>} />
+            <Route path='/productdetail/:id'  element={<Productdetail  />} />
           </Routes>
         </Router>
 

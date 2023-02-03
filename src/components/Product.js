@@ -5,6 +5,7 @@ import productContext from '../context/product/productContext'
 import jobImg from './img/job.jpg'
 import Productitems from './Productitems'
 import Navbar from './Navbar';
+import ProductDetails from './Productdetail';
 
 
 export default function Product() {
@@ -41,7 +42,7 @@ export default function Product() {
 
       <div className="productContainer grid grid-cols-3  mt-6 ml-6 gap-4">
         {products.map((product) => {
-          return <Productitems product={product} />
+          return <Link to={`/productdetail/${product._id}`} > <Productitems product={product} /> </Link>
         })}
 
       </div>

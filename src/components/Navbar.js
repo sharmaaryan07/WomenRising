@@ -38,6 +38,10 @@ export default function Navbar() {
                             </li>
 
                             <li>
+                                <NavLink style={({ isActive }) => { return { color: isActive ? '#2563eb' : "white" } }} to="/job" className="block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Jobs</NavLink>
+                            </li>
+
+                            <li>
                                 <NavLink style={({ isActive }) => { return { color: isActive ? '#2563eb' : "white" } }} to="/product" className="block py-2 pr-4 pl-3  border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-600 md:p-0 dark:text-gray-400 md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-blue-500 md:dark:hover:bg-transparent dark:border-gray-700">Products</NavLink>
                             </li>
 

@@ -16,6 +16,7 @@ import Sellproduct from './components/Sellproduct';
 import Productdetail from './components/Productdetail';
 import Alert from './components/Alert';
 import { useState } from 'react';
+import JobState from './context/product/JobState';
 
 function App() {
   const [alert, setAlert] = useState(null)
@@ -35,6 +36,7 @@ function App() {
   return (
     <>
       <ProductState>
+        <JobState>
         <Router>
           <Alert alert={alert} />
           <Routes>
@@ -49,6 +51,8 @@ function App() {
         </Router>
 
         <Footer/>
+        </JobState>
+
       </ProductState>
     </>
   );

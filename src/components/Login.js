@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 // import image from './img/login22.jpg'
 
 export default function Login(props) {
@@ -80,6 +80,7 @@ export default function Login(props) {
 											<input autoComplete="off" id="password" name="password" value={credentials.password}  onChange={onchange} type="password" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Password" />
 											<label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
 										</div>
+										<Link to='/signup' >Register</Link>
 										<div className="relative">
 											<button className="bg-blue-500 text-white rounded-md px-2 py-1"  >Submit</button>
 										</div>

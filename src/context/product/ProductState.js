@@ -41,22 +41,22 @@ const ProductState = (props) => {
       setProducts(products.concat(response))
     }
 
-  //   // Route 3: Geting perticular product
-  //   const perticularproduct= async (id, name, title, description, price, phone, email, image)=>{
-  //     const response = await fetch(`${host}/api/sell/getproduct/${id}`, {
-  //       method: 'POST', // *GET, POST, PUT, DELETE, etc.
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({id, name, title, description, price, phone, email, image})
+    // Route 3: Geting perticular product
+    const perticularproduct= async (id, name, title, description, price, phone, email, image)=>{
+      const response = await fetch(`${host}/api/sell/getproduct/${id}`, {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({id, name, title, description, price, phone, email, image})
 
         
 
-  //     // console.log(id, name, title, description, price, phone, email, image)
-  //   });
-  //   const json= await response.json();
-  //   return json
-  // };
+      // console.log(id, name, title, description, price, phone, email, image)
+    });
+    const json= await response.json();
+    return json
+  };
 
     return (
         <productContext.Provider value={{products, setProducts, addproduct, getproduct, }}>

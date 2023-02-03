@@ -16,7 +16,7 @@ export default function Home() {
 
         <div className="video opacity-[0.40]" >
           <video autoPlay muted loop >
-            <source src={video} type="video/mp4" />
+            <source src={video} type="video/mp4" /> 
           </video>
         </div>
 
@@ -120,9 +120,9 @@ export default function Home() {
         <div className="AboutInfo  text-center -mt-[29rem] space-y-12 absolute">
           <h2 className='text-3xl '>READ <span className='text-[#2563eb] font-semibold'> ABOUT US </span> </h2>
 
-          <p className='text-sm '>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra <br /> ipsum dolor, ultricies fermentum massa consequat eu.</p>
+          <p className='text-sm '>.................................</p>
 
-          <p className='mr-36 ml-36 '>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore deleniti voluptas enim! Provident consectetur id earum ducimus facilis, aspernatur hic, alias, harum rerum velit voluptas, voluptate enim! Eos, sunt, quidem.</p>
+          <p className='mr-36 ml-36 '>..........................................................</p>
 
           <p className='mr-36 ml-36'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto nulla quo cum officia laboriosam. Amet tempore, aliquid quia eius commodi, doloremque omnis delectus laudantium dolor reiciendis non nulla! Doloremque maxime quo eum in culpa mollitia similique eius doloribus voluptatem facilis! Voluptatibus, eligendi, illum. Distinctio, non!</p>
 

@@ -21,7 +21,8 @@ const sellSchema = new Schema({
     price: { 
         type: Number, 
     },
-    phone: { Number, 
+    phone: { 
+        type: Number, 
     },
     email: { 
         type: String, 

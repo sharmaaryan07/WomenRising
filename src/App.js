@@ -17,6 +17,9 @@ import Productdetail from './components/Productdetail';
 import Alert from './components/Alert';
 import { useState } from 'react';
 import JobState from './context/product/JobState';
+import Jobdetail from './components/Jobdetail';
+import Chatbot from './components/Chatbot';
+
 
 function App() {
   const [alert, setAlert] = useState(null)
@@ -47,7 +50,9 @@ function App() {
             <Route path='/product'  element={<Product />} />
             <Route path='/sellproduct'  element={<Sellproduct showAlert={showAlert} />} />
             <Route path='/productdetail/:id'  element={<Productdetail  />} />
+            <Route path='/jobdetail/:id'  element={<Jobdetail  />} />
           </Routes>
+          <Chatbot/>
         </Router>
 
         <Footer/>

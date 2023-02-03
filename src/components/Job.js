@@ -2,8 +2,12 @@ import { React, useContext, useEffect } from 'react'
 import jobContext from '../context/product/jobContext';
 import jobImg from './img/job.jpg'
 import Jobscard from './Jobscard'
+import { Link } from "react-router-dom";
+import Navbar from './Navbar';
 
 export default function Job() {
+
+
   const Context = useContext(jobContext)
   const { jobs, getJobs } = Context;
 
@@ -14,6 +18,7 @@ export default function Job() {
   return (
 
     <div>
+      <Navbar />
       {/* Job Banner start */}
       <div className='jobBanner'>
         <div className=' bg-gray-900 text-white'>
@@ -29,11 +34,9 @@ export default function Job() {
       {/* Job Banner End */}
 
 
-      {/* <!-- component --> */}
-      {/* <!-- component --> */}
       <div className="jobCard mt-8 ml-4 grid grid-cols-3 ">
         {jobs.map((job) => {
-          return <Jobscard job={job} />
+          return <Link to={{ pathname: `/jobdetail/${job._id}` }} ><Jobscard key={job._id} job={job} /></Link>
         })}
       </div>
 

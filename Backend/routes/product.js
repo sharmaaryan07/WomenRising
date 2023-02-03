@@ -24,7 +24,7 @@ router.post('/update', (req, res)=>{
 
 
 // Route 3: To get Perticular Product Details
-router.post('/getproduct/:id',async (req, res) => {
+router.get('/getproduct/:id',async (req, res) => {
 
     try {
         

@@ -29,54 +29,6 @@ export default function Sellproduct(props) {
         <h2 className='text-4xl text-center font-bold '>Sell Product</h2>
         <form className='   grid grid-cols-2 gap-11 '>
 
-          {/* <div className="grid gap-6 mb-6 md:grid-cols-2">
-                    <div>
-                        <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 ">Name</label>
-                        <input type="text" id="name" name="name" value={product.name} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" require="true" placeholder="John Abrahim" onChange={onChange} />
-                    </div>
-
-                    <div>
-                        <label htmlFor="title" className="block mb-2 text-sm font-medium text-gray-900 ">Product Name</label>
-                        <input type="text" id="title" name="title" value={product.title} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"  require="true" placeholder="Flowbite" onChange={onChange} />
-                    </div>
-
-                    <div>
-                        <label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-900 ">Description</label>
-                        <input type="text" id="description" name="description" value={product.description} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500"  require="true" placeholder="Flowbite" onChange={onChange} />
-                    </div>
-
-                    <div>
-                        <label htmlFor="price" className="block mb-2 text-sm font-medium text-gray-900 ">Price</label>
-                        <input type="text" id="price" name="price" value={product.price} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" require="true" placeholder="Flowbite" onChange={onChange} />
-                    </div>
-
-                    <div>
-                        <label htmlFor="phone" className="block mb-2 text-sm font-medium text-gray-900 ">Phone number</label>
-                        <input type="text" id="phone" name="phone" value={product.phone} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" require="true" placeholder="Enter your Number" onChange={onChange} />
-                    </div>
-                </div>
-
-                <div className="mb-6">
-                    <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 ">Email address</label>
-                    <input type="text" id="email" name="email" value={product.email} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400  dark:focus:ring-blue-500 dark:focus:border-blue-500" require="true" placeholder="john.doe@company.com" onChange={onChange} />
-                </div>
-
-                <div className="mb-6">
-                    <label htmlFor="image" className="block mb-2 text-sm font-medium text-gray-900 ">Email address</label>
-                    <FileBase64
-                        id="image"
-                        name="image"
-                        value={product.image}
-                        type="file"
-                        multiple={false}
-                        onDone={({ base64 }) => setproduct({ ...product, image: base64 })} />
-                </div>
-
-
-                <button type="submit" disabled={product.name.length<=0 || product.email.length<=0 || product.description.length<=0 || product.image.length<=0 || product.phone.length<=0 || product.price.length<=0 || product.title.length<=0 } onClick={handleClick} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button> */}
-
-
-
           <div className="relative z-0  mb-6 group">
             <input type="text" name="name" id="name" value={product.name} onChange={onChange} className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
             <label for="name" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Name</label>
@@ -107,23 +59,18 @@ export default function Sellproduct(props) {
             <input type="number" name="phone" id="phone" value={product.phone} onChange={onChange} className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required maxLength='10' />
             <label for="phone" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone Number</label>
           </div>
-
-
           <div className='space-y-3'>
-          <FileBase64
-            id="image"
-            name="image"
-            value={product.image}
-            type="file"
-            multiple={false}
-            onDone={({ base64 }) => setproduct({ ...product, image: base64 })} />
+            <FileBase64
+              id="image"
+              name="image"
+              value={product.image}
+              type="file"
+              multiple={false}
+              onDone={({ base64 }) => setproduct({ ...product, image: base64 })} />
             <p className='text-xs '>Image size should not be more than 60kb</p>
           </div>
         </form>
         <div>
-
-
-
           <button type="submit" disabled={product.name.length <= 0 || product.email.length <= 0 || product.description.length <= 0 || product.image.length <= 0 || product.phone.length <= 0 || product.price.length <= 0 || product.title.length <= 0} onClick={handleClick} className="text-white bg-blue-700  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Submit</button>
         </div>
 

@@ -19,9 +19,12 @@ import { useState } from 'react';
 import JobState from './context/product/JobState';
 import Jobdetail from './components/Jobdetail';
 import Chatbot from './components/Chatbot';
+import LoadingBar from 'react-top-loading-bar'
 
 
 function App() {
+  const [progress, setProgress] = useState(0)
+  
   const [alert, setAlert] = useState(null)
   const showAlert = (message, type, messageType) => {
     setAlert(
@@ -40,22 +43,27 @@ function App() {
     <>
       <ProductState>
         <JobState>
-        <Router>
-          <Alert alert={alert} />
-          <Routes>
-            <Route path='/home'  element={<Home />} />
-            <Route path='/'  element={<Login showAlert={showAlert} />} />
-            <Route path='/signup' element={<Signup showAlert={showAlert} />} />
-            <Route path='/job' element={<Job />} />
-            <Route path='/product'  element={<Product />} />
-            <Route path='/sellproduct'  element={<Sellproduct showAlert={showAlert} />} />
-            <Route path='/productdetail/:id'  element={<Productdetail  />} />
-            <Route path='/jobdetail/:id'  element={<Jobdetail  />} />
-          </Routes>
-          <Chatbot/>
-        </Router>
+          <Router>
+            {/* <Navbar/> */}
+              <LoadingBar
+                color='#f11946'
+                progress={progress}
+              />
+            <Alert alert={alert} />
+            <Routes>
+              <Route path='/home' element={<Home />} />
+              <Route path='/' element={<Login progress={progress} setProgress={setProgress} showAlert={showAlert} />} />
+              <Route path='/signup' element={<Signup showAlert={showAlert} />} />
+              <Route path='/job' element={<Job />} />
+              <Route path='/product' element={<Product />} />
+              <Route path='/sellproduct' element={<Sellproduct showAlert={showAlert} />} />
+              <Route path='/productdetail/:id' element={<Productdetail />} />
+              <Route path='/jobdetail/:id' element={<Jobdetail />} />
+            </Routes>
+            <Chatbot />
+          </Router>
 
-        <Footer/>
+          <Footer />
         </JobState>
 
       </ProductState>

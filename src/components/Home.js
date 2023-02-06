@@ -8,7 +8,7 @@ import Navbar from './Navbar';
 export default function Home() {
   return (
     <div className='mb-10'>
-          <Navbar />
+      <Navbar />
 
 
       {/* Top banner start */}
@@ -16,7 +16,7 @@ export default function Home() {
 
         <div className="video opacity-[0.40]" >
           <video autoPlay muted loop >
-            <source src={video} type="video/mp4" /> 
+            <source src={video} type="video/mp4" />
           </video>
         </div>
 

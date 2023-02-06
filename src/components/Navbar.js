@@ -1,16 +1,21 @@
 import React from 'react'
 import { Link, NavLink } from "react-router-dom";
 import logo from "./img/logo.png";
+import avatar from "./img/Avatar.png";
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function Navbar() {
-	let navigate = useNavigate();
+    let navigate = useNavigate();
 
-    const logOut=()=>{
+    const logOut = () => {
         localStorage.removeItem('token');
         navigate('/')
     }
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    // <button onClick={logOut} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Logout</button>
     return (
         <div>
             <nav className="bg-white border-gray-200 px-2 md:px-4 py-2.5 dark:bg-gray-900 ">
@@ -20,15 +25,26 @@ export default function Navbar() {
                         {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">WomensRising</span> */}
                     </Link>
                     <div className="flex items-center md:order-3">
-                       {!localStorage.getItem('token') ? <div>
+                        {!localStorage.getItem('token') ? <div>
                             <Link to="/" className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Login</Link>
                             <Link to="/signup" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign up</Link>
                             {/* <img
                             src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
                             className="rounded-full w-14 -mr-8"
                             alt="Avatar"
-                        /> */}</div> : <button onClick={logOut} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Logout</button>
-}
+                        /> */}</div> : <div className="relative">
+                            <button className="signout block h-12 w-12 focus:outline-none focus:border-white focus:border rounded-full overflow-hidden" onClick={() => setIsOpen(!isOpen)}>
+                                <img src={avatar} alt="avatar" className="h-full w-full object-cover" />
+                            </button>
+                            {isOpen && (
+                                <div className="absolute z-20 right-0 w-48 mt-2 py-2 bg-white rounded-lg shadow-xl">
+                                    <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Profile</a>
+                                    <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Settings</a>
+                                    <button onClick={logOut} className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white w-48 text-left">Log out</button>
+                                </div>
+                            )}
+                        </div>
+                        }
 
                     </div>
                     <div id="mega-menu" className="hidden justify-between items-center w-full text-sm md:flex md:w-auto md:order-1">

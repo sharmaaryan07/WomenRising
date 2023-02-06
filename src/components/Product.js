@@ -42,7 +42,7 @@ export default function Product() {
 
       <div className="productContainer grid grid-cols-3  mt-6 ml-6 gap-4">
         {products.map((product) => {
-          return  <Link to={`/productdetail/${product._id}`} > <Productitems product={product} /> </Link>  
+          return   <Productitems product={product} /> 
         })}
 
       </div>

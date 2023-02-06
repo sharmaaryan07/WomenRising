@@ -36,7 +36,7 @@ export default function Job() {
 
       <div className="jobCard mt-8 ml-4 grid grid-cols-3 ">
         {jobs.map((job) => {
-          return <Link to={{ pathname: `/jobdetail/${job._id}` }} ><Jobscard key={job._id} job={job} /></Link>
+          return <Jobscard key={job._id} job={job} />
         })}
       </div>
 

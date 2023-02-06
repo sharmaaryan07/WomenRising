@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const Jobscard = (props) => {
 
@@ -6,7 +7,7 @@ const Jobscard = (props) => {
 
     return (
         <div>
-            <div className="w-[28rem] rounded-md  bg-white px-4 py-4 shadow-md transition transform duration-500 cursor-pointer">
+            <div className="w-[28rem] rounded-md  bg-white px-4 py-4 shadow-md transition transform duration-500 cursor-default">
                 <div className="flex flex-col justify-start  ">
                     <div className="flex justify-between items-center">
                         <div className="text-lg font-semibold text-bookmark-blue flex space-x-1 items-center mb-2">
@@ -29,7 +30,7 @@ const Jobscard = (props) => {
                     </div>
                     <div>
                         <div className="mt-5">
-                            <button  className="mr-2 my-1 uppercase tracking-wider px-2 text-indigo-600 border-indigo-600 hover:bg-indigo-600 hover:text-white border text-sm font-semibold rounded py-1 transition transform duration-500 cursor-pointer">Apply</button>
+                            <Link to={`/jobdetail/${job._id}`}  className="mr-2 my-1 uppercase tracking-wider px-2 text-indigo-600 border-indigo-600 hover:bg-indigo-600 hover:text-white border text-sm font-semibold rounded py-1 transition transform duration-500 cursor-pointer">Apply</Link>
                         </div>
                     </div>
                 </div>

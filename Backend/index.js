@@ -18,6 +18,7 @@ app.use(express.json());
 // Available Routes
 app.use('/api/job', require('./routes/jobs'))
 app.use('/api/sell', require('./routes/product'))
+app.use('/api/cart', require('./routes/carts'))
 app.use('/api/auth', require('./routes/auth'))
 
 app.listen(port, () => {

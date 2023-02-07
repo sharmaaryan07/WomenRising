@@ -1,11 +1,10 @@
-import { useState } from "react";
-import cartContext from "./cartContext";
+import {react, useState } from "react";
+import cartContext from './cartContext';
 
 
-const cartState = (props) => {
+const CartState = (props) => {
     const host="http://localhost:5000";
-    const productInitial = []
-    const [carts, setcarts] = useState(productInitial)
+    const [carts, setcarts] = useState([])
 
     //Route 1: fetch all Product
     const getcarts = async()=>{
@@ -29,19 +28,19 @@ const cartState = (props) => {
 
 
     //Route 2: Add a Product
-    const addcart=async (title, price, image)=>{
+    // const addcart=async (title, price, image)=>{
 
-      // API Call
-      const response = await fetch(`${host}/api/cart/addtocart`, {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        headers: {
-          'Content-Type': 'application/json',
-          "auth-token": localStorage.getItem('token')
-        },
-        body: JSON.stringify({title, price, image})
-      });
-      setcarts(carts.concat(response))
-    }
+    //   // API Call
+    //   const response = await fetch(`${host}/api/cart/addtocart`, {
+    //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       "auth-token": localStorage.getItem('token')
+    //     },
+    //     body: JSON.stringify({title, price, image})
+    //   });
+    //   setcarts(carts.concat(response))
+    // }
 
 //     // Route 3: Geting perticular product
 //     const perticularproduct= async (id, name, title, description, price, phone, email, image)=>{
@@ -61,10 +60,10 @@ const cartState = (props) => {
 //   };
 
     return (
-        <cartContext.Provider value={{carts, setcarts, addcart, getcarts }}>
+        <cartContext.Provider value={{carts, setcarts, getcarts }}>
             {props.children}
         </cartContext.Provider>
     )
 }
 
-export default cartState;
+export default CartState;

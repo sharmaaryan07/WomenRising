@@ -18,6 +18,23 @@ export default function Productdetail() {
     fetchProduct();
   }, [id]);
 
+
+  const handlesubmit = async (e) => {
+    e.preventDefault();
+
+    const response = await fetch("http://localhost:5000/api/cart/addtocart", {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+            'Content-Type': 'application/json',
+            'auth-token': localStorage.getItem('token')
+        },
+        body: JSON.stringify({ title: product.title,price: product.price, image: product.image })
+    });
+    const json = await response.json();
+    console.log(json);
+
+}
+
     return (
         <div>
           <Navbar />
@@ -44,7 +61,7 @@ export default function Productdetail() {
                             </div>
                             <div className="flex">
                                 <span className="title-font font-medium text-2xl text-gray-900">₹{product.price}</span>
-                                <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Add to Cart</button>
+                                <button onClick={handlesubmit} className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">Add to Cart</button>
                                 
                             </div>
                         </div>

@@ -2,7 +2,6 @@ import { React, useContext, useEffect } from 'react'
 import jobContext from '../context/product/jobContext';
 import jobImg from './img/job.jpg'
 import Jobscard from './Jobscard'
-import { Link } from "react-router-dom";
 import Navbar from './Navbar';
 
 export default function Job() {

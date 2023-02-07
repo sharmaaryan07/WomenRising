@@ -24,7 +24,7 @@ export default function Signup(props) {
 
         if (json.success) {
             // save the auth token and redirect
-            localStorage.setItem('token', json.authtoken);
+            localStorage.setItem('token', json.authToken);
             navigate("/")
             props.showAlert("SignUp Successfull","bg-green-500","SignUp Successful")
 

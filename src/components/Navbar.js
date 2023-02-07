@@ -39,8 +39,8 @@ export default function Navbar() {
                             {isOpen && (
                                 <div className="absolute z-20 right-0 w-48 mt-2 py-2 bg-white rounded-lg shadow-xl">
                                     <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Profile</a>
-                                    <a href="#" className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Settings</a>
-                                    <button onClick={logOut} className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white w-48 text-left">Log out</button>
+                                    <Link to='/cart' className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Settings</Link>
+                                    <button onClick={logOut} className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Log out</button>
                                 </div>
                             )}
                         </div>

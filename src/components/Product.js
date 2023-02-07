@@ -5,7 +5,6 @@ import productContext from '../context/product/productContext'
 import jobImg from './img/job.jpg'
 import Productitems from './Productitems'
 import Navbar from './Navbar';
-import ProductDetails from './Productdetail';
 
 
 export default function Product() {

@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import Job from './components/Job';
 import Product from './components/Product';
 import ProductState from './context/product/ProductState';
+import CartState from './context/product/CartState';
 import Sellproduct from './components/Sellproduct';
 import Productdetail from './components/Productdetail';
 import Alert from './components/Alert';
@@ -19,6 +20,7 @@ import { useState } from 'react';
 import JobState from './context/product/JobState';
 import Jobdetail from './components/Jobdetail';
 import Chatbot from './components/Chatbot';
+import Cart from './components/Cart';
 import LoadingBar from 'react-top-loading-bar'
 
 
@@ -43,6 +45,7 @@ function App() {
     <>
       <ProductState>
         <JobState>
+          <CartState>
           <Router>
             {/* <Navbar/> */}
               <LoadingBar
@@ -59,13 +62,14 @@ function App() {
               <Route path='/sellproduct' element={<Sellproduct showAlert={showAlert} />} />
               <Route path='/productdetail/:id' element={<Productdetail />} />
               <Route path='/jobdetail/:id' element={<Jobdetail />} />
+              <Route path='/cart' element={<Cart />} />
             </Routes>
             <Chatbot />
           </Router>
 
           <Footer />
+          </CartState>
         </JobState>
-
       </ProductState>
     </>
   );

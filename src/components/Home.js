@@ -2,31 +2,102 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import video from './video/video8.mp4' // 1450px X 620px
 import image from './img/Haboutus.jpg'
-import Navbar from './Navbar';
+import 'tw-elements';
+import gif1 from './img/gif14.gif'
+import gif2 from './img/gif2.gif'
+
 
 
 export default function Home() {
   return (
     <div className='mb-10'>
-      <Navbar />
 
 
       {/* Top banner start */}
-      <div className="banner bg-gray-900 text-white ">
+      <div className="banner bg-gray-900 text-white  ">
 
-        <div className="video opacity-[0.40]" >
-          <video autoPlay muted loop >
-            <source src={video} type="video/mp4" />
-          </video>
+        {/* Carousel Start */}
+        <div
+          id="carouselExampleCrossfade"
+          className="carousel slide carousel-fade relative"
+          data-bs-ride="carousel"
+
+        >
+          <div className="carousel-indicators  absolute right-0 bottom-0 left-0 flex justify-center p-0 mb-4">
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCrossfade"
+              data-bs-slide-to="0"
+              className="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCrossfade"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#carouselExampleCrossfade"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div className="carousel-inner relative  overflow-hidden ">
+            <div className="carousel-item active float-left w-full">
+              <img
+                src={gif2}
+                className="block w-full"
+                alt="Wild Landscape"
+              />
+            </div>
+            <div className="carousel-item float-left w-full">
+              <img
+                src={gif1}
+                className="block w-full"
+                alt="Camera"
+              />
+            </div>
+            <div className="carousel-item float-left w-full">
+              <img
+                src={gif1}
+                className="block w-full"
+                alt="Exotic Fruits"
+              />
+            </div>
+          </div>
+          <button
+            className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+            type="button"
+            data-bs-target="#carouselExampleCrossfade"
+            data-bs-slide="prev"
+          >
+            <span className="carousel-control-prev-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+          <button
+            className="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+            type="button"
+            data-bs-target="#carouselExampleCrossfade"
+            data-bs-slide="next"
+          >
+            <span className="carousel-control-next-icon inline-block bg-no-repeat" aria-hidden="true"></span>
+            <span className="visually-hidden">Next</span>
+          </button>
         </div>
+        {/* Carousel End */}
 
-        <div className="center text-5xl -mt-[23rem] ml-[30rem] font-medium absolute">
+
+
+        {/* <div className="center text-5xl -mt-[23rem] ml-[30rem] font-medium absolute">
           <h1>FIND THE PERFECT <span className='text-[#2563eb] '> JOB </span> </h1>
 
           <Link to="/signup" className="ml-44  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-3  md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
             Sign up
           </Link>
-        </div>
+        </div> */}
       </div>
       {/* Top banner end */}
 

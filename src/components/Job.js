@@ -2,22 +2,27 @@ import { React, useContext, useEffect } from 'react'
 import jobContext from '../context/product/jobContext';
 import jobImg from './img/job.jpg'
 import Jobscard from './Jobscard'
-import Navbar from './Navbar';
+import { useNavigate } from 'react-router-dom';
 
-export default function Job() {
 
+export default function Job(props) {
+  let navigate = useNavigate();
 
   const Context = useContext(jobContext)
   const { jobs, getJobs } = Context;
 
   useEffect(() => {
-    getJobs();
+    if(localStorage.getItem('token')){
+      getJobs();
+    }else{
+      props.showAlert("Please Login to see Job Page", "bg-red-500", "login To continue");
+      navigate('/login')
+    }
   })
 
   return (
 
     <div>
-      <Navbar />
       {/* Job Banner start */}
       <div className='jobBanner'>
         <div className=' bg-gray-900 text-white'>

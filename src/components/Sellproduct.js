@@ -2,7 +2,6 @@ import React, { useContext } from 'react'
 import { useState } from 'react';
 import productContext from '../context/product/productContext'
 import FileBase64 from 'react-file-base64';
-import Navbar from './Navbar';
 
 
 export default function Sellproduct(props) {
@@ -24,7 +23,6 @@ export default function Sellproduct(props) {
 
   return (
     <div>
-      <Navbar />
       <div className='shadow-md p-10 w-[55rem] ml-[20rem] mt-14 space-y-8'>
         <h2 className='text-4xl text-center font-bold '>Sell Product</h2>
         <form className='   grid grid-cols-2 gap-11 '>

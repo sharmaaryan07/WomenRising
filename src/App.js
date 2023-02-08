@@ -1,6 +1,6 @@
 import './App.css';
 import Login from './components/Login';
-// import Navbar from './components/Navbar';
+import Navbar from './components/Navbar';
 import {
   BrowserRouter as Router,
   Routes,
@@ -47,18 +47,18 @@ function App() {
         <JobState>
           <CartState>
           <Router>
-            {/* <Navbar/> */}
+            <Navbar/>
               <LoadingBar
                 color='#f11946'
                 progress={progress}
               />
             <Alert alert={alert} />
             <Routes>
-              <Route path='/home' element={<Home />} />
-              <Route path='/' element={<Login progress={progress} setProgress={setProgress} showAlert={showAlert} />} />
+              <Route path='/' element={<Home />} />
+              <Route path='/login' element={<Login progress={progress} setProgress={setProgress} showAlert={showAlert} />} />
               <Route path='/signup' element={<Signup showAlert={showAlert} />} />
-              <Route path='/job' element={<Job />} />
-              <Route path='/product' element={<Product />} />
+              <Route path='/job' element={<Job showAlert={showAlert} />} />
+              <Route path='/product' element={<Product showAlert={showAlert} />} />
               <Route path='/sellproduct' element={<Sellproduct showAlert={showAlert} />} />
               <Route path='/productdetail/:id' element={<Productdetail />} />
               <Route path='/jobdetail/:id' element={<Jobdetail />} />

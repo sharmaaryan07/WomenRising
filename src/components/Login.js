@@ -19,12 +19,11 @@ export default function Login(props) {
 			body: JSON.stringify({email: credentials.email, password: credentials.password})
 		  });
 		  const json =await response.json();
-		  console.log(json);
 
 		  if(json.success){
 			// save the auth token and redirect
 			localStorage.setItem('token', json.authToken);
-			navigate("/home")
+			navigate("/")
 			props.showAlert("Successfully Logged in", "bg-green-500", "Login Successful");
 
 		  }else{

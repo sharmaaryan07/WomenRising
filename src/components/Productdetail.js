@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from './Navbar';
 import { useParams } from 'react-router-dom';
 
 
@@ -37,7 +36,6 @@ export default function Productdetail() {
 
     return (
         <div>
-          <Navbar />
             <section className="text-gray-600 body-font overflow-hidden">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">

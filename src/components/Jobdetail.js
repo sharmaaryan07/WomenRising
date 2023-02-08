@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Navbar from './Navbar';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -17,7 +16,6 @@ const ProductDetail = () => {
 
   return (
     <div>
-      <Navbar/>
       title: {job.title} <br/>
       description: {job.description}<br/>
       salary: {job.salary}<br/>

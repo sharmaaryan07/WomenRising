@@ -1,4 +1,4 @@
-import {react, useState } from "react";
+import { useState } from "react";
 import cartContext from './cartContext';
 
 
@@ -22,45 +22,31 @@ const CartState = (props) => {
       // console.log(json)
       setcarts(json);
     }
-    
 
 
+    //Route 1: fetch all Product
+    const deletecarts = async(id)=>{
+      console.log("Delteed"+ id)
+      // API Call
+      const response = await fetch(`${host}/api/cart/deletecart/${id}`, {
+          method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
+          headers: {
+              'Content-Type': 'application/json',
+              "auth-token": localStorage.getItem('token')
+            },
+          });
+          
+          const json= await response.json();
+          // console.log(json)
+          setcarts(json);
+          const newProduct= carts.filter((product)=>{return product._id!==id})
+          setcarts(newProduct);
+    }
 
 
-    //Route 2: Add a Product
-    // const addcart=async (title, price, image)=>{
-
-    //   // API Call
-    //   const response = await fetch(`${host}/api/cart/addtocart`, {
-    //     method: 'POST', // *GET, POST, PUT, DELETE, etc.
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //       "auth-token": localStorage.getItem('token')
-    //     },
-    //     body: JSON.stringify({title, price, image})
-    //   });
-    //   setcarts(carts.concat(response))
-    // }
-
-//     // Route 3: Geting perticular product
-//     const perticularproduct= async (id, name, title, description, price, phone, email, image)=>{
-//       const response = await fetch(`${host}/api/sell/getproduct/${id}`, {
-//         method: 'POST', // *GET, POST, PUT, DELETE, etc.
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({id, name, title, description, price, phone, email, image})
-
-        
-
-//       // console.log(id, name, title, description, price, phone, email, image)
-//     });
-//     const json= await response.json();
-//     return json
-//   };
 
     return (
-        <cartContext.Provider value={{carts, setcarts, getcarts }}>
+        <cartContext.Provider value={{carts, setcarts, getcarts, deletecarts }}>
             {props.children}
         </cartContext.Provider>
     )

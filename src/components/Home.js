@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import video from './video/video8.mp4' // 1450px X 620px
+// import video from './video/video8.mp4' // 1450px X 620px
 import image from './img/Haboutus.jpg'
 import 'tw-elements';
 import gif1 from './img/gif14.gif'

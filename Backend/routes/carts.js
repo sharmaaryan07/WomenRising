@@ -42,5 +42,29 @@ router.get('/getproduct/:id',async (req, res) => {
 });
 
 
+// Route 3: To get Delete Product Details
+router.delete('/deletecart/:id', fetchuser, async (req, res) => {
+
+    try {
+
+        const product = await cartProduct.findById(req.params.id);
+        if (!product) {
+            return res.status(404).send("Not Found")
+        }
+
+        // Allow deletion only if user owns this product
+        if (product.user.toString() !== req.user.id) {
+            return res.status(401).send("Not Allowed")
+        }
+
+        note = await cartProduct.findByIdAndDelete(req.params.id)
+        res.send(note);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Some Internal Server Error Occured!!")
+    }
+});
+
+
 // Exporting Router
 module.exports = router

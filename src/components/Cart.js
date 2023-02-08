@@ -7,9 +7,11 @@ import cartContext from '../context/product/cartContext';
 
 export default function Example() {
     const Context = useContext(cartContext)
-    const { carts, getcarts } = Context;
+    const { carts, getcarts, deletecarts } = Context;
 
     const [total, setTotal] = useState(0);
+
+    
 
     useEffect(() => {
         let totalPrice = 0;
@@ -26,6 +28,7 @@ export default function Example() {
     return (
         <div>
             <div className="mt-12 mr-12 ml-12">
+              <h1 className='text-4xl text-center mb-12'>YOUR <span className='text-[#2563eb]'>CART</span> </h1>
                 <div className="flow-root">
                     <ul role="list" className="-my-6 divide-y divide-gray-200">
                         {carts && carts.length > 0 && carts.map((cart) => (
@@ -50,6 +53,7 @@ export default function Example() {
                                         <div className="flex">
                                             <button
                                                 type="button"
+                                                onClick={ ()=>deletecarts(cart._id)}
                                                 className="font-medium text-indigo-600 hover:text-indigo-500"
                                             >
                                                 Remove

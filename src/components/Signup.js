@@ -10,6 +10,7 @@ export default function Signup(props) {
 
     const handlesubmit = async (e) => {
         e.preventDefault();
+        props.setProgress(0);
         const { name, email, password } = credentials;
 
         const response = await fetch("http://localhost:5000/api/auth/createuser", {
@@ -19,8 +20,11 @@ export default function Signup(props) {
             },
             body: JSON.stringify({ name, email, password })
         });
+        props.setProgress(50);
+
         const json = await response.json();
-        console.log(json);
+        props.setProgress(100);
+
 
         if (json.success) {
             // save the auth token and redirect
@@ -58,7 +62,7 @@ export default function Signup(props) {
                                 placeholder="Full Name" />
 
                             <input
-                                type="text"
+                                type="email"
                                 className="block border border-grey-light w-full p-3 rounded mb-4"
                                 name="email"
                                 id="email"

@@ -49,22 +49,24 @@ function App() {
           <Router>
             <Navbar/>
               <LoadingBar
-                color='#f11946'
+                color='#2563eb'
                 progress={progress}
+                waitingTime={1200}
+                loaderSpeed={1300}
               />
             <Alert alert={alert} />
             <Routes>
               <Route path='/' element={<Home />} />
-              <Route path='/login' element={<Login progress={progress} setProgress={setProgress} showAlert={showAlert} />} />
-              <Route path='/signup' element={<Signup showAlert={showAlert} />} />
-              <Route path='/job' element={<Job showAlert={showAlert} />} />
-              <Route path='/product' element={<Product showAlert={showAlert} />} />
-              <Route path='/sellproduct' element={<Sellproduct showAlert={showAlert} />} />
-              <Route path='/productdetail/:id' element={<Productdetail />} />
-              <Route path='/jobdetail/:id' element={<Jobdetail />} />
+              <Route path='/login' element={<Login setProgress={setProgress} showAlert={showAlert} />} />
+              <Route path='/signup' element={<Signup  setProgress={setProgress} showAlert={showAlert} />} />
+              <Route path='/job' element={<Job setProgress={setProgress}  showAlert={showAlert} />} />
+              <Route path='/product' element={<Product   showAlert={showAlert} />} />
+              <Route path='/sellproduct' element={<Sellproduct  setProgress={setProgress} showAlert={showAlert} />} />
+              <Route path='/productdetail/:id' element={<Productdetail setProgress={setProgress} showAlert={showAlert} />} />
+              <Route path='/jobdetail/:id' element={<Jobdetail setProgress={setProgress}/>} />
               <Route path='/cart' element={<Cart />} />
             </Routes>
-            <Chatbot />
+            <Chatbot  />
           </Router>
 
           <Footer />

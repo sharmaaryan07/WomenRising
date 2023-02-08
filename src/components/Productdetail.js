@@ -4,15 +4,20 @@ import { useParams } from 'react-router-dom';
 
 
 
-export default function Productdetail() {
+export default function Productdetail(props) {
     const { id } = useParams();
   const [product, setProduct] = useState({});
 
   useEffect(() => {
     const fetchProduct = async () => {
+        props.setProgress(0)
+
       const response = await fetch(`http://localhost:5000/api/sell/getproduct/${id}`);
+      props.setProgress(50)
       const data = await response.json();
+      props.setProgress(100)
       setProduct(data);
+
     };
     fetchProduct();
   }, [id]);
@@ -20,7 +25,8 @@ export default function Productdetail() {
 
   const handlesubmit = async (e) => {
     e.preventDefault();
-
+    props.setProgress(0)
+    
     const response = await fetch("http://localhost:5000/api/cart/addtocart", {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         headers: {
@@ -28,9 +34,12 @@ export default function Productdetail() {
             'auth-token': localStorage.getItem('token')
         },
         body: JSON.stringify({ title: product.title,price: product.price, image: product.image })
+        
     });
+    props.setProgress(50)
     const json = await response.json();
-    console.log(json);
+    props.setProgress(100)
+
 
 }
 

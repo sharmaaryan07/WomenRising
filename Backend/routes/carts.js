@@ -16,14 +16,14 @@ router.get('/fetchcart', fetchuser ,async (req, res)=>{
 
 //Route 1: Creating Routes for add cart product 
 router.post('/addtocart', fetchuser ,(req, res)=>{
-    
+    let success= true;
     const {title,price, image}= req.body;
 
     const addcart= new cartProduct({
         title, price, image, user: req.user.id
     })
     addcart.save();
-    res.send(req.body)
+    res.send( req.body)
     
 })
 

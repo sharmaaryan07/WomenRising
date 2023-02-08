@@ -11,8 +11,12 @@ export default function Sellproduct(props) {
   const [product, setproduct] = useState({ name: "", title: "", description: "", price: "", phone: "", email: "", image: "" })
   const handleClick = (e) => {
     e.preventDefault();
+    props.setProgress(0)
+
     addproduct(product.name, product.title, product.description, product.price, product.phone, product.email, product.image)
     setproduct({ name: "", title: "", description: "", price: "", phone: "", email: "", image: "" })
+    props.setProgress(100)
+
     props.showAlert("Product Added", "bg-green-500", "Product Added Successful")
   }
 

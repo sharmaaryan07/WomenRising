@@ -26,22 +26,6 @@ const JobState = (props) => {
 
 
 
-    // Route 3: Geting perticular product
-    const singleJob = async (id, name, title, description, price, phone, email, image) => {
-        const response = await fetch(`${host}/api/sell/getproduct/${id}`, {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({id, name, title, description, price, phone, email, image })
-
-
-
-            // console.log(id, name, title, description, price, phone, email, image)
-        });
-        const json = await response.json();
-        return json
-    };
 
 
     return (

@@ -17,9 +17,9 @@ export default function Navbar() {
     // <button onClick={logOut} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Logout</button>
     return (
         <div>
-            <nav className="bg-white border-gray-200 px-2 md:px-4 py-2.5 dark:bg-gray-900 ">
+            <nav className="bg-white border-gray-200 px-2 py-4 dark:bg-gray-900 ">
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-                    <Link to="https://flowbite.com" className="flex items-center" >
+                    <Link to="home" className="flex items-center" >
                         <img src={logo} className="mr-3 h-6 sm:h-9  invert" alt="Flowbite Logo" />
                         {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">WomensRising</span> */}
                     </Link>

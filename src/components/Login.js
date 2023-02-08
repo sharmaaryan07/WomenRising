@@ -11,6 +11,7 @@ export default function Login(props) {
 
 	const handlesubmit = async (e) => {
 		e.preventDefault(); 
+		props.setProgress(0);
 		const response = await fetch("http://localhost:5000/api/auth/login", {
 			method: 'POST', // *GET, POST, PUT, DELETE, etc.
 			headers: {
@@ -18,8 +19,9 @@ export default function Login(props) {
 			},
 			body: JSON.stringify({email: credentials.email, password: credentials.password})
 		  });
+		  props.setProgress(50);
 		  const json =await response.json();
-
+		  props.setProgress(100);
 		  if(json.success){
 			// save the auth token and redirect
 			localStorage.setItem('token', json.authToken);

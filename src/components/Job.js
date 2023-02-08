@@ -12,6 +12,7 @@ export default function Job(props) {
   const { jobs, getJobs } = Context;
 
   useEffect(() => {
+    
     if(localStorage.getItem('token')){
       getJobs();
     }else{
@@ -40,7 +41,7 @@ export default function Job(props) {
 
       <div className="jobCard mt-8 ml-4 grid grid-cols-3 ">
         {jobs.map((job) => {
-          return <Jobscard key={job._id} job={job} />
+          return <Jobscard key={job._id} job={job}  />
         })}
       </div>
 

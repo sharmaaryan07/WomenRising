@@ -8,6 +8,26 @@ const JobState = (props) => {
     const jobInitial = []
     const [jobs, setJobs] = useState(jobInitial);
 
+
+  //Route 2: Add a Product
+  const addjob=async (company, title, description, location,salary, phone, email, material, image)=>{
+
+    // API Call
+    const response = await fetch(`${host}/api/job/addjob`, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({company, title, description, location,salary, phone, email, material, image})
+    });
+    setJobs(jobs.concat(response))
+  }
+
+
+
+
+
+
     //Route 1: fetch all Product
     const getJobs = async () => {
 
@@ -29,7 +49,7 @@ const JobState = (props) => {
 
 
     return (
-        <jobContext.Provider value={{ jobs, getJobs }}>
+        <jobContext.Provider value={{ jobs, getJobs,addjob }}>
             {props.children}
         </jobContext.Provider>
     )

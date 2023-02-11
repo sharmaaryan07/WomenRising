@@ -24,6 +24,7 @@ import Jobdetail from './components/Jobdetail';
 import Chatbot from './components/Chatbot';
 import Cart from './components/Cart';
 import Blogs from './components/Blogs';
+import Addjob from './components/Addjob';
 
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
                   <Route path='/jobdetail/:id' element={<Jobdetail setProgress={setProgress} />} />
                   <Route path='/cart' element={<Cart />} />
                   <Route path='/blogs' element={<Blogs />} />
+                  <Route path='/addjob' element={<Addjob />} />
                 </Routes>
                 <Chatbot />
               </Router>

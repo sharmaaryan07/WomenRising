@@ -6,6 +6,10 @@ const { Schema } = mongoose;
 
 // Creating Schema 
 const jobSchema = new Schema({
+    company: {
+        type: String,
+        required: true,
+    },
     title: {
         type: String,
         required: true,
@@ -20,16 +24,22 @@ const jobSchema = new Schema({
     // required: true
     salary: {
         type: Number,
+        required: true,
     },
     phone: {
         type: Number,
+        required: true,
     },
     email: {
         type: String,
+        required: true,
     },
-    type: {
+    material:{
         type: String,
     },
+    image:{
+        type: String,
+    }
 
 });
 

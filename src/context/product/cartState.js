@@ -24,7 +24,7 @@ const CartState = (props) => {
     }
 
 
-    //Route 1: fetch all Product
+    //Route 2: delete product
     const deletecarts = async(id)=>{
       console.log("Delteed"+ id)
       // API Call

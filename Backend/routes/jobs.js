@@ -8,15 +8,19 @@ const router = express.Router();
 // Route 1: Add Jobs 
 router.post('/addjob', (req, res)=>{
     
-    const addJob= job(req.body)
-    addJob.save();
-    res.send(req.body)
+    const { company, title, description, location,salary, phone, email, material, image } = req.body;
+
+        const addblog = new job({
+            company, title, description, location,salary, phone, email, material, image
+        })
+        addblog.save();
+        res.send(req.body)
 })
 
 
 
 // Route 2: Fetching jobs
-router.get('/fetchjob', async (req, res)=>{
+router.get('/fetchjob',  async (req, res)=>{
     const fetchJobs= await job.find({user: req.user});
     res.json(fetchJobs);
     

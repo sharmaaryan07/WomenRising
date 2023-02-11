@@ -19,11 +19,45 @@ const ProductDetail = (props) => {
   }, [id]);
 
   return (
-    <div>
-      title: {job.title} <br/>
-      description: {job.description}<br/>
-      salary: {job.salary}<br/>
-      ...
+    <div className='ml-12 mt-12 mr-12 flex justify-items-start'>
+      <div className="left space-y-7 w-[49rem] p-5">
+        <div className="header text-5xl font-medium">
+          {job.title}
+        </div>
+
+        <div className="jobRole ">
+          <span className='text-2xl font-normal'>Job Role:</span>  <br />
+          {job.description}
+        </div>
+
+        <div className="material">
+          <span className='text-2xl font-normal'>Material:</span> <br/>
+          {job.material}
+        </div>
+
+        <div className="materialPhoto ">
+          <span className='text-2xl font-normal  '>Material's Photo:</span>
+          <div className="images grid grid-cols-2">
+          <img className='w-72 rounded-xl ' src={job.image}  />
+          </div>
+
+        </div>
+      </div>
+
+      <div className="right  ml-40 ">
+        <div className="border sticky top-12 border-gray-300 p-7 rounded-lg bg-gray-200 space-y-5 w-80 ">
+          <div className='flex justify-center'>Company Name:</div>
+          <div><i class="fa-solid fa-phone"></i> {job.phone}</div>
+          <div><i class="fa-solid fa-envelope"></i> {job.email}</div>
+          <div><i class="fa-solid fa-location-pin"></i> {job.location}</div>
+          <div><i class="fa-solid fa-money-bill"></i> ₹{job.salary}</div>
+        </div>
+
+      </div>
+
+      {/* description: <br />
+      salary: {job.salary}<br />
+      ... */}
     </div>
   );
 };

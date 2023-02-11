@@ -26,7 +26,7 @@ const Jobscard = (props) => {
                         <span>{job.location}</span>
                     </div>
                     <div className="text-sm text-gray-500 flex space-x-1 mt-3 items-center">
-                        <span> <span className='text-[#2563eb] font-semibold' >Description:</span>  {job.description}</span>
+                        <span> <span className='text-[#2563eb] font-semibold' >Description:</span>  {job.description ? job.description.slice(0, 50) : ""}.....</span>
                     </div>
                     <div>
                         <div className="mt-5">

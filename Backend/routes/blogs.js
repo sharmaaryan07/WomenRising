@@ -78,24 +78,24 @@ router.delete('/deleteblog/:id', fetchuser, async (req, res) => {
 // Route 5: Editing you Blog
 router.put('/editblog/:id', fetchuser, async (req, res) => {
 
-    const {title, description, image} =  req.body;
+    const { title, description, image } = req.body;
 
     // Create a new Blog object
     const newBlog = {};
-    if(title){newBlog.title = title};
-    if(description){newBlog.description = description};
-    if(image){newBlog.image = image};
+    if (title) { newBlog.title = title };
+    if (description) { newBlog.description = description };
+    if (image) { newBlog.image = image };
 
     // Find the blog to be updated 
-    let upadteBlog= await blogSchema.findById(req.params.id);
-    if(!upadteBlog){return res.status(404).send("Not Found")}
+    let upadteBlog = await blogSchema.findById(req.params.id);
+    if (!upadteBlog) { return res.status(404).send("Not Found") }
 
     if (upadteBlog.user.toString() !== req.user.id) {
         return res.status(401).send("Not Allowed")
     }
-    
-    upadteBlog = await blogSchema.findByIdAndUpdate(req.params.id, {$set:newBlog}, {new:true})
-    res.json({upadteBlog});
+
+    upadteBlog = await blogSchema.findByIdAndUpdate(req.params.id, { $set: newBlog }, { new: true })
+    res.json({ upadteBlog });
 });
 
 

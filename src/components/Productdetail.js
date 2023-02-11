@@ -39,8 +39,6 @@ export default function Productdetail(props) {
     props.setProgress(50)
     const json = await response.json();
     props.setProgress(100)
-
-
 }
 
     return (

@@ -25,6 +25,8 @@ import Chatbot from './components/Chatbot';
 import Cart from './components/Cart';
 import Blogs from './components/Blogs';
 import Addjob from './components/Addjob';
+import Blogdetail from './components/Blogdetail';
+import Addblog from './components/Addblog';
 
 
 function App() {
@@ -71,6 +73,8 @@ function App() {
                   <Route path='/cart' element={<Cart />} />
                   <Route path='/blogs' element={<Blogs />} />
                   <Route path='/addjob' element={<Addjob />} />
+                  <Route path='/blogdetail/:id' element={<Blogdetail />} />
+                  <Route path='/addblog' element={<Addblog />} />
                 </Routes>
                 <Chatbot />
               </Router>

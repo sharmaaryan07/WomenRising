@@ -24,11 +24,29 @@ const BlogState = (props) => {
     }
 
 
+    
+  //Route 2: Add a Job
+  const addblog=async ( title, description, image )=>{
+
+    // API Call
+    const response = await fetch(`${host}/api/blogs/addblog`, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        'Content-Type': 'application/json',
+        "auth-token": localStorage.getItem('token')
+        
+      },
+      body: JSON.stringify({title, description, image})
+    });
+    setBlogs(blogs.concat(response))
+  }
+
+
 
 
 
     return (
-        <blogContext.Provider value={{ blogs,setBlogs, getBlogs }}>
+        <blogContext.Provider value={{ blogs,setBlogs, getBlogs, addblog }}>
             {props.children}
         </blogContext.Provider>
     )

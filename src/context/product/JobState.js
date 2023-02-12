@@ -9,7 +9,7 @@ const JobState = (props) => {
     const [jobs, setJobs] = useState(jobInitial);
 
 
-  //Route 2: Add a Product
+  //Route 2: Add a Job
   const addjob=async (company, title, description, location,salary, phone, email, material, image)=>{
 
     // API Call

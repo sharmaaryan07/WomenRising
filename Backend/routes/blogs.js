@@ -98,6 +98,18 @@ router.put('/editblog/:id', fetchuser, async (req, res) => {
     res.json({ upadteBlog });
 });
 
+// Route 6: To get Perticular blog Details
+router.get('/getblog/:id',async (req, res) => {
+
+    try {
+        
+        const blog = await blogSchema.findById(req.params.id);
+        res.json(blog);
+    } catch (error) {
+        console.error(error.message);
+        res.status(500).send("Some Internal Server Error Occured!!")
+    }
+});
 
 
 

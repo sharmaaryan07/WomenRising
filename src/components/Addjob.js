@@ -4,20 +4,20 @@ import jobContext from '../context/product/jobContext'
 import FileBase64 from 'react-file-base64';
 
 
-export default function Addjob() {
+export default function Addjob(props) {
   const Context = useContext(jobContext)
   const { addjob } = Context;
 
   const [add, setAdd] = useState({ company: "", title: "", description: "", location: "", salary: "", phone: "", email: "", material: "",image: "" })
   const handleClick = (e) => {
     e.preventDefault();
-    // props.setProgress(0)
+    props.setProgress(0)
 
     addjob(add.company, add.title, add.description, add.location, add.salary, add.phone, add.email, add.material, add.image)
     setAdd({company: "", title: "", description: "", location: "", salary: "", phone: "", email: "", material: "",image: "" })
-    // props.setProgress(100)
+    props.setProgress(100)
 
-    // props.showAlert("add Added", "bg-green-500", "add Added Successful")
+    props.showAlert("Job Added", "bg-green-500", "Job Added Successful")
   }
 
   const onChange = (e) => {

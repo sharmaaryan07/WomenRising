@@ -4,9 +4,10 @@ import blogContext from '../context/product/blogContext'
 import FileBase64 from 'react-file-base64';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+import { Link } from 'react-router-dom';
 
 
-export default function Addjob() {
+export default function Addjob(props) {
 
     let modules = {
         toolbar: [
@@ -35,13 +36,13 @@ export default function Addjob() {
     const [blogs, setblogs] = useState({ title: "", description: "", image: "" })
     const handleClick = (e) => {
         e.preventDefault();
-        // props.setProgress(0)
+        props.setProgress(0)
 
         addblog(blogs.title, blogs.description, blogs.image)
         setblogs({ title: "", description: "",image: "" })
-        // props.setProgress(100)
+        props.setProgress(100)
 
-        // props.showAlert("add Added", "bg-green-500", "add Added Successful")
+        props.showAlert("Blog Added", "bg-green-500", "Blog Added Successful")
     }
 
     const onChange = (e) => {
@@ -55,8 +56,16 @@ export default function Addjob() {
 
     return (
         <div>
+             <div>
+                <div className='text-center space-x-5 mt-9 text-lg'>
+                <Link to='/blogs'> All Blogs </Link>
+                <Link to='/addblog'> Add Blog </Link>
+                <Link to='/yourblog'> Your Blogs </Link>
+                </div>
+            </div>
+
             <div className='shadow-md p-10 w-[55rem] ml-[20rem] mt-14 space-y-8'>
-                <h2 className='text-4xl text-center font-bold '>Sell add</h2>
+                <h2 className='text-4xl text-center font-bold '>Add Blog</h2>
                 <form className='   '>
 
 

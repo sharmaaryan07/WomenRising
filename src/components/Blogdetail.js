@@ -10,12 +10,12 @@ const Blogdetail = (props) => {
 
     useEffect(() => {
         const fetchBlog = async () => {
-            // props.setProgress(0)
+            props.setProgress(0)
 
             const response = await fetch(`http://localhost:5000/api/blogs/getblog/${id}`);
-            //   props.setProgress(50)
+              props.setProgress(50)
             const data = await response.json();
-            //   props.setProgress(100)
+              props.setProgress(100)
             setBlogs(data);
 
         };

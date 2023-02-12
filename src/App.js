@@ -27,6 +27,7 @@ import Blogs from './components/Blogs';
 import Addjob from './components/Addjob';
 import Blogdetail from './components/Blogdetail';
 import Addblog from './components/Addblog';
+import Yourblog from './components/Yourblog';
 
 
 function App() {
@@ -71,10 +72,11 @@ function App() {
                   <Route path='/productdetail/:id' element={<Productdetail setProgress={setProgress} showAlert={showAlert} />} />
                   <Route path='/jobdetail/:id' element={<Jobdetail setProgress={setProgress} />} />
                   <Route path='/cart' element={<Cart />} />
-                  <Route path='/blogs' element={<Blogs />} />
-                  <Route path='/addjob' element={<Addjob />} />
-                  <Route path='/blogdetail/:id' element={<Blogdetail />} />
-                  <Route path='/addblog' element={<Addblog />} />
+                  <Route path='/blogs' element={<Blogs setProgress={setProgress} showAlert={showAlert} />} />
+                  <Route path='/addjob' element={<Addjob setProgress={setProgress} showAlert={showAlert} />} />
+                  <Route path='/blogdetail/:id' element={<Blogdetail  setProgress={setProgress} showAlert={showAlert}  />} />
+                  <Route path='/addblog' element={<Addblog setProgress={setProgress} showAlert={showAlert} />} />
+                  <Route path='/yourblog' element={<Yourblog />} />
                 </Routes>
                 <Chatbot />
               </Router>

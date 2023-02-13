@@ -31,8 +31,10 @@ import Yourblog from './components/Yourblog';
 
 
 function App() {
+  // useState for Loading bar
   const [progress, setProgress] = useState(0)
 
+  // Logic For Alert start
   const [alert, setAlert] = useState(null)
   const showAlert = (message, type, messageType) => {
     setAlert(
@@ -42,10 +44,11 @@ function App() {
         mssgType: messageType
       }
     )
-
     setTimeout(() => {
       setAlert(null);
     }, 2500);
+  // Logic For Alert start
+
   };
   return (
     <>

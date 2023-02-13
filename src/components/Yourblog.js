@@ -26,7 +26,7 @@ export default function Blogs() {
 
             <div className='blogsCard ml-8 mt-12 grid grid-cols-3'>
                 {blogs.map((blog) => {
-                    return <Yourcard key={blog._id} blog={blog} />
+                    return <Link to={`/blogdetail/${blog._id}`}> <Yourcard key={blog._id} blog={blog} /></Link>
                     
 
                 })}

@@ -88,16 +88,6 @@ export default function Home() {
           </button>
         </div>
         {/* Carousel End */}
-
-
-
-        {/* <div className="center text-5xl -mt-[23rem] ml-[30rem] font-medium absolute">
-          <h1>FIND THE PERFECT <span className='text-[#2563eb] '> JOB </span> </h1>
-
-          <Link to="/signup" className="ml-44  text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-3  md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-            Sign up
-          </Link>
-        </div> */}
       </div>
       {/* Top banner end */}
 
@@ -191,15 +181,12 @@ export default function Home() {
         <div className="AboutInfo  text-center -mt-[29rem] space-y-12 absolute">
           <h2 className='text-3xl '>READ <span className='text-[#2563eb] font-semibold'> ABOUT US </span> </h2>
 
-          <p className='text-sm '>.................................</p>
+          <p className=''>Womens Rising is the best career platform to accelerate women’s careers. Womens Rising can <br/> connect to many illiterate womens/housewifes or whose who dont have work to do.</p>
 
-          <p className='mr-36 ml-36 '>..........................................................</p>
-
-          <p className='mr-36 ml-36'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto nulla quo cum officia laboriosam. Amet tempore, aliquid quia eius commodi, doloremque omnis delectus laudantium dolor reiciendis non nulla! Doloremque maxime quo eum in culpa mollitia similique eius doloribus voluptatem facilis! Voluptatibus, eligendi, illum. Distinctio, non!</p>
+          <p className='mr-36 ml-36 '>Our vision is to enable women to achieve their full potential by enabling them to start, restart and rise in their careers. Our motive is to do the best for womens who dont earn and want to earn some money by themselves.</p>
 
         </div>
         {/* About Us Info End */}
-
       </div>
       {/* About Us End */}
 

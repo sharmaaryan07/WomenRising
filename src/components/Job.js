@@ -1,6 +1,6 @@
 import { React, useContext, useEffect } from 'react'
 import jobContext from '../context/product/jobContext';
-import jobImg from './img/job.jpg'
+import jobImg from './img/job12.jpeg'
 import Jobscard from './Jobscard'
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -26,10 +26,10 @@ export default function Job(props) {
 
     <div>
       {/* Job Banner start */}
-      <div className='jobBanner'>
-        <div className=' bg-gray-900 text-white'>
+      <div className='jobBanner '>
+        <div className=' bg-gray-900 texxt-white '>
           <div>
-            <img src={jobImg} alt="" className='opacity-[0.19]' />
+            <img src={jobImg} alt="" className='opacity-[0.30] w-[50rem] ' />
           </div>
         </div>
 

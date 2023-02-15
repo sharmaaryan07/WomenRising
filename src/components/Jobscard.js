@@ -17,7 +17,6 @@ const Jobscard = (props) => {
                             </svg>
                             <span>{job.title} </span>
                         </div>
-                        <span className="bg-green-500 rounded-full uppercase text-white text-sm px-4 py-1 font-bold shadow-xl"> {job.type} </span>
                     </div>
                     <div className="text-sm text-gray-500 flex space-x-1 items-center">
                         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

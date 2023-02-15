@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
+import loginImg from "./img/login.png";
 
 export default function Login(props) {
 
@@ -43,7 +44,7 @@ export default function Login(props) {
 		<div className='containers flex '>
 
 			<form onSubmit={handlesubmit}>
-				<div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12 ml-[34rem] mt-9">
+				<div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12 ml-48 mt-9">
 					<div className="relative py-3 sm:max-w-xl sm:mx-auto">
 						<div
 							className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
@@ -74,6 +75,10 @@ export default function Login(props) {
 					</div>
 				</div>
 			</form>
+
+			<div className="img ml-24 mt-28  ">
+				<img src={loginImg} alt="" className='w-[44rem]' />
+			</div>
 		</div>
 	)
 }

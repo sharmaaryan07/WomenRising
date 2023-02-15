@@ -1,4 +1,7 @@
+// importing Express 
 const express = require('express')
+const fetchuser = require('../middleware/fetchuser');
+const applyJob = require('../models/applyJob')
 const job = require('../models/JobSchema')
 const nodemailer = require("nodemailer");
 
@@ -6,69 +9,31 @@ const nodemailer = require("nodemailer");
 // importing Router form Express
 const router = express.Router();
 
-
-// Route 1: Add Jobs 
-router.post('/addjob', (req, res) => {
-
-    const { company, title, description, location, salary, phone, email, material, image } = req.body;
-
-    const addblog = new job({
-        company, title, description, location, salary, phone, email, material, image
-    })
-    addblog.save();
-    res.send(req.body)
-})
-
-
-
-// Route 2: Fetching jobs
-router.get('/fetchjob', async (req, res) => {
-    const fetchJobs = await job.find({ user: req.user });
-    res.json(fetchJobs);
-
-})
-
-// Route 3: To get Perticular job Details
-router.get('/getjob/:id', async (req, res) => {
-
-    try {
-        const singlejob = await job.findById(req.params.id);
-        res.json(singlejob);
-    } catch (error) {
-        console.error(error.message);
-        res.status(500).send("Some Internal Server Error Occured!!")
-    }
-});
-
-
 // Route to apply for a job posting
 router.post('/apply/:jobId', (req, res) => {
     const jobId = req.params.jobId;
-    job.findById(jobId, (err, job) => {
+    applyJob.findById(jobId, (err, applyJob) => {
         if (err) {
             console.error('Error retrieving job posting:', err);
             res.status(500).send('Error retrieving job posting');
         } else {
             const { name, email, resume } = req.body;
-            job.applications.push({ name, email, resume });
-            job.save((err) => {
+            applyJob.applications.push({ name, email, resume });
+            applyJob.save((err) => {
                 if (err) {
                     console.error('Error saving job posting:', err);
                     res.status(500).send('Error saving job posting');
                 } else {
                     const transporter = nodemailer.createTransport({
-                        service: 'gmail',
-                        host: "smtp.gmail.com",
-                        port: 465,
-                        secure: true,
+                        service: 'Gmail',
                         auth: {
                             user: 'sharmaaru0828@gmail.com',
-                            pass: 'jiarighptjuyansm',
+                            pass: 'ari@sharma123',
                         },
                     });
                     const mailOptions = {
-                        from: `${job.applications.email}`,
-                        to: 'sharmaaru0828@gmail.com',
+                        from: 'sharmaaru0828@gmail.com',
+                        to: job.email,
                         subject: 'New job application received',
                         text: `A new job application has been received for "${job.title}".`,
                         html: `<p>A new job application has been received for "${job.description}".</p>`,
@@ -86,7 +51,6 @@ router.post('/apply/:jobId', (req, res) => {
         }
     });
 });
-
 
 // Exporting Router
 module.exports = router

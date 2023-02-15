@@ -34,12 +34,30 @@ const jobSchema = new Schema({
         type: String,
         required: true,
     },
-    material:{
+    material: {
         type: String,
     },
-    image:{
+    image: {
         type: String,
-    }
+    },
+    applications: [{
+        name: {
+            type: String,
+            required: true
+        },
+        email: {
+            type: String,
+            required: true
+        },
+        resume: {
+            type: String,
+            required: true
+        },
+        date: {
+            type: Date,
+            default: Date.now,
+        },
+    }],
 
 });
 

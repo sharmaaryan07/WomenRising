@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const ProductDetail = (props) => {
   const { id } = useParams();
@@ -17,6 +17,9 @@ const ProductDetail = (props) => {
     fetchJob();
 
   }, [id]);
+
+
+  
 
   return (
     <div className='ml-12 mt-12 mr-12 flex justify-items-start'>
@@ -38,7 +41,7 @@ const ProductDetail = (props) => {
         <div className="materialPhoto ">
           <span className='text-2xl font-normal  '>Material's Photo:</span>
           <div className="images grid grid-cols-2">
-          <img className='w-72 rounded-xl ' src={job.image}  />
+          <img className='w-72 rounded-xl ' src={job.image} alt="" />
           </div>
 
         </div>
@@ -46,11 +49,12 @@ const ProductDetail = (props) => {
 
       <div className="right  ml-40 ">
         <div className="border sticky top-12 border-gray-300 p-7 rounded-lg bg-gray-200 space-y-5 w-80 ">
-          <div className='flex justify-center'>Company Name:</div>
+          <div className='flex justify-center font-semibold text-lg '>{job.company}</div>
           <div><i class="fa-solid fa-phone"></i> {job.phone}</div>
           <div><i class="fa-solid fa-envelope"></i> {job.email}</div>
           <div><i class="fa-solid fa-location-pin"></i> {job.location}</div>
           <div><i class="fa-solid fa-money-bill"></i> ₹{job.salary}</div>
+          <div><Link to={`/apply/${job._id}`}> <i class="fa-solid fa-money-bill"></i> Apply for job</Link></div>
         </div>
 
       </div>

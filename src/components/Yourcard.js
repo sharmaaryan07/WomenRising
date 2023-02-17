@@ -24,7 +24,7 @@ export default function Yourcard(props) {
                         {blog.title}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
-                        <div dangerouslySetInnerHTML={{ __html: blog.description }} />
+                        <div dangerouslySetInnerHTML={{ __html: blog.description ? blog.description.slice(0,60) : "" }} />
                     </Typography>
                 </CardContent>
             </CardActionArea>

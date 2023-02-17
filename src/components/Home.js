@@ -99,6 +99,7 @@ export default function Home() {
           <h6 className='mt-28  text-3xl'>
             FEATURED <span className='text-[#2563eb] font-semibold'> JOBS </span>
           </h6>
+          
 
           <p className='text-gray-600'>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra <br /> ipsum dolor, ultricies fermentum massa consequat eu.</p>
 

@@ -9,7 +9,7 @@ const ProductState = (props) => {
     const [products, setProducts] = useState(productInitial)
 
     //Route 1: fetch all Product
-    const getproduct = async()=>{
+  const getproduct = async()=>{
 
       // API Call
       const response = await fetch(`${host}/api/sell/fetchproduct`, {
@@ -24,10 +24,6 @@ const ProductState = (props) => {
       setProducts(json);
     }
     
-
-
-
-
     //Route 2: Add a Product
     const addproduct=async (name, title, description, price, phone, email, image)=>{
 
@@ -42,28 +38,15 @@ const ProductState = (props) => {
       setProducts(products.concat(response))
     }
 
-    // Route 3: Geting perticular product
-    const perticularproduct= async (id, name, title, description, price, phone, email, image)=>{
-      const response = await fetch(`${host}/api/sell/getproduct/${id}`, {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({id, name, title, description, price, phone, email, image})
-
-        
-
-      // console.log(id, name, title, description, price, phone, email, image)
-    });
-    const json= await response.json();
-    return json
-  };
-
+    
+    
+    
     return (
-        <productContext.Provider value={{products, setProducts, addproduct, getproduct, }}>
+      <productContext.Provider value={{products, setProducts, addproduct, getproduct, }}>
             {props.children}
         </productContext.Provider>
     )
-}
+  };
+
 
 export default ProductState;

@@ -33,7 +33,7 @@ export default function Applyjob(props) {
   return (
     <div>
       <div className='shadow-md p-10 w-[55rem] ml-[20rem] mt-14 space-y-8'>
-        <h2 className='text-4xl text-center font-bold '>Sell add</h2>
+        <h2 className='text-4xl text-center font-bold '>Apply Job </h2>
         <form className='   grid grid-cols-2 gap-11 '>
 
           <div className="relative z-0  mb-6 group">

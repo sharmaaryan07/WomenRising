@@ -7,10 +7,10 @@ import Yourcard from './Yourcard'
 
 export default function Blogs() {
     const Context = useContext(blogContext)
-    const { blogs, specificart } = Context;
+    const { blogs, specifiblog } = Context;
 
     useEffect(() => {
-        specificart();
+        specifiblog();
     })
 
     return (
@@ -29,14 +29,8 @@ export default function Blogs() {
                     return <Link to={`/blogdetail/${blog._id}`}> <Yourcard key={blog._id} blog={blog} /></Link>
                     
 
-                })}
-                {/* <BlogCard key={blog._id} blog={blog} /> */}
-                
-
+                })}                
             </div>
-
-
         </div>
-
     )
 }

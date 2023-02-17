@@ -29,6 +29,8 @@ import Blogdetail from './components/Blogdetail';
 import Addblog from './components/Addblog';
 import Yourblog from './components/Yourblog';
 import Applyjob from './components/Applyjob';
+import Contact from './components/Contact';
+import Translator from './components/Translator';
 
 
 function App() {
@@ -66,6 +68,8 @@ function App() {
                   loaderSpeed={1300}
                 />
                 <Alert alert={alert} />
+                <Translator/>
+
                 <Routes>
                   <Route path='/' element={<Home />} />
                   <Route path='/login' element={<Login setProgress={setProgress} showAlert={showAlert} />} />
@@ -82,6 +86,7 @@ function App() {
                   <Route path='/addblog' element={<Addblog setProgress={setProgress} showAlert={showAlert} />} />
                   <Route path='/yourblog' element={<Yourblog />} />
                   <Route path='/apply/:id' element={<Applyjob setProgress={setProgress} showAlert={showAlert} />} />
+                  <Route path='/contact' element={<Contact  />} />
                 </Routes>
                 <Chatbot />
               </Router>

@@ -29,7 +29,7 @@ const Jobscard = (props) => {
                     </div>
                     <div>
                         <div className="mt-5">
-                            <Link to={`/jobdetail/${job._id}`}  className="mr-2 my-1 uppercase tracking-wider px-2 text-indigo-600 border-indigo-600 hover:bg-indigo-600 hover:text-white border text-sm font-semibold rounded py-1 transition transform duration-500 cursor-pointer">Apply</Link>
+                            <Link to={`/jobdetail/${job._id}`}  className="mr-2 my-1   px-2 text-indigo-600 border-indigo-600 hover:bg-indigo-600 hover:text-white border text-sm font-semibold rounded py-1 transition transform duration-500 cursor-pointer">Detail</Link>
                         </div>
                     </div>
                 </div>

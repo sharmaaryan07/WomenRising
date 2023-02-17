@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "./img/logo.png";
 import avatar from "./img/Avatar.png";
 import { useState } from 'react';
+import Translator from './Translator';
 
 export default function Navbar() {
     let navigate = useNavigate();
@@ -14,28 +15,32 @@ export default function Navbar() {
 
     const [isOpen, setIsOpen] = useState(false);
 
+    
+
     // <button onClick={logOut} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Logout</button>
     return (
         <div>
-            <nav className="bg-white border-gray-200 px-2 py-4 dark:bg-gray-900 ">
+            <nav className="bg-white border-gray-200 px-2 py-4 dark:bg-gray-900  ">
                 <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
                     <Link to="home" className="flex items-center" >
                         <img src={logo} className="mr-3 h-6 sm:h-9  invert" alt="Flowbite Logo" />
                         {/* <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">WomensRising</span> */}
                     </Link>
+                    
                     <div className="flex items-center md:order-3">
+
                         {!localStorage.getItem('token') ? <div>
                             <Link to="/login" className="text-gray-800 dark:text-white hover:bg-gray-50 focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Login</Link>
                             <Link to="/signup" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 md:px-5 md:py-2.5 mr-1 md:mr-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign up</Link>
-                            </div> : <div className="relative">
+                        </div> : <div className="relative">
                             <button className="signout block h-12 w-12 focus:outline-none focus:border-white focus:border rounded-full overflow-hidden" onClick={() => setIsOpen(!isOpen)}>
                                 <img src={avatar} alt="avatar" className="h-full w-full object-cover" />
                             </button>
                             {isOpen && (
-                                <div className="absolute z-20 right-0 w-48 mt-2 py-2 bg-white rounded-lg shadow-xl">
+                                <div className="absolute z-20 right-0 w-48 mt-2 py-2 bg-white rounded-md  ">
                                     <Link to="/" className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Profile</Link>
                                     <Link to='/cart' className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Cart</Link>
-                                    <button onClick={logOut} className="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Log out</button>
+                                    <button onClick={logOut} className="block px-4 w-48 text-left py-2 text-gray-800 hover:bg-indigo-500 hover:text-white">Log out</button>
                                 </div>
                             )}
                         </div>

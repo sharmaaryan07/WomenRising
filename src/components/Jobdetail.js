@@ -40,7 +40,7 @@ const ProductDetail = (props) => {
 
         <div className="materialPhoto ">
           <span className='text-2xl font-normal  '>Material's Photo:</span>
-          <div className="images grid grid-cols-2">
+          <div className="images grid grid-cols-3">
           <img className='w-72 rounded-xl ' src={job.image} alt="" />
           </div>
 

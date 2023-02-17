@@ -10,7 +10,7 @@ export default function Login(props) {
 	let navigate = useNavigate();
 
 	// its an onSubmit function it will fetch user credential if user is signuped.
-	const handlesubmit = async (e) => {
+	const submitLogin = async (e) => {
 		e.preventDefault();
 		props.setProgress(0);
 		// API Request
@@ -43,7 +43,7 @@ export default function Login(props) {
 	return (
 		<div className='containers flex '>
 
-			<form onSubmit={handlesubmit}>
+			<form onSubmit={submitLogin}>
 				<div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12 ml-48 mt-9">
 					<div className="relative py-3 sm:max-w-xl sm:mx-auto">
 						<div

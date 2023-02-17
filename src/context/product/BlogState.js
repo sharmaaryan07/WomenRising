@@ -43,7 +43,7 @@ const BlogState = (props) => {
 
 
   //Route 1: fetch all Product
-  const specificart = async () => {
+  const specifiblog = async () => {
 
     // API Call
     const response = await fetch(`${host}/api/blogs/fetchuserblog`, {
@@ -61,7 +61,7 @@ const BlogState = (props) => {
 
 
   return (
-    <blogContext.Provider value={{ blogs, setBlogs, getBlogs, addblog, specificart }}>
+    <blogContext.Provider value={{ blogs, setBlogs, getBlogs, addblog, specifiblog }}>
       {props.children}
     </blogContext.Provider>
   )

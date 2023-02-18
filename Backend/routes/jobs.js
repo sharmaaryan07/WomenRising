@@ -71,8 +71,8 @@ router.post('/apply/:jobId', (req, res) => {
                         to: 'sharmaaru0828@gmail.com',
                         subject: 'New job application received',
                         text: `A new job application has been received for "${job.title}".`,
-                        html: `<h1>A new job application has been received for "${job.description}".</h1>
-                        <h3>Contact Detail</h3>
+                        html: `<p>A new job application has been received for "${job.description}".</p>
+                        <p>Contact Detail</p>
                         <ul>
                         <li>Name: ${req.body.name} </li>
                         <li>Email: ${req.body.email} </li>

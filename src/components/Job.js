@@ -48,7 +48,7 @@ export default function Job(props) {
       {/* Job Banner End */}
 
 
-      <div className="jobCard mt-8 ml-8 mr-8 grid grid-cols-3 gap-5">
+      <div className="jobCard space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:grid lg:grid-cols-3">
         {jobs.map((job) => {
           return <Jobscard key={job._id} job={job} />
         })}

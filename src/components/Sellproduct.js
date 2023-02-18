@@ -27,7 +27,7 @@ export default function Sellproduct(props) {
 
   return (
     <div>
-      <div className='shadow-md p-10 w-[55rem] ml-[20rem] mt-14 space-y-8'>
+      <div className='shadow-lg p-10 w-[55rem] ml-[23rem] rounded-xl mt-14 space-y-8'>
         <h2 className='text-4xl text-center font-bold '>Sell Product</h2>
         <form className='   grid grid-cols-2 gap-11 '>
 

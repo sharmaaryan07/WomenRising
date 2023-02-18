@@ -44,7 +44,7 @@ export default function Product(props) {
       </div>
       {/* productBanner End */}
 
-      <div className="productContainer grid grid-cols-3  mt-6 ml-6 gap-4">
+      <div className="productContainer space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:grid lg:grid-cols-3">
         {products.map((product) => {
           return <Productitems product={product} />
         })}

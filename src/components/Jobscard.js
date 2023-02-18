@@ -7,7 +7,7 @@ const Jobscard = (props) => {
 
     return (
         <div>
-            <div className="w-[28rem] rounded-md  bg-white px-4 py-4 shadow-md transition transform duration-500 cursor-default">
+            <div className="w-full   rounded-md  bg-white px-4 py-4 shadow-md transition transform duration-500 cursor-default">
                 <div className="flex flex-col justify-start  ">
                     <div className="flex justify-between items-center">
                         <div className="text-lg font-semibold text-bookmark-blue flex space-x-1 items-center mb-2">

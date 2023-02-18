@@ -1,16 +1,34 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from "react-router-dom";
 // import video from './video/video8.mp4' // 1450px X 620px
-import image from './img/Haboutus.jpg'
+import aboutImg from './img/about2.png'
+import contactImg from './img/contact.png'
 import 'tw-elements';
 import gif1 from './img/gif14.gif'
 import gif2 from './img/gif2.gif'
+import jobContext from '../context/product/jobContext';
+import Jobscard from './Jobscard';
+import productContext from '../context/product/productContext';
+import Productitems from './Productitems';
 
 
 
 export default function Home() {
+
+  const Context = useContext(jobContext)
+  const { jobs, getJobs } = Context;
+
+  const Context2 = useContext(productContext)
+  const { products, getproduct } = Context2;
+
+  useEffect(() => {
+
+    getJobs();
+    getproduct();
+  })
+
   return (
-    <div className='mb-10'>
+    <div className='mb-10  '>
 
 
       {/* Top banner start */}
@@ -91,124 +109,132 @@ export default function Home() {
       </div>
       {/* Top banner end */}
 
-      {/* FEATURED JOBS Start */}
-      <div className="featurejob text-center space-y-11">
 
-        <div className="jobinfo space-y-6">
 
-          <h6 className='mt-28  text-3xl'>
-            FEATURED <span className='text-[#2563eb] font-semibold'> JOBS </span>
-          </h6>
-          
 
-          <p className='text-gray-600'>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra <br /> ipsum dolor, ultricies fermentum massa consequat eu.</p>
 
-        </div>
 
-        {/* Card Start */}
-        <div className="card grid grid-cols-3 space-x-6 mr-8 ml-8 ">
 
-          {/* Card 1 Start */}
-          <div className="flex justify-center">
-            <div className="flex flex-col md:flex-row md:max-w-lg rounded-lg bg-white shadow-lg">
-              <img className=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
-              <div className="p-6 flex flex-col justify-start">
-                <h5 className="text-gray-900 text-xl font-medium mb-2">Job title</h5>
-                <p className="text-gray-700 text-base mb-4">
-                  This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                </p>
-                <p className="text-gray-600 text-xs">Last updated 3 mins ago</p>
-              </div>
-            </div>
-          </div>
-          {/* Card 1 End */}
-
-          {/* Card 2 Start */}
-          <div className="flex justify-center">
-            <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-              <img className=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
-              <div className="p-6 flex flex-col justify-start">
-                <h5 className="text-gray-900 text-xl font-medium mb-2">Job title</h5>
-                <p className="text-gray-700 text-base mb-4">
-                  This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                </p>
-                <p className="text-gray-600 text-xs">Last updated 3 mins ago</p>
-              </div>
-            </div>
-          </div>
-          {/* Card 2 End */}
-
-          {/* Card 3 Start */}
-          <div className="flex justify-center">
-            <div className="flex flex-col md:flex-row md:max-w-xl rounded-lg bg-white shadow-lg">
-              <img className=" w-full h-96 md:h-auto object-cover md:w-48 rounded-t-lg md:rounded-none md:rounded-l-lg" src="https://mdbootstrap.com/wp-content/uploads/2020/06/vertical.jpg" alt="" />
-              <div className="p-6 flex flex-col justify-start">
-                <h5 className="text-gray-900 text-xl font-medium mb-2">Job title</h5>
-                <p className="text-gray-700 text-base mb-4">
-                  This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-                </p>
-                <p className="text-gray-600 text-xs">Last updated 3 mins ago</p>
-              </div>
-            </div>
-          </div>
-          {/* Card 3 End */}
-        </div>
-        {/* Card End */}
-
-        {/* View Job Button */}
-        <div className='jobButton'>
-          <Link to="/job" >
-            <button type="button" className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-base  px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800">
-              View Job
-            </button>
-          </Link>
-        </div>
-      </div>
-      {/* FEATURED JOBS End */}
 
 
       {/* About Us Start */}
-      <div className='aboutmain text-white '>
+      <div className='aboutmain mt-4 ml-5 mr-5 px-3 space-y-5 md:grid md:grid-cols-2  md:mt-20 md:mb-20  lg:mt-14 lg:mb-14 '>
 
-        {/* Background Image start */}
-        <div className="aboutus mt-28 bg-gray-900 " >
-          <div>
-            <img src={image} alt="" className='opacity-[0.35]' />
+        {/*  Image start */}
+        <div className="aboutImg flex justify-center   ">
+          <img src={aboutImg} alt="about us " className='w-[22rem]  md:w-[24rem]  lg:w-[34rem]  ' />
+        </div>
+        {/*  Image stop */}
+
+        {/* Content start */}
+        <div className="aboutContent space-y-4 md:mt-5  lg:mt-36   ">
+          <h4 className='text-5xl font-bold ' >About <span className='text-orange-500 font-bold'>Us</span> </h4>
+
+          <p className='text-lg'>Womens Rising is the best career platform to accelerate women’s careers. Womens Rising can connect to many illiterate womens/housewifes or whose who dont have work to do.</p>
+
+          <p className='text-lg '>Our vision is to enable women to achieve their full potential by enabling them to start, restart and rise in their careers. Our motive is to do the best for womens who dont earn and want to earn some money by themselves.</p>
+
+        </div>
+        {/* Content stop */}
+
+        <div className="button text-center col-span-2 ">
+            <Link to="/aboutus" >
+              <button type="button" className="border  focus:ring-1 focus:outline-none  font-semibold rounded-lg text-base  px-5 py-2.5 text-center mr-2 mb-2 border-orange-500 text-orange-500 hover:text-white hover:bg-orange-600 focus:ring-orange-800">
+                View Job
+              </button>
+            </Link>
           </div>
-        </div>
-        {/* Background Image End */}
-
-        {/* About Us Info Start */}
-        <div className="AboutInfo  text-center -mt-[29rem] space-y-12 absolute">
-          <h2 className='text-3xl '>READ <span className='text-[#2563eb] font-semibold'> ABOUT US </span> </h2>
-
-          <p className=''>Womens Rising is the best career platform to accelerate women’s careers. Womens Rising can <br/> connect to many illiterate womens/housewifes or whose who dont have work to do.</p>
-
-          <p className='mr-36 ml-36 '>Our vision is to enable women to achieve their full potential by enabling them to start, restart and rise in their careers. Our motive is to do the best for womens who dont earn and want to earn some money by themselves.</p>
-
-        </div>
-        {/* About Us Info End */}
       </div>
       {/* About Us End */}
 
-      {/* Send US Message Start */}
-      <div className="messageUs text-center space-y-9">
-        <h2 className='text-3xl mt-28'>SEND US A <span className='text-[#2563eb] font-semibold'>MESSAGE</span> </h2>
 
-        <p className='mr-64 ml-64'>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula, sit amet dapibus odio augue eget libero. Morbi tempus mauris a nisi luctus imperdiet.
-          CONTACT US</p>
 
-        <div>
 
-          <a href='/' >
-            <button type="button" className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-1 focus:outline-none focus:ring-blue-300 font-semibold rounded-lg text-base  px-5 py-2.5 text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800">
-              Contact Us
-            </button>
-          </a>
+
+
+      <div className="feature  mt-14 ml-5 mr-5 lg:ml-7 lg:mr-7 ">
+
+        {/* Job start */}
+        <div className="job space-y-5">
+
+          <div>
+            <h4 className='text-5xl font-bold ' >Featured <span className='text-orange-500 font-bold'>Job</span> </h4>
+          </div>
+
+          <div className="jobCard space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:grid lg:grid-cols-3  ">
+            {jobs.map((job) => {
+              return <Jobscard key={job._id} job={job} />
+            }) ? jobs.map((job) => {
+              return <Jobscard key={job._id} job={job} />
+            }).slice(0, 3) : ""}
+          </div>
+
+          <div className="button text-center ">
+            <Link to="/job" >
+              <button type="button" className="border  focus:ring-1 focus:outline-none  font-semibold rounded-lg text-base  px-5 py-2.5 text-center mr-2 mb-2 border-orange-500 text-orange-500 hover:text-white hover:bg-orange-600 focus:ring-orange-800">
+                View Job
+              </button>
+            </Link>
+          </div>
         </div>
+        {/* Job End */}
+
+
+        {/* Product Start */}
+        <div className="product mt-14 ml-5 mr-5 lg:ml-2 lg:mr-2 space-y-5">
+          <div>
+            <h4 className='text-5xl font-bold ' >Featured <span className='text-orange-500 font-bold'>Product</span> </h4>
+          </div>
+
+          <div className="productcard">
+            <div className="productContainer space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:grid lg:grid-cols-3 ">
+              {products.map((product) => {
+                return <Productitems product={product} />
+              }) ? products.map((product) => {
+                return <Productitems product={product} />
+              }).slice(0, 3) : ""}
+
+            </div>
+          </div>
+
+          <div className="button text-center ">
+            <Link to="/product" >
+              <button type="button" className="border  focus:ring-1 focus:outline-none  font-semibold rounded-lg text-base  px-5 py-2.5 text-center mr-2 mb-2 border-orange-500 text-orange-500 hover:text-white hover:bg-orange-600 focus:ring-orange-800">
+                View Product
+              </button>
+            </Link>
+          </div>
+        </div>
+        {/* Product End */}
+
+
+
+
+
+
+
+        {/* Contact Start */}
+        <div className='Contact mt-14 ml-5 mr-5  space-y-5 md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 '>
+          <div className="image flex justify-center">
+            <img src={contactImg} alt="contact" className='w-[26rem] md:w-[20rem] lg:w-[28rem]  rounded-xl' />
+          </div>
+
+          <div className="content space-y-3">
+            <h4 className='text-5xl font-bold ' >Contact <span className='text-orange-500 font-bold'>Us</span> </h4>
+            <p>If you have any queries or suggestions, Do contact us</p>
+          </div>
+
+          <div className="button text-center md:col-span-2 lg:col-span-1 ">
+            <Link to="/product" >
+              <button type="button" className=" border  focus:ring-1 focus:outline-none  font-semibold rounded-lg text-base  px-5 py-2.5 text-center mr-2 mb-2 border-orange-500 text-orange-500 hover:text-white hover:bg-orange-600 focus:ring-orange-800">
+                View Product
+              </button>
+            </Link>
+          </div>
+        </div>
+        {/* Contact End */}
 
       </div>
-      {/* Send US Message End */}
 
     </div>
   )

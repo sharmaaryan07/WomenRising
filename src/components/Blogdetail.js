@@ -2,13 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 const Blogdetail = (props) => {
-
-
-
     const { id } = useParams();
     const [blogs, setBlogs] = useState({});
 
-    useEffect(() => {
+    useEffect((props) => {
         const fetchBlog = async () => {
             props.setProgress(0)
 

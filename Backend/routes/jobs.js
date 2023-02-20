@@ -10,12 +10,12 @@ const router = express.Router();
 // Route 1: Add Jobs 
 router.post('/addjob', (req, res) => {
 
-    const { company, title, description, location, salary, phone, email, material, image } = req.body;
+    const { ownername, title, description, location, salary, phone, email, materialImg, image } = req.body;
 
-    const addblog = new job({
-        company, title, description, location, salary, phone, email, material, image
+    const addjob = new job({
+        ownername, title, description, location, salary, phone, email, materialImg, image
     })
-    addblog.save();
+    addjob.save();
     res.send(req.body)
 })
 
@@ -49,8 +49,8 @@ router.post('/apply/:jobId', (req, res) => {
             console.error('Error retrieving job posting:', err);
             res.status(500).send('Error retrieving job posting');
         } else {
-            const { name, email, resume } = req.body;
-            job.applications.push({ name, email, resume });
+            const { name, email, address, age } = req.body;
+            job.applications.push({ name, email, address, age });
             job.save((err) => {
                 if (err) {
                     console.error('Error saving job posting:', err);
@@ -68,15 +68,16 @@ router.post('/apply/:jobId', (req, res) => {
                     });
                     const mailOptions = {
                         from: `${req.body.email}`,
-                        to: 'sharmaaru0828@gmail.com',
+                        to: `${job.email}`,
                         subject: 'New job application received',
-                        text: `A new job application has been received for "${job.title}".`,
-                        html: `<p>A new job application has been received for "${job.description}".</p>
+                        text: `<h2>A new job application has been received for "${job.title}".</h2>`,
+                        html: `
                         <p>Contact Detail</p>
                         <ul>
                         <li>Name: ${req.body.name} </li>
                         <li>Email: ${req.body.email} </li>
-                        <li>Resume: ${req.body.resume} </li>
+                        <li>Address: ${req.body.address} </li>
+                        <li>Age: ${req.body.age} </li>
                         </ul>
                         `,
                     };

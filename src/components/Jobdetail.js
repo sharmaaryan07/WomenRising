@@ -15,33 +15,33 @@ const ProductDetail = (props) => {
       setJob(data);
     };
     fetchJob();
-
   }, [id]);
 
 
-  
+
 
   return (
     <div className='ml-12 mt-12 mr-12 flex justify-items-start'>
       <div className="left space-y-7 w-[49rem] p-5">
-        <div className="header text-5xl font-medium">
+        <div className="header text-5xl font-bold">
           {job.title}
         </div>
 
+        <div className="material">
+          <span className='text-2xl font-bold'>Job Image:</span> <br />
+          <img className='w-[45rem] rounded-xl' src={job.image} alt=".." />
+        </div>
+
         <div className="jobRole ">
-          <span className='text-2xl font-normal'>Job Role:</span>  <br />
+          <span className='text-2xl font-bold'>Job Role:</span>  <br />
           {job.description}
         </div>
 
-        <div className="material">
-          <span className='text-2xl font-normal'>Material:</span> <br/>
-          {job.material}
-        </div>
 
         <div className="materialPhoto ">
-          <span className='text-2xl font-normal  '>Material's Photo:</span>
-          <div className="images grid grid-cols-3">
-          <img className='w-72 rounded-xl ' src={job.image} alt="" />
+          <span className='text-2xl font-bold  '>Materials and Similar Photos Of the Products:</span>
+          <div className="images ">
+            <img className=' w-[20rem] rounded-xl ' src={job.materialImg} alt=".." />
           </div>
 
         </div>
@@ -49,12 +49,12 @@ const ProductDetail = (props) => {
 
       <div className="right  ml-40 ">
         <div className="border sticky top-12 border-gray-300 p-7 rounded-lg bg-gray-200 space-y-5 w-80 ">
-          <div className='flex justify-center font-semibold text-lg '>{job.company}</div>
-          <div><i class="fa-solid fa-phone"></i> {job.phone}</div>
-          <div><i class="fa-solid fa-envelope"></i> {job.email}</div>
-          <div><i class="fa-solid fa-location-pin"></i> {job.location}</div>
-          <div><i class="fa-solid fa-money-bill"></i> ₹{job.salary}</div>
-          <div><Link to={`/apply/${job._id}`}> <i class="fa-solid fa-money-bill"></i> Apply for job</Link></div>
+          <div className='flex justify-center font-semibold text-lg '>{job.name}</div>
+          <div><i class="fa-solid fa-phone text-orange-500 "></i> {job.phone}</div>
+          <div><i class="fa-solid fa-envelope text-orange-500"></i> {job.email}</div>
+          <div><i class="fa-solid fa-location-pin text-orange-500"></i> {job.location}</div>
+          <div><i class="fa-solid fa-money-bill text-orange-500"></i> ₹{job.salary}</div>
+          <div><Link to={`/apply/${job._id}`}> <i class="fa-solid fa-money-bill text-orange-500"></i> Apply for job</Link></div>
         </div>
 
       </div>

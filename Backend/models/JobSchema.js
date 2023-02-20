@@ -6,7 +6,7 @@ const { Schema } = mongoose;
 
 // Creating Schema 
 const jobSchema = new Schema({
-    company: {
+    ownername: {
         type: String,
         required: true,
     },
@@ -34,7 +34,7 @@ const jobSchema = new Schema({
         type: String,
         required: true,
     },
-    material: {
+    materialImg: {
         type: String,
     },
     image: {
@@ -49,8 +49,12 @@ const jobSchema = new Schema({
             type: String,
             required: true
         },
-        resume: {
+        address: {
             type: String,
+            required: true
+        },
+        age: {
+            type: Number,
             required: true
         },
         date: {

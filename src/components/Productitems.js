@@ -19,11 +19,11 @@ export default function Productitems(props) {
                             </div>
                             <div className="mt-4">
                                 <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-                                <h2 className="text-gray-900 title-font text-lg font-medium"><span className='text-[#2563eb]'> Name:</span> {product.title}</h2>
-                                <p className="mt-1"><span className='text-[#2563eb]'> Price:</span> ₹{product.price}</p>
+                                <h2 className="text-gray-900 title-font text-lg font-medium"><span className='text-orange-500'> Name:</span> {product.title}</h2>
+                                <p className="mt-1"><span className='text-orange-500'> Price:</span> ₹{product.price}</p>
                             </div>
                             <div className="button justify-end flex">
-                                <Link to={`/productdetail/${product._id}`} type="button" class="inline-block px-4 py-1.5 bg-blue-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Show More</Link>
+                                <Link to={`/productdetail/${product._id}`} type="button" class="inline-block px-4 py-1.5 bg-orange-600 text-white font-medium text-sm leading-tight uppercase rounded shadow-md hover:bg-orange-700 hover:shadow-lg focus:bg-orange-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-orange-800 active:shadow-lg transition duration-150 ease-in-out">Show More</Link>
                             </div>
                         </div>
                     </div>

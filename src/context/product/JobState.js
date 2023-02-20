@@ -10,7 +10,7 @@ const JobState = (props) => {
 
 
   //Route 2: Add a Job
-  const addjob=async (company, title, description, location,salary, phone, email, material, image)=>{
+  const addjob=async (ownername, title, description, location,salary, phone, email, materialImg, image)=>{
 
     // API Call
     const response = await fetch(`${host}/api/job/addjob`, {
@@ -18,7 +18,7 @@ const JobState = (props) => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({company, title, description, location,salary, phone, email, material, image})
+      body: JSON.stringify({ownername, title, description, location,salary, phone, email, materialImg, image})
     });
     setJobs(jobs.concat(response))
   }

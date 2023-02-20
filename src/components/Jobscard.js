@@ -25,11 +25,11 @@ const Jobscard = (props) => {
                         <span>{job.location}</span>
                     </div>
                     <div className="text-sm text-gray-500 flex space-x-1 mt-3 items-center">
-                        <span> <span className='text-[#2563eb] font-semibold' >Description:</span>  {job.description ? job.description.slice(0, 50) : ""}.....</span>
+                        <span> <span className='text-orange-500 font-semibold' >Description:</span>  {job.description ? job.description.slice(0, 50) : ""}.....</span>
                     </div>
                     <div>
                         <div className="mt-5">
-                            <Link to={`/jobdetail/${job._id}`}  className="mr-2 my-1   px-2 text-indigo-600 border-indigo-600 hover:bg-indigo-600 hover:text-white border text-sm font-semibold rounded py-1 transition transform duration-500 cursor-pointer">Detail</Link>
+                            <Link to={`/jobdetail/${job._id}`}  className="mr-2 my-1   px-2 text-orange-600 border-orange-600 hover:bg-orange-600 hover:text-white border text-sm font-semibold rounded py-1 transition transform duration-500 cursor-pointer">Detail</Link>
                         </div>
                     </div>
                 </div>

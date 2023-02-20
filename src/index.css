@@ -2,7 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
+
 body{
     font-family: 'Poppins', sans-serif;
     background-color: #f7f7f7;
 }
+
+body{
+    animation: delay 2s ;
+    
+}
+
+@keyframes delay {
+    0%{
+        opacity: 0% ; 
+    }
+    100%{
+        opacity: 100%; 
+    }
+}
+
+.lefteffect{
+    animation: left 4s ;
+}
+
+@keyframes left {
+    0%{
+        margin-left: -60rem;
+        visibility: hidden;
+    }
+    100%{
+        margin-left: 0rem;
+    }
+}
+
+

@@ -16,7 +16,7 @@ export default function Blogs() {
     return (
         <div >
             <div>
-                <div className='text-center space-x-5 mt-9 text-lg'>
+                <div className='text-center space-x-5 mt-9 text-2xl font-bold'>
                 <Link to='/blogs'> All Blogs </Link>
                 <Link to='/addblog'> Add Blog </Link>
                 <Link to='/yourblog'> Your Blogs </Link>
@@ -24,7 +24,7 @@ export default function Blogs() {
                 <h1 className='text-center text-3xl mt-12'>Your Blog Page</h1>
             </div>
 
-            <div className='blogsCard ml-8 mt-12 grid grid-cols-3'>
+            <div className='blogsCard md:px-5 mt-6 space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:grid lg:grid-cols-3'>
                 {blogs.map((blog) => {
                     return <Link to={`/blogdetail/${blog._id}`}> <Yourcard key={blog._id} blog={blog} /></Link>
                     

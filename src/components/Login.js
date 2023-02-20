@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import loginImg from "./img/login.png";
 
 export default function Login(props) {
@@ -41,43 +41,49 @@ export default function Login(props) {
 	}
 
 	return (
-		<div className='containers flex '>
+		<div className='flex justify-center   mt-16 md:mt-0 ' >
+			<div className=' lg:grid lg:grid-cols-2 lg:gap-2' >
+				<div className=' lg:flex justify-center  '>
+					{/* Start of form */}
+					<form onSubmit={submitLogin}  >
+						<div className="   min-h-screen flex flex-col ">
+							<div className="container   flex-1 flex flex-col items-center justify-center  ">
+								<div className="bg-white px-6 py-8 rounded shadow-md text-black w-[23rem] h-[25rem] md:w-[28rem] md:h-[28rem] ">
+									<div className='md:mt-9'>
 
-			<form onSubmit={submitLogin}>
-				<div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12 ml-48 mt-9">
-					<div className="relative py-3 sm:max-w-xl sm:mx-auto">
-						<div
-							className="absolute inset-0 bg-gradient-to-r from-blue-300 to-blue-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl">
-						</div>
-						<div className="relative  bg-white shadow-lg sm:rounded-3xl p-[30px]">
-							<div className="max-w-md mx-auto">
-								<div>
-									<h1 className="text-[40px] font-bold text-center">Login</h1>
-								</div>
-								<div className="divide-y divide-gray-200 w-64">
-									<div className="py-8 leading-6 space-y-6 text-gray-700 sm:text-lg sm:leading-7  ">
-										<div className="relative">
-											<input autoComplete="off" id="email" name="email" value={credentials.email} onChange={onchange} type="text" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Email address" />
-											<label htmlFor="email" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Email Address</label>
-										</div>
-										<div className="relative">
-											<input autoComplete="off" id="password" name="password" value={credentials.password} onChange={onchange} type="password" className="peer placeholder-transparent h-10 w-full border-b-2 border-gray-300 text-gray-900 focus:outline-none focus:borer-rose-600" placeholder="Password" />
-											<label htmlFor="password" className="absolute left-0 -top-3.5 text-gray-600 text-sm peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-440 peer-placeholder-shown:top-2 transition-all peer-focus:-top-3.5 peer-focus:text-gray-600 peer-focus:text-sm">Password</label>
-										</div>
-										<p className='text-sm'>Don't have an account? <Link to='/signup' className='text-blue-500'> Register </Link> </p>
-										<div className="relative">
-											<button className="bg-blue-500 text-white rounded-md px-2 py-1"  >Submit</button>
+										<h1 className="mb-8 text-3xl font-bold text-center">LOG<span className='text-orange-500'>IN</span> </h1>
+
+										<input type="email" className="block border border-grey-light w-full p-3 rounded mb-4" name="email" id="email" onChange={onchange} placeholder="Email" />
+
+										<input type="password" className="block border border-grey-light w-full p-3 rounded mb-4" name="password" id="password" onChange={onchange} minLength="4" placeholder="Password" />
+
+										<button type="submit" className="w-full text-center py-3 rounded bg-orange-600 text-white hover:bg-orange-400 focus:outline-none my-1">
+											Login
+										</button>
+
+										<div className="text-grey-dark mt-6">
+											Dont have an account? &nbsp;
+											<a className="underline  text-orange-500" href="/signup">
+												Sign Up
+											</a>
 										</div>
 									</div>
 								</div>
+
+
 							</div>
 						</div>
-					</div>
+					</form>
 				</div>
-			</form>
+				{/* End of form */}
 
-			<div className="img ml-24 mt-28  ">
-				<img src={loginImg} alt="" className='w-[44rem]' />
+<div className='lg:flex lg:justify-center '>
+
+				<div className="img   hidden   lg:mr-3 lg:block   ">
+					
+					<img src={loginImg} alt=""  />
+				</div>
+</div>
 			</div>
 		</div>
 	)

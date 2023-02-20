@@ -31,6 +31,7 @@ import Yourblog from './components/Yourblog';
 import Applyjob from './components/Applyjob';
 import Contact from './components/Contact';
 import Translator from './components/Translator';
+import About from './components/About';
 
 
 function App() {
@@ -62,7 +63,7 @@ function App() {
               <Router>
                 <Navbar />
                 <LoadingBar
-                  color='#2563eb'
+                  color='orange'
                   progress={progress}
                   waitingTime={1200}
                   loaderSpeed={1300}
@@ -87,6 +88,7 @@ function App() {
                   <Route path='/yourblog' element={<Yourblog />} />
                   <Route path='/apply/:id' element={<Applyjob setProgress={setProgress} showAlert={showAlert} />} />
                   <Route path='/contact' element={<Contact  />} />
+                  <Route path='/about' element={<About  />} />
                 </Routes>
                 <Chatbot />
               </Router>

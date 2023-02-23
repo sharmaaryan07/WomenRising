@@ -9,7 +9,6 @@ import {
 import Login from './components/Login';
 import Home from './components/Home';
 import Signup from './components/Signup';
-import Footer from './components/Footer';
 import Job from './components/Job';
 import Product from './components/Product';
 import ProductState from './context/product/ProductState';
@@ -39,6 +38,7 @@ import Adminproductdetail from './components/Adminproductdetail';
 import Adminproduct from './components/Adminproduct';
 import AdminProductState from './context/product/AdminProductState';
 import Adminlogin from './components/Adminlogin';
+import Dashboard from './components/Dashboard';
 
 
 function App() {
@@ -103,11 +103,11 @@ function App() {
                       <Route path='/adminjobdetail/:id' element={<Adminjobdetail setProgress={setProgress} showAlert={showAlert} />} />
                       <Route path='/adminproduct' element={<Adminproduct />} />
                       <Route path='/adminproductdetail/:id' element={<Adminproductdetail setProgress={setProgress} showAlert={showAlert} />} />
+                      <Route path='/dashboard' element={<Dashboard setProgress={setProgress} showAlert={showAlert} />} />
 
                     </Routes>
                     <Chatbot />
                   </Router>
-                  <Footer />
                 </BlogState>
               </CartState>
             </AdminProductState>

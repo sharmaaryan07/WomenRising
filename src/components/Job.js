@@ -4,6 +4,8 @@ import jobImg from './img/abImage.jpg'
 import Jobscard from './Jobscard'
 import { useNavigate, Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import Footer from './Footer';
+
 
 
 
@@ -62,6 +64,9 @@ export default function Job(props) {
             return <Jobscard key={job._id} job={job} />
           })}
         </div>
+
+        <Footer />
+
 
       </div>
     </>

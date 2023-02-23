@@ -7,7 +7,7 @@ const Blogdetail = (props) => {
     const { id } = useParams();
     const [blogs, setBlogs] = useState({});
 
-    useEffect((props) => {
+    useEffect(() => {
         const fetchBlog = async () => {
             props.setProgress(0)
 

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { Link } from "react-router-dom";
 import aboutImg from './img/aboutimg.png'
-import contactImg from './img/contact.png'
 import 'tw-elements';
 import { Carousel } from 'flowbite-react';
 import gif1 from './img/Homec.png'
@@ -160,9 +159,10 @@ export default function Home() {
 
 
           {/* Contact Start */}
-          <div className='testimonial mt-28 space-y-4'>
-            <div>
-              <h4 className='text-5xl font-bold ' ><span className='text-orange-500 font-bold'>Testimonial</span> </h4>
+          <div className='testimonial mt-28 space-y-4 mb-8 '>
+            <div className='space-y-6'>
+              <h4 className='text-5xl font-bold text-center' ><span className='text-orange-500 font-bold'>Customer</span> review </h4>
+              <h4 className='text-2xl font-bold text-center' >What our customer saying...... </h4>
             </div>
 
             <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">

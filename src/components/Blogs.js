@@ -3,6 +3,8 @@ import React, { useEffect, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import blogContext from '../context/product/blogContext';
 import BlogCard from './Blogcard'
+import Navbar from './Navbar';
+
 
 
 export default function Blogs(props) {
@@ -10,10 +12,10 @@ export default function Blogs(props) {
     const { blogs, getBlogs } = Context;
 
     const navigate = useNavigate()
-    useEffect( () => {
-        if( localStorage.getItem('token')){
+    useEffect(() => {
+        if (localStorage.getItem('token')) {
             getBlogs();
-        }else{
+        } else {
             navigate('/login')
             props.showAlert("Please Login to see Blog Page", "bg-red-500", "login To continue");
         }
@@ -21,11 +23,12 @@ export default function Blogs(props) {
 
     return (
         <div >
+            <Navbar />
             <div>
                 <div className='text-center space-x-5 mt-9 text-2xl font-bold'>
-                <Link to='/blogs'> All Blogs </Link>
-                <Link to='/addblog'> Add Blog </Link>
-                <Link to='/yourblog'> Your Blogs </Link>
+                    <Link to='/blogs'> All Blogs </Link>
+                    <Link to='/addblog'> Add Blog </Link>
+                    <Link to='/yourblog'> Your Blogs </Link>
                 </div>
                 <h1 className='text-center font-bold text-3xl mt-12'><span className='text-orange-500'> Blog</span> Page</h1>
             </div>

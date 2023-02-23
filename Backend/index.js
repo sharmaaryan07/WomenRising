@@ -17,11 +17,12 @@ app.use(express.json());
 
 // Available Routes
 app.use('/api/job', require('./routes/jobs'))
-app.use('/api/jobapply', require('./routes/jobApplication'))
 app.use('/api/sell', require('./routes/product'))
 app.use('/api/cart', require('./routes/carts'))
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/blogs', require('./routes/blogs'))
+app.use('/api/admin', require('./routes/admin'))
+app.use('/api/adminjob', require('./routes/adminjob'))
 
 app.listen(port, () => {
   console.log(`WomensRising backend app listening on port http://localhost:${port}`)

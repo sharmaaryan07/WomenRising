@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import {useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import loginImg from "./img/login.png";
+import Navbar from './Navbar';
+
 
 export default function Login(props) {
 
@@ -41,50 +43,54 @@ export default function Login(props) {
 	}
 
 	return (
-		<div className='flex justify-center   mt-16 md:mt-0 ' >
-			<div className=' lg:grid lg:grid-cols-2 lg:gap-2' >
-				<div className=' lg:flex justify-center  '>
-					{/* Start of form */}
-					<form onSubmit={submitLogin}  >
-						<div className="   min-h-screen flex flex-col ">
-							<div className="container   flex-1 flex flex-col items-center justify-center  ">
-								<div className="bg-white px-6 py-8 rounded shadow-md text-black w-[23rem] h-[25rem] md:w-[28rem] md:h-[28rem] ">
-									<div className='md:mt-9'>
+		<>
+			<Navbar />
+			<div className='flex justify-center   mt-16 md:mt-0 ' >
 
-										<h1 className="mb-8 text-3xl font-bold text-center">LOG<span className='text-orange-500'>IN</span> </h1>
+				<div className=' lg:grid lg:grid-cols-2 lg:gap-2' >
+					<div className=' lg:flex justify-center  '>
+						{/* Start of form */}
+						<form onSubmit={submitLogin}  >
+							<div className="   min-h-screen flex flex-col ">
+								<div className="container   flex-1 flex flex-col items-center justify-center  ">
+									<div className="bg-white px-6 py-8 rounded shadow-md text-black w-[23rem] h-[25rem] md:w-[28rem] md:h-[28rem] ">
+										<div className='md:mt-9'>
 
-										<input type="email" className="block border border-grey-light w-full p-3 rounded mb-4" name="email" id="email" onChange={onchange} placeholder="Email" />
+											<h1 className="mb-8 text-3xl font-bold text-center">LOG<span className='text-orange-500'>IN</span> </h1>
 
-										<input type="password" className="block border border-grey-light w-full p-3 rounded mb-4" name="password" id="password" onChange={onchange} minLength="4" placeholder="Password" />
+											<input type="email" className="block border border-grey-light w-full p-3 rounded mb-4" name="email" id="email" onChange={onchange} placeholder="Email" />
 
-										<button type="submit" className="w-full text-center py-3 rounded bg-orange-600 text-white hover:bg-orange-400 focus:outline-none my-1">
-											Login
-										</button>
+											<input type="password" className="block border border-grey-light w-full p-3 rounded mb-4" name="password" id="password" onChange={onchange} minLength="4" placeholder="Password" />
 
-										<div className="text-grey-dark mt-6">
-											Dont have an account? &nbsp;
-											<a className="underline  text-orange-500" href="/signup">
-												Sign Up
-											</a>
+											<button type="submit" className="w-full text-center py-3 rounded bg-orange-600 text-white hover:bg-orange-400 focus:outline-none my-1">
+												Login
+											</button>
+
+											<div className="text-grey-dark mt-6">
+												Dont have an account? &nbsp;
+												<a className="underline  text-orange-500" href="/signup">
+													Sign Up
+												</a>
+											</div>
 										</div>
 									</div>
+
+
 								</div>
-
-
 							</div>
+						</form>
+					</div>
+					{/* End of form */}
+
+					<div className='lg:flex lg:justify-center '>
+
+						<div className="img   hidden   lg:mr-3 lg:block   ">
+
+							<img src={loginImg} alt="" />
 						</div>
-					</form>
+					</div>
 				</div>
-				{/* End of form */}
-
-<div className='lg:flex lg:justify-center '>
-
-				<div className="img   hidden   lg:mr-3 lg:block   ">
-					
-					<img src={loginImg} alt=""  />
-				</div>
-</div>
 			</div>
-		</div>
+		</>
 	)
 }

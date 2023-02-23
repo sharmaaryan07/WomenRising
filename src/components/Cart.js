@@ -4,6 +4,8 @@ import { useContext } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import cartContext from '../context/product/cartContext';
+import Navbar from './Navbar';
+
 
 export default function Example() {
   const Context = useContext(cartContext)
@@ -27,6 +29,8 @@ export default function Example() {
 
   return (
     <div>
+      <Navbar />
+
       <div className="mt-12 mr-12 ml-12">
         <h1 className='text-4xl text-center mb-12'>YOUR <span className='text-[#2563eb]'>CART</span> </h1>
         <div className="flow-root">

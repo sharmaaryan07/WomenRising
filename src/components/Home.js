@@ -4,7 +4,6 @@ import aboutImg from './img/aboutimg.png'
 import contactImg from './img/contact.png'
 import 'tw-elements';
 import { Carousel } from 'flowbite-react';
-// import gif1 from './img/gif14.gif'
 import gif1 from './img/Homec.png'
 import aiImage from './img/aiImgae.png'
 import gif2 from './img/gif2.gif'
@@ -12,31 +11,10 @@ import jobContext from '../context/product/jobContext';
 import Jobscard from './Jobscard';
 import productContext from '../context/product/productContext';
 import Productitems from './Productitems';
-
+import Navbar from './Navbar';
 
 
 export default function Home() {
-  // const [isInViewport, setIsInViewport] = useState(false);
-
-  // useEffect(() => {
-  //   function handleScroll() {
-  //     const aboutImg = document.querySelector('.aboutImg');
-  //     const aboutImgTop = aboutImg.getBoundingClientRect().top;
-
-  //     // Check if element is in view
-  //     if (aboutImgTop < window.innerHeight) {
-  //       setIsInViewport(true);
-  //     } else {
-  //       setIsInViewport(false);
-  //     }
-  //   }
-
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, []);
 
   const Context = useContext(jobContext)
   const { jobs, getJobs } = Context;
@@ -52,8 +30,8 @@ export default function Home() {
 
   return (
     <div className='mb-10   '>
-
-
+      <Navbar />
+      
       {/* Top banner start */}
       <div className="banner  hidden lg:block  ">
 

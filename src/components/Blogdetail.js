@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Navbar from './Navbar';
+
 
 const Blogdetail = (props) => {
     const { id } = useParams();
@@ -10,9 +12,9 @@ const Blogdetail = (props) => {
             props.setProgress(0)
 
             const response = await fetch(`http://localhost:5000/api/blogs/getblog/${id}`);
-              props.setProgress(50)
+            props.setProgress(50)
             const data = await response.json();
-              props.setProgress(100)
+            props.setProgress(100)
             setBlogs(data);
 
         };
@@ -28,33 +30,39 @@ const Blogdetail = (props) => {
     });
 
     return (
-        <div className='mt-9 mr-8 ml-8 space-y-4'>
-            <div className="heading text-center text-4xl font-semibold">
-                {blogs.title}
+        <>
+            <div className="nav">
+                <Navbar />
+
             </div>
+            <div className='mt-9 mr-8 ml-8 space-y-4'>
+                <div className="heading text-center text-4xl font-semibold">
+                    {blogs.title}
+                </div>
 
 
 
-            <div className="image h-[30rem] flex justify-center ">
-                <img src={blogs.image} alt='' />
-            </div>
-
-            <div className="header">
-                <div className="right ">
-                    Name
+                <div className="image h-[30rem] flex justify-center ">
+                    <img src={blogs.image} alt='' />
                 </div>
 
                 <div className="header">
-                    <div className="right text-right">
-                        {formattedDate}
+                    <div className="right ">
+                        Name
+                    </div>
+
+                    <div className="header">
+                        <div className="right text-right">
+                            {formattedDate}
+                        </div>
+                    </div>
+
+                    <div className="description">
+                        <div dangerouslySetInnerHTML={{ __html: blogs.description }} />
                     </div>
                 </div>
-
-                <div className="description">
-                    <div dangerouslySetInnerHTML={{ __html: blogs.description }} />
-                </div>
             </div>
-        </div>
+        </>
     );
 };
 

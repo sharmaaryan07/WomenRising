@@ -31,7 +31,7 @@ function Adminjob(props) {
       {/* Navbar end */}
 
       {/* Job contant start */}
-      <div className="container pl-32 text-center mt-5 text-3xl font-bold">
+      <div className="container text-center mt-5 text-3xl font-bold">
         <span className='text-orange-500 ' >Job</span>  page
       </div>
         <div className="jobCard pl-36 space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:mt-12 lg:grid lg:grid-cols-3">

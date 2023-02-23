@@ -23,6 +23,7 @@ app.use('/api/auth', require('./routes/auth'))
 app.use('/api/blogs', require('./routes/blogs'))
 app.use('/api/admin', require('./routes/admin'))
 app.use('/api/adminjob', require('./routes/adminjob'))
+app.use('/api/adminproduct', require('./routes/adminproduct'))
 
 app.listen(port, () => {
   console.log(`WomensRising backend app listening on port http://localhost:${port}`)

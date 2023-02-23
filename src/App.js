@@ -35,6 +35,10 @@ import About from './components/About';
 import Admin from './components/Admin';
 import Adminjob from './components/Adminjob';
 import Adminjobdetail from './components/Adminjobdetail';
+import Adminproductdetail from './components/Adminproductdetail';
+import Adminproduct from './components/Adminproduct';
+import AdminProductState from './context/product/AdminProductState';
+import Adminlogin from './components/Adminlogin';
 
 
 function App() {
@@ -54,7 +58,7 @@ function App() {
     setTimeout(() => {
       setAlert(null);
     }, 2500);
-    // Logic For Alert start
+    // Logic For Alert End
 
   };
   return (
@@ -62,45 +66,51 @@ function App() {
       <ProductState>
         <JobState>
           <AdminJobState>
-            <CartState>
-              <BlogState>
-                <Router>
-                  <LoadingBar
-                    color='orange'
-                    progress={progress}
-                    waitingTime={1200}
-                    loaderSpeed={1300}
-                  />
-                  <Alert alert={alert} />
-                  <Translator />
+            <AdminProductState>
+              <CartState>
+                <BlogState>
+                  <Router>
+                    <LoadingBar
+                      color='orange'
+                      progress={progress}
+                      waitingTime={1200}
+                      loaderSpeed={1300}
+                    />
+                    <Alert alert={alert} />
+                    <Translator />
 
-                  <Routes>
-                    <Route path='/' element={<Home />} />
-                    <Route path='/login' element={<Login setProgress={setProgress} showAlert={showAlert} />} />
-                    <Route path='/signup' element={<Signup setProgress={setProgress} showAlert={showAlert} />} />
-                    <Route path='/job' element={<Job setProgress={setProgress} showAlert={showAlert} />} />
-                    <Route path='/product' element={<Product showAlert={showAlert} />} />
-                    <Route path='/sellproduct' element={<Sellproduct setProgress={setProgress} showAlert={showAlert} />} />
-                    <Route path='/productdetail/:id' element={<Productdetail setProgress={setProgress} showAlert={showAlert} />} />
-                    <Route path='/jobdetail/:id' element={<Jobdetail setProgress={setProgress} />} />
-                    <Route path='/cart' element={<Cart />} />
-                    <Route path='/blogs' element={<Blogs setProgress={setProgress} showAlert={showAlert} />} />
-                    <Route path='/addjob' element={<Addjob setProgress={setProgress} showAlert={showAlert} />} />
-                    <Route path='/blogdetail/:id' element={<Blogdetail setProgress={setProgress} showAlert={showAlert} />} />
-                    <Route path='/addblog' element={<Addblog setProgress={setProgress} showAlert={showAlert} />} />
-                    <Route path='/yourblog' element={<Yourblog />} />
-                    <Route path='/apply/:id' element={<Applyjob setProgress={setProgress} showAlert={showAlert} />} />
-                    <Route path='/contact' element={<Contact />} />
-                    <Route path='/about' element={<About />} />
-                    <Route path='/admin' element={<Admin />} />
-                    <Route path='/adminjob' element={<Adminjob />} />
-                    <Route path='/adminjobdetail/:id' element={<Adminjobdetail  setProgress={setProgress} showAlert={showAlert} />} />
-                  </Routes>
-                  <Chatbot />
-                </Router>
-                <Footer />
-              </BlogState>
-            </CartState>
+                    <Routes>
+                      <Route path='/' element={<Home />} />
+                      <Route path='/login' element={<Login setProgress={setProgress} showAlert={showAlert} />} />
+                      <Route path='/signup' element={<Signup setProgress={setProgress} showAlert={showAlert} />} />
+                      <Route path='/job' element={<Job setProgress={setProgress} showAlert={showAlert} />} />
+                      <Route path='/product' element={<Product showAlert={showAlert} />} />
+                      <Route path='/sellproduct' element={<Sellproduct setProgress={setProgress} showAlert={showAlert} />} />
+                      <Route path='/productdetail/:id' element={<Productdetail setProgress={setProgress} showAlert={showAlert} />} />
+                      <Route path='/jobdetail/:id' element={<Jobdetail setProgress={setProgress} />} />
+                      <Route path='/cart' element={<Cart />} />
+                      <Route path='/blogs' element={<Blogs setProgress={setProgress} showAlert={showAlert} />} />
+                      <Route path='/addjob' element={<Addjob setProgress={setProgress} showAlert={showAlert} />} />
+                      <Route path='/blogdetail/:id' element={<Blogdetail setProgress={setProgress} showAlert={showAlert} />} />
+                      <Route path='/addblog' element={<Addblog setProgress={setProgress} showAlert={showAlert} />} />
+                      <Route path='/yourblog' element={<Yourblog />} />
+                      <Route path='/apply/:id' element={<Applyjob setProgress={setProgress} showAlert={showAlert} />} />
+                      <Route path='/contact' element={<Contact />} />
+                      <Route path='/about' element={<About />} />
+                      <Route path='/admin' element={<Admin />} />
+                      <Route path='/adminlogin' element={<Adminlogin setProgress={setProgress} showAlert={showAlert} />} />
+                      <Route path='/adminjob' element={<Adminjob />} />
+                      <Route path='/adminjobdetail/:id' element={<Adminjobdetail setProgress={setProgress} showAlert={showAlert} />} />
+                      <Route path='/adminproduct' element={<Adminproduct />} />
+                      <Route path='/adminproductdetail/:id' element={<Adminproductdetail setProgress={setProgress} showAlert={showAlert} />} />
+
+                    </Routes>
+                    <Chatbot />
+                  </Router>
+                  <Footer />
+                </BlogState>
+              </CartState>
+            </AdminProductState>
           </AdminJobState>
         </JobState>
       </ProductState>

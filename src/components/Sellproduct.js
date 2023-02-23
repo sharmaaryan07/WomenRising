@@ -1,21 +1,21 @@
 import React, { useContext } from 'react'
 import { useState } from 'react';
-import productContext from '../context/product/productContext'
+import adminProductContext from '../context/product/adminProductContext'
 import FileBase64 from 'react-file-base64';
 import Navbar from './Navbar';
 
 
 
 export default function Sellproduct(props) {
-  const Context = useContext(productContext)
-  const { addproduct } = Context;
+  const Context = useContext(adminProductContext)
+  const { addadminproduct } = Context;
 
   const [product, setproduct] = useState({ name: "", title: "", description: "", price: "", phone: "", email: "", image: "" })
   const handleClick = (e) => {
     e.preventDefault();
     props.setProgress(0)
 
-    addproduct(product.name, product.title, product.description, product.price, product.phone, product.email, product.image)
+    addadminproduct(product.name, product.title, product.description, product.price, product.phone, product.email, product.image)
     setproduct({ name: "", title: "", description: "", price: "", phone: "", email: "", image: "" })
     props.setProgress(100)
 

@@ -4,9 +4,12 @@ import Navbar from './Navbar';
 
 
 const ProductDetail = (props) => {
+  // useParam() will take the id from url
   const { id } = useParams();
+
   const [job, setJob] = useState({});
 
+  // useEffect() is use to fetch a perticular job detail
   useEffect(() => {
     const fetchJob = async () => {
       props.setProgress(0)
@@ -34,9 +37,9 @@ const ProductDetail = (props) => {
             {job.title}
           </div>
 
-          <div className="material">
+          <div className="material space-y-3">
             <span className='text-2xl font-bold'>Job Image:</span> <br />
-            <img className='w-[45rem] rounded-xl' src={job.image} alt=".." />
+            <img className='w-[38rem] rounded-xl' src={job.image} alt=".." />
           </div>
 
           <div className="jobRole ">
@@ -54,9 +57,9 @@ const ProductDetail = (props) => {
           </div>
         </div>
 
-        <div className="right  ml-40 ">
+        <div className="right  ml-40 font-semibold ">
           <div className="border sticky top-12 border-gray-300 p-7 rounded-lg bg-gray-200 space-y-5 w-80 ">
-            <div className='flex justify-center font-semibold text-lg '>{job.name}</div>
+            <div className='flex justify-center font-semibold text-2xl text-orange-500 '>{job.ownername}</div>
             <div><i class="fa-solid fa-phone text-orange-500 "></i> {job.phone}</div>
             <div><i class="fa-solid fa-envelope text-orange-500"></i> {job.email}</div>
             <div><i class="fa-solid fa-location-pin text-orange-500"></i> {job.location}</div>
@@ -66,9 +69,6 @@ const ProductDetail = (props) => {
 
         </div>
 
-        {/* description: <br />
-      salary: {job.salary}<br />
-      ... */}
       </div>
     </>
   );

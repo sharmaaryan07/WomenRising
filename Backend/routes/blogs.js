@@ -111,7 +111,5 @@ router.get('/getblog/:id',async (req, res) => {
     }
 });
 
-
-
 // Exporting Router
 module.exports = router

@@ -11,6 +11,7 @@ export default function Login(props) {
 
 	const [credentials, setCredentials] = useState({ email: "", password: "" })
 
+	// Created a variable "navigate" where useNavigate() function is stored
 	let navigate = useNavigate();
 
 	// its an onSubmit function it will fetch user credential if user is signuped.
@@ -31,7 +32,9 @@ export default function Login(props) {
 		if (json.success) {
 			// save the auth token and redirect
 			localStorage.setItem('token', json.authToken);
+			// it will navigate to home page
 			navigate("/")
+			// It will show an alert
 			props.showAlert("Successfully Logged in", "bg-green-500", "Login Successful");
 
 		} else {
@@ -39,7 +42,7 @@ export default function Login(props) {
 		}
 	}
 
-
+	// this function will target or will get the input value of field.
 	const onchange = (e) => {
 		setCredentials({ ...credentials, [e.target.name]: e.target.value })
 	}
@@ -64,7 +67,7 @@ export default function Login(props) {
 					<div className=' lg:grid lg:grid-cols-2 lg:gap-2' >
 						<div className=' lg:flex justify-center  '>
 							{/* Start of form */}
-							<form onSubmit={submitLogin} className="lg:mt-16" >
+							<form onSubmit={submitLogin} className="lg:-mt-16" >
 								<div className="   min-h-screen flex flex-col ">
 									<div className="container   flex-1 flex flex-col items-center justify-center  ">
 										<div className="bg-white px-6 py-8 rounded shadow-md text-black w-[23rem] h-[25rem] md:w-[28rem] md:h-[28rem] ">
@@ -80,7 +83,7 @@ export default function Login(props) {
 													Login
 												</button>
 
-												<div className="text-grey-dark mt-6">
+												<div className="text-grey-dark mt-10">
 													Dont have an account? &nbsp;
 													<a className="underline  text-orange-500" href="/signup">
 														Sign Up
@@ -98,7 +101,7 @@ export default function Login(props) {
 
 						<div className='lg:flex lg:justify-center '>
 
-							<div className="img   hidden   lg:mr-3 lg:block   ">
+							<div className="img   hidden   lg:mr-3 lg:block  lg:mt-9  ">
 
 								<img src={loginImg} alt="" />
 							</div>

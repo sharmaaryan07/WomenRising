@@ -78,7 +78,6 @@ function App() {
                     />
                     <Alert alert={alert} />
                     <Translator />
-
                     <Routes>
                       <Route path='/' element={<Home />} />
                       <Route path='/login' element={<Login setProgress={setProgress} showAlert={showAlert} />} />
@@ -104,7 +103,6 @@ function App() {
                       <Route path='/adminproduct' element={<Adminproduct />} />
                       <Route path='/adminproductdetail/:id' element={<Adminproductdetail setProgress={setProgress} showAlert={showAlert} />} />
                       <Route path='/dashboard' element={<Dashboard setProgress={setProgress} showAlert={showAlert} />} />
-
                     </Routes>
                     <Chatbot />
                   </Router>

@@ -9,10 +9,11 @@ export default function Applyjob(props) {
   const { id } = useParams();
 
   const handleClick = async (e) => {
+    // preventDefault is use to prevent website to reload.
     e.preventDefault();
     props.setProgress(0);
     const { name, email, address, age } = applyJob;
-
+    // ths api will help user to apply for job
     const response = await fetch(`http://localhost:5000/api/job/apply/${id}`, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       headers: {
@@ -23,7 +24,6 @@ export default function Applyjob(props) {
     props.setProgress(100);
     const json = await response.json();
   }
-
 
   const onChange = (e) => {
     setApplyJob({ ...applyJob, [e.target.name]: e.target.value })

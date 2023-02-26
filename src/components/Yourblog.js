@@ -8,10 +8,12 @@ import Navbar from './Navbar';
 
 
 export default function Blogs() {
+    // this context is helping in passing specific blog api data in this page.
     const Context = useContext(blogContext)
     const { blogs, specifiblog } = Context;
 
     useEffect(() => {
+        // this function will show only that blog that user have added
         specifiblog();
     })
 

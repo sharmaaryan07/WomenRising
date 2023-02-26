@@ -54,7 +54,5 @@ router.delete('/deleteadminproduct/:id', async (req, res) => {
     }
 });
 
-
-
 // Exporting Router
 module.exports = router

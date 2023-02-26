@@ -7,21 +7,21 @@ import Navbar from './Navbar';
 
 
 export default function Sellproduct(props) {
+  // useContext is helping in passing api data 
   const Context = useContext(adminProductContext)
   const { addadminproduct } = Context;
 
   const [product, setproduct] = useState({ name: "", title: "", description: "", price: "", phone: "", email: "", image: "" })
+  // this function will add product in database
   const handleClick = (e) => {
     e.preventDefault();
     props.setProgress(0)
-
     addadminproduct(product.name, product.title, product.description, product.price, product.phone, product.email, product.image)
     setproduct({ name: "", title: "", description: "", price: "", phone: "", email: "", image: "" })
     props.setProgress(100)
-
     props.showAlert("Product Added", "bg-green-500", "Product Added Successful")
   }
-
+  // this function will target or will get the input value of field.
   const onChange = (e) => {
     setproduct({ ...product, [e.target.name]: e.target.value })
   }

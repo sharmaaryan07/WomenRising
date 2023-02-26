@@ -9,16 +9,20 @@ import Navbar from './Navbar';
 
 
 export default function Productdetail(props) {
+    // this useParam will get is from url
     const { id } = useParams();
     const [product, setProduct] = useState({});
 
+// this context will get api data for addproduct
     const Context = useContext(productContext)
     const { addproduct } = Context;
 
+    // this context will get api for deleting a product
     const Context2 = useContext(adminProductContext)
     const { deleteadminProduct } = Context2;
 
     useEffect(() => {
+        // this will fetch a perticular product data
         const fetchProduct = async () => {
             props.setProgress(0)
 
@@ -32,6 +36,7 @@ export default function Productdetail(props) {
         fetchProduct();
     }, [id]);
 
+    // this fucntion will add product in product page.
     const handleClick = (e) => {
         e.preventDefault();
         props.setProgress(0)

@@ -17,7 +17,9 @@ function Dashboard() {
     const { products, getadminproduct } = Context2;
 
     useEffect(() => {
+        // this function will get all the jobs that are pending.
         getadminJobs();
+        // this function will get all the product that are pending.
         getadminproduct();
     })
 

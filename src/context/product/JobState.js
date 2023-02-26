@@ -55,8 +55,6 @@ const JobState = (props) => {
   }
 
 
-
-
     return (
         <jobContext.Provider value={{ jobs, getJobs,addjob, applyjob }}>
             {props.children}

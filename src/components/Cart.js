@@ -4,18 +4,19 @@ import { useContext } from 'react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import cartContext from '../context/product/cartContext';
+import Footer from './Footer';
 import Navbar from './Navbar';
 
 
 export default function Example() {
+  // this usecontext is helping in passing cart api data in this page
   const Context = useContext(cartContext)
   const { carts, getcarts, deletecarts } = Context;
 
   const [total, setTotal] = useState(0);
 
-
-
   useEffect(() => {
+    // this totalPrice will show total amount according to the product added in cart
     let totalPrice = 0;
     carts.forEach((cart) => {
       totalPrice += cart.price;
@@ -23,7 +24,9 @@ export default function Example() {
     setTotal(totalPrice);
   }, [carts]);
 
+  // this wll get all the product that user has add in cart
   useEffect(() => {
+
     getcarts();
   })
 
@@ -32,7 +35,7 @@ export default function Example() {
       <Navbar />
 
       <div className="mt-12 mr-12 ml-12">
-        <h1 className='text-4xl text-center mb-12'>YOUR <span className='text-[#2563eb]'>CART</span> </h1>
+        <h1 className='text-4xl text-center mb-12'>YOUR <span className='text-orange-500'>CART</span> </h1>
         <div className="flow-root">
           <ul role="list" className="-my-6 divide-y divide-gray-200">
             {carts && carts.length > 0 && carts.map((cart) => (
@@ -58,7 +61,7 @@ export default function Example() {
                       <button
                         type="button"
                         onClick={() => deletecarts(cart._id)}
-                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                        className="font-medium text-orange-600 hover:text-text-orange-500"
                       >
                         Remove
                       </button>
@@ -80,7 +83,7 @@ export default function Example() {
         <div className="mt-6">
           <a
             href="/"
-            className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+            className="flex items-center justify-center rounded-md border border-transparent bg-orange-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-orange-700"
           >
             Checkout
           </a>
@@ -90,7 +93,7 @@ export default function Example() {
             or &nbsp;
             <Link
               to='/product'
-              className="font-medium text-indigo-600 hover:text-indigo-500"
+              className="font-medium text-orange-600 hover:text-orange-500"
 
             >
               Continue Shopping
@@ -99,6 +102,8 @@ export default function Example() {
           </p>
         </div>
       </div>
+
+      <Footer/>
     </div>
   )
 }

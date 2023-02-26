@@ -10,13 +10,16 @@ import Footer from './Footer';
 
 
 export default function Job(props) {
+  // Created a variable "navigate" where useNavigate() function is stored
   let navigate = useNavigate();
 
+  // It will help to get logic of api with the help of context hook
   const Context = useContext(jobContext)
   const { jobs, getJobs } = Context;
 
+  // this useEffect hook will help to fecth data
   useEffect(() => {
-
+// if user is logged in then job page will be visible other vise user will be redirect to login page
     if (localStorage.getItem('token')) {
       getJobs();
     } else {

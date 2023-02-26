@@ -6,6 +6,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { Link } from 'react-router-dom';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 
 export default function Addjob(props) {
@@ -27,30 +28,27 @@ export default function Addjob(props) {
             'link', 'image'
         ];
 
-
-
-
-
+    // useContext() is helping in passing add blog api data in this page
     const Context = useContext(blogContext)
     const { addblog } = Context;
 
     const [blogs, setblogs] = useState({ title: "", description: "", image: "" })
+    // this handleClick will add blog in our datatbas
     const handleClick = (e) => {
         e.preventDefault();
         props.setProgress(0)
-
         addblog(blogs.title, blogs.description, blogs.image)
         setblogs({ title: "", description: "", image: "" })
         props.setProgress(100)
 
         props.showAlert("Blog Added", "bg-green-500", "Blog Added Successful")
     }
-
+    // what ever user will type in input field will be fetch by this onChange 
     const onChange = (e) => {
         console.log(e.target);
         setblogs({ ...blogs, [e.target.name]: e.target.value })
     }
-
+    // what ever user will type in description input field it will get fetch by onEditorChange() 
     const onEditorChange = (value) => {
         setblogs({ ...blogs, description: value })
     }
@@ -60,7 +58,7 @@ export default function Addjob(props) {
             <div className="nav">
                 <Navbar />
             </div>
-            
+
             <div className='flex justify-center'>
 
                 <div>
@@ -73,7 +71,7 @@ export default function Addjob(props) {
                         </div>
                     </div>
 
-                    <div className='shadow-md p-10 w-full  mt-14 space-y-8 bg-orange-100 '>
+                    <div className='shadow-md p-10 w-[45rem]  mt-14 space-y-8 bg-orange-100 '>
                         <h2 className='text-4xl text-center font-bold '><span className='text-orange-500'>ADD</span>  BLOG</h2>
                         <form className='   '>
 
@@ -112,6 +110,10 @@ export default function Addjob(props) {
                         {/* disabled={add.company.length <= 0 || add.email.length <= 0 || add.description.length <= 0 || add.phone.length <= 0 || add.salary.length <= 0 || add.title.length <= 0 || add.material.length <= 0} */}
                     </div>
                 </div>
+            </div>
+
+            <div className="footer">
+                <Footer />
             </div>
         </>
     )

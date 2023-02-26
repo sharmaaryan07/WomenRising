@@ -6,12 +6,12 @@ import Adminproductcard from './Adminproductcard'
 
 
 function Adminproduct(props) {
-
+    // this Context is helping in getting api data of pending product
     const Context = useContext(adminProductContext)
     const { products, getadminproduct } = Context;
 
     let navigate = useNavigate();
-
+    // this useEffect will get all that product that are pending.
     useEffect(() => {
         if (localStorage.getItem('token')) {
             getadminproduct();

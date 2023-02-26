@@ -58,11 +58,6 @@ const AdminJobState = (props) => {
         setJobs(newJob);
     }
 
- 
-
-
-
-
     return (
         <adminJobContext.Provider value={{ jobs, getadminJobs,addadminjob, deleteadminJobs }}>
             {props.children}

@@ -8,10 +8,12 @@ import Navbar from './Navbar';
 
 
 export default function Blogs(props) {
+    // this context is helping in passing blog API data 
     const Context = useContext(blogContext)
     const { blogs, getBlogs } = Context;
 
     const navigate = useNavigate()
+    // it will get all blogs that are avilable in database
     useEffect(() => {
         if (localStorage.getItem('token')) {
             getBlogs();

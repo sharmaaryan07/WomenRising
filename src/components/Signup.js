@@ -10,11 +10,12 @@ export default function Signup(props) {
 
     let navigate = useNavigate();
 
+// this function will help user to get register
     const handlesubmit = async (e) => {
         e.preventDefault();
         props.setProgress(0);
         const { name, email, password } = credentials;
-
+        // API call
         const response = await fetch("http://localhost:5000/api/auth/createuser", {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
             headers: {
@@ -57,7 +58,7 @@ export default function Signup(props) {
                             <div className="   min-h-screen flex flex-col ">
                                 <div className="container   flex-1 flex flex-col items-center justify-center  ">
                                     <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full  ">
-                                        <h1 className="mb-8 text-3xl text-center">Sign up</h1>
+                                        <h1 className="mb-8 text-3xl text-center font-bold">Sign<span className='text-orange-500' >up</span> </h1>
                                         <input type="text" className="block border border-grey-light w-full p-3 rounded mb-4" name="name" id="name" onChange={onchange} minLength="3" placeholder="Full Name" />
 
                                         <input type="email" className="block border border-grey-light w-full p-3 rounded mb-4" name="email" id="email" onChange={onchange} placeholder="Email" />

@@ -7,9 +7,11 @@ import adminJobContext from '../context/product/adminJobContext'
 
 
 const ProductDetail = (props) => {
+    // this useParam will fetch id from url
     const { id } = useParams();
     const [job, setJob] = useState({});
-
+    
+    // this useContext will 
     const Context = useContext(jobContext)
     const { addjob } = Context;
 
@@ -17,6 +19,7 @@ const ProductDetail = (props) => {
     const { deleteadminJobs } = Context2;
 
     useEffect(() => {
+        // this fetchJob will fetch a perticular job detail data
         const fetchJob = async () => {
             props.setProgress(0)
             const response = await fetch(`http://localhost:5000/api/adminjob/getadminjob/${id}`);
@@ -29,6 +32,7 @@ const ProductDetail = (props) => {
     }, [id]);
 
 
+ // this fucntion will add job in job page.
     const handleClick = (e) => {
         e.preventDefault();
         props.setProgress(0)
@@ -38,8 +42,6 @@ const ProductDetail = (props) => {
 
         props.showAlert("Job Added", "bg-green-500", "Job Added Successful")
         deleteadminJobs(job._id)
-
-
     }
 
     return (

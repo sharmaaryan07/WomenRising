@@ -5,16 +5,19 @@ import productContext from '../context/product/productContext'
 import Productitems from './Productitems'
 import PImg from './img/aiProduct.jpg'
 import Navbar from './Navbar';
+import Footer from './Footer';
+
 
 
 
 
 export default function Product(props) {
+  // this useContext will help to get api logic
   const Context = useContext(productContext)
   const { products, getproduct } = Context;
 
   let navigate = useNavigate();
-
+  // if user is logged in then only product page will be visible otherwise it will redirect to login page
   useEffect(() => {
     if (localStorage.getItem('token')) {
       getproduct();
@@ -36,7 +39,7 @@ export default function Product(props) {
             <img src={PImg} alt="" className='hidden lg:block' />
           </div>
 
-          <div className="AboutInfo  ml-[40rem] -mt-[27rem] space-y-6 absolute text-white ">
+          <div className="AboutInfo  ml-[40rem] -mt-[23rem] space-y-6 absolute text-white ">
             <div>
 
               <h2 className='text-5xl text-orange-500 font-semibold'>  Product Page  </h2>
@@ -44,7 +47,7 @@ export default function Product(props) {
 
             <div className='flex justify-center'>
               <Link to="/sellproduct" >
-                <button type="button" className="text-white hover:text-white border border-white hover:bg-orange-500 hover:border-orange-700 focus:ring-1 focus:outline-none focus:ring-orange-300 font-semibold rounded-lg text-xs  px-5 py-2.5 text-center mr-2 mb-2 ">
+                <button type="button" className="text-white hover:text-white border bg-orange-400 border-orange-500 hover:bg-orange-500 hover:border-orange-700 focus:ring-1 focus:outline-none focus:ring-orange-300 font-bold rounded-lg text-sm  px-5 py-2.5 text-center mr-2 mb-2 ">
                   Sell Product
                 </button>
               </Link>
@@ -59,6 +62,10 @@ export default function Product(props) {
           })}
 
         </div>
+
+      </div>
+      <div className="footer">
+        <Footer />
 
       </div>
     </>

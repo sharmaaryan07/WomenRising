@@ -14,7 +14,7 @@ import Navbar from './Navbar';
 
 
 export default function Home() {
-
+  // this context is helping in passing api data of job
   const Context = useContext(jobContext)
   const { jobs, getJobs } = Context;
 
@@ -22,33 +22,34 @@ export default function Home() {
   const { products, getproduct } = Context2;
 
   useEffect(() => {
-
+    // this function will get all the jobs that are available
     getJobs();
+    // this function will get all the product that are available
     getproduct();
   })
 
   return (
     <div className='mb-10   '>
       <Navbar />
-      
+
       {/* Top banner start */}
       <div className="banner  hidden lg:block  ">
 
         {/* Carousel Start */}
 
-        <div className="h-56  lg:h-[40rem]  ">
-          <Carousel slideInterval={150}>
-            <div className='flex justify-center bg-gray-500 py-7'>
+        <div className="h-56  lg:h-[43rem]  ">
+          <Carousel slideInterval={1000}>
+            <div className='flex justify-center bg-gray-300 py-7'>
 
               <img
                 src={gif1}
-                className='w-fit  '
+                className='w-[34rem]  '
 
                 alt="..."
               />
             </div>
             <img
-              className='h-[40rem]'
+              className='h-[45rem]'
               src={gif2}
               alt="..."
             />

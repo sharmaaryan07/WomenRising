@@ -62,16 +62,15 @@ router.post('/apply/:jobId', (req, res) => {
                         port: 465,
                         secure: true,
                         auth: {
-                            user: 'womensrising07@gmail.com',
-                            pass: 'cskgwyzbgbhwmxqt',
+                            user: 'womensrising05@gmail.com',
+                            pass: 'slntzaynefhnnhgg',
                         },
                     });
                     const mailOptions = {
                         from: `${req.body.email}`,
                         to: `${job.email}`,
                         subject: 'New job application received',
-                        text: `<h2>A new job application has been received for "${job.title}".</h2>`,
-                        html: `
+                        html: `<h2>A new job application has been received for "${job.title}".</h2>
                         <p>Contact Detail</p>
                         <ul>
                         <li>Name: ${req.body.name} </li>

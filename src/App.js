@@ -47,6 +47,7 @@ function App() {
 
   // Logic For Alert start
   const [alert, setAlert] = useState(null)
+
   const showAlert = (message, type, messageType) => {
     setAlert(
       {
@@ -59,8 +60,12 @@ function App() {
       setAlert(null);
     }, 2500);
     // Logic For Alert End
-
   };
+
+
+
+
+
   return (
     <>
       <ProductState>
@@ -95,7 +100,16 @@ function App() {
                       <Route path='/yourblog' element={<Yourblog />} />
                       <Route path='/apply/:id' element={<Applyjob setProgress={setProgress} showAlert={showAlert} />} />
                       <Route path='/contact' element={<Contact />} />
+
+
+
+
                       <Route path='/about' element={<About />} />
+
+
+
+
+
                       <Route path='/admin' element={<Admin />} />
                       <Route path='/adminlogin' element={<Adminlogin setProgress={setProgress} showAlert={showAlert} />} />
                       <Route path='/adminjob' element={<Adminjob />} />
@@ -112,8 +126,10 @@ function App() {
           </AdminJobState>
         </JobState>
       </ProductState>
-    </>
-  );
+
+
+      </>
+      );
 }
 
-export default App;
+      export default App;

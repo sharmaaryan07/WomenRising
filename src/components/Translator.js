@@ -24,6 +24,7 @@ function GoogleTranslate() {
 
   return <div className='sticky top-[39rem]  z-50 ml-8  ' ><div id="google_translate_element" className=' shadow-2xl absolute p-1 bg-white'>
     </div></div>;
+    
 }
 
 export default GoogleTranslate;

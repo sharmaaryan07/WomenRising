@@ -17,18 +17,23 @@ const sellSchema = new Schema({
     // required: true
     description: { 
         type: String, 
+        required: true, 
     },
     price: { 
         type: Number, 
+        required: true, 
     },
     phone: { 
         type: Number, 
+        required: true, 
     },
     email: { 
         type: String, 
+        required: true, 
     },
     image: {
         type: String,
+        required: true, 
       },
 });
 

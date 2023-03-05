@@ -55,7 +55,7 @@ export default function Signup(props) {
                     <div className=' lg:flex justify-center'>
                         {/* Start of form */}
                         <form onSubmit={handlesubmit}  >
-                            <div className="   min-h-screen flex flex-col ">
+                            <div className="min-h-screen flex flex-col ">
                                 <div className="container   flex-1 flex flex-col items-center justify-center  ">
                                     <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full  ">
                                         <h1 className="mb-8 text-3xl text-center font-bold">Sign<span className='text-orange-500' >up</span> </h1>

@@ -20,7 +20,7 @@ export default function Addjob(props) {
     setAdd({ ownername: "", title: "", description: "", location: "", salary: "", phone: "", email: "", materialImg: "", image: "" })
     props.setProgress(100)
 
-    props.showAlert("Job Added", "bg-green-500", "Job Added Successful")
+    props.showAlert("Job Added", "bg-yellow-500", "It will take 1 - 2 days to add a job in job page")
   }
 
   const onChange = (e) => {

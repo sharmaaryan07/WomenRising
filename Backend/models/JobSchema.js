@@ -57,6 +57,10 @@ const jobSchema = new Schema({
             type: Number,
             required: true
         },
+        phone: {
+            type: Number,
+            required: true
+        },
         date: {
             type: Date,
             default: Date.now,

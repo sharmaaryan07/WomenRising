@@ -57,12 +57,12 @@ const Blogdetail = (props) => {
 
                     <div className="header">
                         <div className="right ">
-                            Name: {blogs.username}
+                           <span className='font-bold'   >Name:</span>  {blogs.username}
                         </div>
 
                         <div className="header">
                             <div className="right text-right">
-                                {formattedDate}
+                            <span className='font-bold' >Date:</span>    {formattedDate}
                             </div>
                         </div>
                     </div>

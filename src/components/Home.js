@@ -39,9 +39,8 @@ export default function Home() {
         {/* Carousel Start */}
 
         <div className="h-56  lg:h-[40rem]  ">
-          <Carousel slideInterval={1000}>
+          <Carousel slideInterval={180}>
             <div className='flex justify-center bg-gray-300 py-7'>
-
               <img
                 src={gif1}
                 className='w-[33rem]  '

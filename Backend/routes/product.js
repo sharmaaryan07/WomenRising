@@ -29,8 +29,8 @@ router.post('/update', (req, res) => {
                 port: 465,
                 secure: true,
                 auth: {
-                    user: 'womensrising05@gmail.com',
-                    pass: 'slntzaynefhnnhgg',
+                    user: 'womenrising89@gmail.com',
+                    pass: 'kgjkuowzybvuaozc',
                 },
             });
             const mailOptions = {

@@ -31,7 +31,9 @@ export default function Blogs() {
                     <Link to='/addblog'> Add Blog </Link>
                     <Link to='/yourblog'> Your Blogs </Link>
                 </div>
-                <h1 className='text-center text-3xl mt-12'>Your Blog Page</h1>
+                
+                <h1 className='font-bold text-center text-3xl mt-12'>Your <span className='text-orange-500' >Blog</span>  </h1>
+
             </div>
 
             <div className='blogsCard md:px-5 mt-6 space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:grid lg:grid-cols-3'>

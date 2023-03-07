@@ -30,10 +30,8 @@ function Dashboard() {
             </div>
 
             <div className="container  mt-5  font-bold">
-                <div className="text-center text-3xl">
-                    <h1>Dash<span className='text-orange-500' >board</span></h1>
-                    <br />
-                    <h2 className='text-2xl' >Your Dashboard </h2>
+                <div className=" ml-[50rem]  text-3xl">
+                    <h1>Admin <span className='text-orange-500' >Dashboard</span></h1>
                 </div>
 
                 <hr className='  border-orange-500 mt-7' />
@@ -55,7 +53,7 @@ function Dashboard() {
                     </div>
 
                     <div className="pendingproduct">
-                        <h1 className=''>
+                        <h1 >
                             Pending <span className='text-orange-500' >Product's</span>
                         </h1>
 

@@ -96,7 +96,7 @@ function App() {
                       <Route path='/addblog' element={<Addblog setProgress={setProgress} showAlert={showAlert} />} />
                       <Route path='/yourblog' element={<Yourblog />} />
                       <Route path='/apply/:id' element={<Applyjob setProgress={setProgress} showAlert={showAlert} />} />
-                      <Route path='/contact' element={<Contact />} />
+                      <Route path='/contact' element={<Contact showAlert={showAlert} />} />
                       <Route path='/about' element={<About />} />
                       <Route path='/admin' element={<Admin />} />
                       <Route path='/adminlogin' element={<Adminlogin setProgress={setProgress} showAlert={showAlert} />} />

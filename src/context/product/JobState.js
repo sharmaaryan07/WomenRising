@@ -40,23 +40,11 @@ const JobState = (props) => {
         setJobs(json);
     }
 
-  //Route 2: Add a Job
-  const applyjob=async (name, email, resume, id)=>{
 
-    // API Call
-    const response = await fetch(`${host}/api/job/apply/${id}`, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({name, email, resume})
-    });
-    setJobs(jobs.concat(response))
-  }
 
 
     return (
-        <jobContext.Provider value={{ jobs, getJobs,addjob, applyjob }}>
+        <jobContext.Provider value={{ jobs, getJobs,addjob }}>
             {props.children}
         </jobContext.Provider>
     )

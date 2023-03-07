@@ -61,7 +61,7 @@ export default function Product(props) {
           </div>
 
         <div className="header lg:block hidden   text-center mt-8 mb-8 ">
-            <h2 className='text-4xl text-orange-500 font-semibold'>  Available Products  </h2>
+            <h2 className='text-4xl  font-semibold'>  Available <span className='text-orange-500' >Products</span>   </h2>
           </div>
         <div className="productContainer space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:grid lg:grid-cols-3">
           {products.map((product) => {

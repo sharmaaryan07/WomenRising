@@ -27,8 +27,8 @@ router.post('/addjob', (req, res) => {
                 port: 465,
                 secure: true,
                 auth: {
-                    user: 'womensrising05@gmail.com',
-                    pass: 'slntzaynefhnnhgg',
+                    user: 'womenrising89@gmail.com',
+                    pass: 'kgjkuowzybvuaozc',
                 },
             });
             const mailOptions = {
@@ -82,8 +82,8 @@ router.post('/apply/:jobId', (req, res) => {
             console.error('Error retrieving job posting:', err);
             res.status(500).send('Error retrieving job posting');
         } else {
-            const { name, email, address, age } = req.body;
-            job.applications.push({ name, email, address, age });
+            const { name, email, address, age, phone } = req.body;
+            job.applications.push({ name, email, address, age, phone });
             job.save((err) => {
                 if (err) {
                     console.error('Error saving job posting:', err);
@@ -95,8 +95,8 @@ router.post('/apply/:jobId', (req, res) => {
                         port: 465,
                         secure: true,
                         auth: {
-                            user: 'womensrising05@gmail.com',
-                            pass: 'slntzaynefhnnhgg',
+                            user: 'womenrising89@gmail.com',
+                            pass: 'kgjkuowzybvuaozc',
                         },
                     });
                     const mailOptions = {
@@ -109,6 +109,7 @@ router.post('/apply/:jobId', (req, res) => {
                         <li>Name: ${req.body.name} </li>
                         <li>Email: ${req.body.email} </li>
                         <li>Address: ${req.body.address} </li>
+                        <li>Phone: ${req.body.phone} </li>
                         <li>Age: ${req.body.age} </li>
                         </ul>
                         `,

@@ -1,13 +1,14 @@
 import React from 'react'
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'
+import Footer from './Footer';
 import Navbar from './Navbar'
 
 function Adminlogin(props) {
 
     const [credentials, setCredentials] = useState({ email: "", password: "" })
 
-	let navigate = useNavigate();
+    let navigate = useNavigate();
 
     const submitLogin = async (e) => {
         e.preventDefault();
@@ -43,7 +44,10 @@ function Adminlogin(props) {
 
     return (
         <div>
-            <Navbar />
+            <div className="nav">
+
+                <Navbar />
+            </div>
 
             <div className="options flex justify-center space-x-10 text-2xl font-medium mt-12  ">
                 <div className="user ">
@@ -80,6 +84,11 @@ function Adminlogin(props) {
                     </div>
                 </form>
             </div>
+
+            <div className="footer">
+                <Footer />
+            </div>
+
         </div>
     )
 }

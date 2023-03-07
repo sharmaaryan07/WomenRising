@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Footer from './Footer';
 import Navbar from './Navbar';
 
 
@@ -39,16 +40,16 @@ const ProductDetail = (props) => {
 
           <div className="material space-y-3">
             <span className='text-2xl font-bold'>Job Image:</span> <br />
-            <img className='w-[38rem] rounded-xl' src={job.image} alt=".." />
+            <img className='w-[28rem] rounded-xl' src={job.image} alt=".." />
           </div>
 
-          <div className="jobRole ">
-            <span className='text-2xl font-bold'>Job Role:</span>  <br />
-            {job.description}
+          <div className="jobDescription space-y-3">
+            <span className='text-2xl font-bold'>Job Description:</span>  <br />
+            <div className='font-[560]' >{job.description}</div>
           </div>
 
 
-          <div className="materialPhoto ">
+          <div className="materialPhoto space-y-4 ">
             <span className='text-2xl font-bold  '>Materials and Similar Photos Of the Products:</span>
             <div className="images ">
               <img className=' w-[20rem] rounded-xl ' src={job.materialImg} alt=".." />
@@ -63,13 +64,18 @@ const ProductDetail = (props) => {
             <div><i class="fa-solid fa-phone text-orange-500 "></i> {job.phone}</div>
             <div><i class="fa-solid fa-envelope text-orange-500"></i> {job.email}</div>
             <div><i class="fa-solid fa-location-pin text-orange-500"></i> {job.location}</div>
-            <div><i class="fa-solid fa-money-bill text-orange-500"></i> ₹{job.salary}</div>
+            <div><i class="fa-solid fa-money-bill text-orange-500"></i> {job.salary}</div>
             <div><Link to={`/apply/${job._id}`}> <i class="fa-solid fa-money-bill text-orange-500"></i> Apply for job</Link></div>
           </div>
 
         </div>
 
       </div>
+
+      <div className="footer">
+        <Footer />
+      </div>
+
     </>
   );
 };

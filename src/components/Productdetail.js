@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Footer from './Footer';
 import Navbar from './Navbar';
 
 
@@ -26,7 +27,7 @@ export default function Productdetail(props) {
         fetchProduct();
     }, [id]);
 
-// this function will add product in cart
+    // this function will add product in cart
     const handlesubmit = async (e) => {
         e.preventDefault();
         props.setProgress(0)
@@ -47,26 +48,34 @@ export default function Productdetail(props) {
 
     return (
         <div>
-            <Navbar />
+            <div>
+                <Navbar />
+            </div>
 
             <section className="text-gray-600 body-font overflow-hidden">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                        <img src={product.image} alt="ecommerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" />
+                        <img src={product.image} alt="ecommerce" className="lg:w-96 w-full lg:h-auto  h-64 object-cover object-center rounded" />
                         <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 space-y-4 ">
                             <h2 className="text-3xl title-font text-orange-500 font-bold  tracking-widest">PRODUCT NAME</h2>
                             <h1 className="text-gray-900 text-2xl font-semibold title-font  mb-1">{product.title}</h1>
 
-                            <p className="leading-relaxed text-lg ">{product.description}</p>
-                            <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-                                <div className="flex">
-                                    <span className="mr-3"> <span className='text-orange-500 text-xl ' >Email:</span> <br />
-                                    <span className='text-lg' >{product.email}</span>  </span>
+                            <p className="leading-relaxed text-lg font-extrabold ">{product.description}</p>
+                            <div className="grid grid-cols-3 mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5  ">
+
+                                <div className="flex   ">
+                                    <span className="mr-3"> <span className='text-orange-500 text-xl ' >Owner Name:</span> <br />
+                                        <span className='text-lg' >{product.name}</span>  </span>
 
                                 </div>
-                                <div className="flex ml-6 items-center">
+                                <div className="flex ">
+                                    <span className="mr-3"> <span className='text-orange-500 text-xl ' >Email:</span> <br />
+                                        <span className='text-lg' >{product.email}</span>  </span>
+
+                                </div>
+                                <div className="flex ml-20 items-center">
                                     <span className="mr-3"> <span className='text-orange-500 text-xl ' >Phone:</span>  <br />
-                                    <span className='text-lg' >{product.phone}</span>  </span>
+                                        <span className='text-lg' >{product.phone}</span>  </span>
                                     <div className="relative">
 
                                     </div>
@@ -81,6 +90,10 @@ export default function Productdetail(props) {
                     </div>
                 </div>
             </section>
+
+            <div>
+                <Footer />
+            </div>
         </div>
     )
 }

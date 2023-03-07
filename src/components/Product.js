@@ -34,7 +34,7 @@ export default function Product(props) {
       <div className='pb-9'>
 
         {/* productBanner Start */}
-        <div className="banner">
+        <div className="banner hidden lg:block ">
           <div className="image ">
             <img src={PImg} alt="" className='hidden lg:block' />
           </div>
@@ -56,6 +56,13 @@ export default function Product(props) {
         </div>
         {/* productBanner End */}
 
+        <div className="header lg:hidden text-center mt-8 mb-8 ">
+            <h2 className='text-5xl text-orange-500 font-semibold'>  Products  </h2>
+          </div>
+
+        <div className="header lg:block hidden   text-center mt-8 mb-8 ">
+            <h2 className='text-4xl text-orange-500 font-semibold'>  Available Products  </h2>
+          </div>
         <div className="productContainer space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:grid lg:grid-cols-3">
           {products.map((product) => {
             return <Productitems product={product} />

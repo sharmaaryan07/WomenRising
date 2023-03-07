@@ -3,6 +3,7 @@ import { useState } from 'react';
 import adminJobContext from '../context/product/adminJobContext'
 import FileBase64 from 'react-file-base64';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 
 
@@ -25,6 +26,8 @@ export default function Addjob(props) {
   const onChange = (e) => {
     setAdd({ ...add, [e.target.name]: e.target.value })
   }
+
+  
 
 
   return (
@@ -66,10 +69,7 @@ export default function Addjob(props) {
               <input type="number" name="phone" id="phone" value={add.phone} onChange={onChange} className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer" placeholder=" " required maxLength='10' />
               <label for="phone" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-orange-600 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Phone Number</label>
             </div>
-            {/* <div className="relative z-0  mb-6 group">
-            <input type="text" name="material" id="material" value={add.material} onChange={onChange} className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer" placeholder=" " />
-            <label for="material" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-orange-600 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Material</label>
-          </div> */}
+
 
             <div className="relative z-0  mb-6 group">
               <input type="text" name="location" id="location" value={add.location} onChange={onChange} className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer" placeholder=" " />
@@ -104,10 +104,13 @@ export default function Addjob(props) {
             </div>
           </form>
           <div>
-            <button type="submit" disabled={add.ownername.length <= 0 || add.email.length <= 0 || add.description.length <= 0 || add.phone.length <= 0 || add.salary.length <= 0 || add.title.length <= 0} onClick={handleClick} className=" border  focus:ring-1 focus:outline-none  font-semibold rounded-lg text-base  px-3 py-2 text-center mr-2 mb-2 border-orange-500 text-orange-500 hover:text-white hover:bg-orange-600 focus:ring-orange-800">Submit</button>
+            <button type="submit" disabled={add.ownername.length <= 0 || add.email.length <= 0 || add.description.length <= 0 || add.phone.length <= 0 || add.salary.length <= 0 || add.title.length <= 0 } onClick={handleClick} className=" border  focus:ring-1 focus:outline-none  font-semibold rounded-lg text-base  px-3 py-2 text-center mr-2 mb-2 border-orange-500 text-orange-500 hover:text-white hover:bg-orange-600 focus:ring-orange-800">Submit</button>
           </div>
 
         </div>
+      </div>
+      <div className="footer">
+        <Footer/>
       </div>
     </>
   )

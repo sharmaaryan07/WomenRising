@@ -15,9 +15,42 @@ router.post('/addjob', (req, res) => {
     const addjob = new job({
         ownername, title, description, location, salary, phone, email, materialImg, image
     })
-    addjob.save();
-    res.send(req.body)
-})
+
+    addjob.save((err) => {
+        if (err) {
+            console.error('Error saving job posting:', err);
+            res.status(500).send('Error saving job posting');
+        } else {
+            const transporter = nodemailer.createTransport({
+                service: 'gmail',
+                host: "smtp.gmail.com",
+                port: 465,
+                secure: true,
+                auth: {
+                    user: 'womensrising05@gmail.com',
+                    pass: 'slntzaynefhnnhgg',
+                },
+            });
+            const mailOptions = {
+                from: `${req.body.email}`,
+                to: `${req.body.email}`,
+                subject: 'Job Accepted.',
+                html: `<h2>Your job "${req.body.title}" has been accepted and its displaying in job page .</h2>
+                `,
+            };
+            transporter.sendMail(mailOptions, (err, info) => {
+                if (err) {
+                    console.error('Error sending email:', err);
+                    res.status(500).send('Error sending email');
+                } else {
+                    console.log('Email sent:', info.response);
+                    res.status(200).send('Job application saved successfully');
+                }
+            });
+        }
+    });
+});
+
 
 
 

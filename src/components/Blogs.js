@@ -3,6 +3,7 @@ import React, { useEffect, useContext } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import blogContext from '../context/product/blogContext';
 import BlogCard from './Blogcard'
+import Footer from './Footer';
 import Navbar from './Navbar';
 
 
@@ -25,7 +26,9 @@ export default function Blogs(props) {
 
     return (
         <div >
-            <Navbar />
+            <div className="nav">
+                <Navbar />
+            </div>
             <div>
                 <div className='text-center space-x-5 mt-9 text-2xl font-bold'>
                     <Link to='/blogs'> All Blogs </Link>
@@ -41,6 +44,10 @@ export default function Blogs(props) {
 
                 })}
 
+            </div>
+
+            <div className="footer">
+                <Footer />
             </div>
 
 

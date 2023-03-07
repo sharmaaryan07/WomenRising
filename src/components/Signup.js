@@ -1,5 +1,6 @@
 import { React, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import Footer from './Footer';
 import signupimg from './img/signup2.png'
 import Navbar from './Navbar';
 
@@ -64,7 +65,7 @@ export default function Signup(props) {
                                         <input type="email" className="block border border-grey-light w-full p-3 rounded mb-4" name="email" id="email" onChange={onchange} placeholder="Email" />
 
                                         <input type="password" className="block border border-grey-light w-full p-3 rounded mb-4" name="password" id="password" onChange={onchange} minLength="4" placeholder="Password" />
-                                        <input type="password" onChange={onchange} className="block border border-grey-light w-full p-3 rounded mb-4" name="confirm_password" id="confirm_password" placeholder="Confirm Password" />
+                                        <input type="password" onChange={onchange} className="block border border-grey-light w-full p-3   rounded mb-4" name="confirm_password" id="confirm_password" placeholder="Confirm Password" />
 
                                         <button type="submit" className="w-full text-center py-3 rounded bg-orange-600 text-white hover:bg-orange-400 focus:outline-none my-1">
                                             Create Account
@@ -99,6 +100,10 @@ export default function Signup(props) {
                         <img src={signupimg} alt="" className='' />
                     </div>
                 </div>
+            </div>
+
+            <div className="footer">
+                <Footer/>
             </div>
         </>
     )

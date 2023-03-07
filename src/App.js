@@ -62,10 +62,6 @@ function App() {
     // Logic For Alert End
   };
 
-
-
-
-
   return (
     <>
       <ProductState>
@@ -76,10 +72,11 @@ function App() {
                 <BlogState>
                   <Router>
                     <LoadingBar
-                      color='orange'
+                      color='#ff5a1f'
                       progress={progress}
                       waitingTime={1200}
                       loaderSpeed={1300}
+                      height={3}
                     />
                     <Alert alert={alert} />
                     <Translator />
@@ -100,16 +97,7 @@ function App() {
                       <Route path='/yourblog' element={<Yourblog />} />
                       <Route path='/apply/:id' element={<Applyjob setProgress={setProgress} showAlert={showAlert} />} />
                       <Route path='/contact' element={<Contact />} />
-
-
-
-
                       <Route path='/about' element={<About />} />
-
-
-
-
-
                       <Route path='/admin' element={<Admin />} />
                       <Route path='/adminlogin' element={<Adminlogin setProgress={setProgress} showAlert={showAlert} />} />
                       <Route path='/adminjob' element={<Adminjob />} />

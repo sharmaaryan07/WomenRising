@@ -26,7 +26,7 @@ const BlogState = (props) => {
 
 
   //Route 2: Add a blog
-  const addblog = async (title, description, image) => {
+  const addblog = async (username, title, description, image) => {
 
     // API Call
     const response = await fetch(`${host}/api/blogs/addblog`, {
@@ -36,7 +36,7 @@ const BlogState = (props) => {
         "auth-token": localStorage.getItem('token')
 
       },
-      body: JSON.stringify({ title, description, image })
+      body: JSON.stringify({ username, title, description, image })
     });
     setBlogs(blogs.concat(response))
   }
@@ -59,9 +59,27 @@ const BlogState = (props) => {
     setBlogs(json);
   }
 
+  const deleteblog = async (id) => {
+    // API Call
+    const response = await fetch(`${host}/api/blogs/deleteblog/${id}`, {
+      method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        'Content-Type': 'application/json',
+        'auth-token': localStorage.getItem('token')
+      },
+    });
+    const json = await response.json();
+    console.log(json);
+
+    const newBlog = blogs.filter((blog) => { return blog._id !== id })
+    setBlogs(newBlog);
+  }
+
+
+
 
   return (
-    <blogContext.Provider value={{ blogs, setBlogs, getBlogs, addblog, specifiblog }}>
+    <blogContext.Provider value={{ blogs, setBlogs, getBlogs, addblog, specifiblog, deleteblog }}>
       {props.children}
     </blogContext.Provider>
   )

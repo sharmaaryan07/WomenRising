@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Footer from './Footer';
 import Navbar from './Navbar';
+import blogContext from '../context/product/blogContext';
+import { useContext } from 'react';
 
 
 const Blogdetail = (props) => {
@@ -8,7 +11,10 @@ const Blogdetail = (props) => {
     const { id } = useParams();
     const [blogs, setBlogs] = useState({});
 
-    
+    // this context will get api for deleting a product
+    const Context = useContext(blogContext)
+    const { deleteblog } = Context;
+
     useEffect(() => {
         // this function will fetch perticular product details
         const fetchBlog = async () => {
@@ -37,7 +43,7 @@ const Blogdetail = (props) => {
                 <Navbar />
 
             </div>
-            <div className='mt-9 mr-8 ml-8 space-y-4'>
+            <div className='mt-9 mr-8 ml-8 space-y-6'>
                 <div className="heading text-center text-4xl font-semibold">
                     {blogs.title}
                 </div>
@@ -47,23 +53,37 @@ const Blogdetail = (props) => {
                 <div className="image h-[30rem] flex justify-center ">
                     <img src={blogs.image} alt='' />
                 </div>
-
-                <div className="header">
-                    <div className="right ">
-                        Name
-                    </div>
+                <div className='ml-16 mr-16 '>
 
                     <div className="header">
-                        <div className="right text-right">
-                            {formattedDate}
+                        <div className="right ">
+                            Name: {blogs.username}
+                        </div>
+
+                        <div className="header">
+                            <div className="right text-right">
+                                {formattedDate}
+                            </div>
                         </div>
                     </div>
 
-                    <div className="description">
-                        <div dangerouslySetInnerHTML={{ __html: blogs.description }} />
-                    </div>
                 </div>
+                <div className="description ml-16 mr-16  ">
+                    <div dangerouslySetInnerHTML={{ __html: blogs.description }} />
+                </div>
+
+
+
             </div>
+            <div className='flex justify-center mt-12 '   >
+                <button type="button" onClick={() => { deleteblog(blogs._id) }} className=" border  focus:ring-1 focus:outline-none  font-semibold rounded-lg text-2xl  px-3 py-2 text-center mr-2 mb-2 border-orange-500 text-orange-500 hover:text-white hover:bg-orange-600 focus:ring-orange-800">Delete</button>
+
+            </div>
+
+            <div className="footer">
+                <Footer />
+            </div>
+
         </>
     );
 };

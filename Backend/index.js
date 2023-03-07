@@ -1,9 +1,9 @@
 const mongoconnect=require('./db');
 
 // conecting express
-const express = require('express')
+const express = require('express');
 // imported cors
-var cors = require('cors')
+var cors = require('cors');
 
 mongoconnect();
 
@@ -11,7 +11,7 @@ const app = express()
 const port = 5000
 
 // Use Cors
-app.use(cors())
+app.use(cors());
 // Using Middleware
 app.use(express.json());
 

@@ -32,13 +32,13 @@ export default function Addjob(props) {
     const Context = useContext(blogContext)
     const { addblog } = Context;
 
-    const [blogs, setblogs] = useState({ title: "", description: "", image: "" })
+    const [blogs, setblogs] = useState({ username: "", title: "", description: "", image: "" })
     // this handleClick will add blog in our datatbas
     const handleClick = (e) => {
         e.preventDefault();
         props.setProgress(0)
-        addblog(blogs.title, blogs.description, blogs.image)
-        setblogs({ title: "", description: "", image: "" })
+        addblog(blogs.username,blogs.title, blogs.description, blogs.image)
+        setblogs({username: "", title: "", description: "", image: "" })
         props.setProgress(100)
 
         props.showAlert("Blog Added", "bg-green-500", "Blog Added Successful")
@@ -76,9 +76,9 @@ export default function Addjob(props) {
                         <form className='   '>
 
 
-                            <div className="relative z-0  mb-6 group">
-                                <input type="text" name="title" id="title" value={blogs.title} onChange={onChange} className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer" placeholder=" " required />
-                                <label for="title" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-orange-600 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Blog Title</label>
+                            <div className="relative z-0  mb-6 group space-y-4">
+                                <input type="text" name="username" id="username" value={blogs.username} onChange={onChange} className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer" placeholder="Your Name" required />
+                                <input type="text" name="title" id="title" value={blogs.title} onChange={onChange} className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer" placeholder="Blog Title" required />
                             </div>
 
                             <br />
@@ -88,7 +88,6 @@ export default function Addjob(props) {
 
                                 <FileBase64
                                     id="image"
-
                                     name="image"
                                     value={blogs.image}
                                     type="file"

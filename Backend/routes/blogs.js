@@ -22,10 +22,10 @@ router.get('/fetchblog', async (req, res) => {
 router.post('/addblog', fetchuser, (req, res) => {
 
     try {
-        const { title, description, image } = req.body;
+        const { username, title, description, image } = req.body;
 
         const addblog = new blogSchema({
-            title, description, image, user: req.user.id
+            username, title, description, image, user: req.user.id
         })
         addblog.save();
         res.send(req.body)
@@ -51,28 +51,28 @@ router.get('/fetchuserblog', fetchuser, async (req, res) => {
 
 })
 
-// Route 4: To get Delete blog of specific user
+// Route 4: To delete a specific blog of a user
 router.delete('/deleteblog/:id', fetchuser, async (req, res) => {
-
     try {
-
-        const deleteBlog = await blogSchema.findById(req.params.id);
-        if (!deleteBlog) {
-            return res.status(404).send("Not Found")
-        }
-
-        // Allow deletion only if user owns this blog
-        if (deleteBlog.user.toString() !== req.user.id) {
-            return res.status(401).send("Not Allowed")
-        }
-
-        const remove = await blogSchema.findByIdAndDelete(req.params.id)
-        res.send(remove);
+      const deleteBlog = await blogSchema.findById(req.params.id);
+      if (!deleteBlog) {
+        return res.status(404).send("Not Found")
+      }
+  
+      // Allow deletion only if user owns this blog
+      if (deleteBlog.user.toString() !== req.user.id) {
+        return res.status(401).send("Not Allowed")
+      }
+  
+      await blogSchema.findByIdAndDelete(req.params.id);
+      res.json({ message: 'Blog deleted successfully' });
     } catch (error) {
-        console.error(error.message);
-        res.status(500).send("Some Internal Server Error Occured!!")
+      console.error(error.message);
+      res.status(500).send("Some Internal Server Error Occured!!");
     }
-});
+  });
+  
+
 
 
 // Route 5: Editing you Blog
@@ -99,10 +99,10 @@ router.put('/editblog/:id', fetchuser, async (req, res) => {
 });
 
 // Route 6: To get Perticular blog Details
-router.get('/getblog/:id',async (req, res) => {
+router.get('/getblog/:id', async (req, res) => {
 
     try {
-        
+
         const blog = await blogSchema.findById(req.params.id);
         res.json(blog);
     } catch (error) {

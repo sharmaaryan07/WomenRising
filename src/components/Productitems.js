@@ -14,7 +14,7 @@ export default function Productitems(props) {
                  <div className="container px-5 py-4 mx-auto shadow-sm">
                     <div className="flex flex-wrap -m-4">
                         <div className=" p-4 w-full">
-                            <div className="block relative h-60 rounded overflow-hidden">
+                            <div className="block relative h-80 rounded overflow-hidden">
                                 <img alt="ecommerce" className="object-cover object-center w-full h-full block" src={product.image} />
                             </div>
                             <div className="mt-4">

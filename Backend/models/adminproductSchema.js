@@ -19,7 +19,7 @@ const adminproductSchema = new Schema({
         type: String, 
     },
     price: { 
-        type: Number, 
+        type: String, 
     },
     phone: { 
         type: Number, 

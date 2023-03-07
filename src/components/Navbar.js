@@ -19,7 +19,7 @@ export default function Navbar() {
             <nav className=" border-gray-200 px-5 py-4 lg:px-7 bg-gray-900  w-full ">
                 <div className="flex flex-wrap justify-between items-center  ">
                     <Link to="/" className="flex items-center" >
-                        <img src={logo} className="mr-3 h-9  md:h-[3rem]  invert" alt="Flowbite Logo" />
+                        <img src={logo} className="mr-3 h-9  md:h-[4rem]  invert" alt="Flowbite Logo" />
                     </Link>
 
                     <div className="flex items-center md:order-3">

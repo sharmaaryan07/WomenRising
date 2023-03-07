@@ -11,6 +11,7 @@ import Jobscard from './Jobscard';
 import productContext from '../context/product/productContext';
 import Productitems from './Productitems';
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 
 export default function Home() {
@@ -29,7 +30,7 @@ export default function Home() {
   })
 
   return (
-    <div className='mb-10   '>
+    <div className='   '>
       <Navbar />
 
       {/* Top banner start */}
@@ -37,25 +38,25 @@ export default function Home() {
 
         {/* Carousel Start */}
 
-        <div className="h-56  lg:h-[43rem]  ">
+        <div className="h-56  lg:h-[40rem]  ">
           <Carousel slideInterval={1000}>
             <div className='flex justify-center bg-gray-300 py-7'>
 
               <img
                 src={gif1}
-                className='w-[34rem]  '
+                className='w-[33rem]  '
 
-                alt="..."
+                alt="womensRising"
               />
             </div>
             <img
               className='h-[45rem]'
               src={gif2}
-              alt="..."
+              alt="women Empowerment"
             />
             <img
               src={aiImage}
-              alt="..."
+              alt="WomenRising2"
             />
           </Carousel>
         </div>
@@ -134,7 +135,7 @@ export default function Home() {
           {/* Product Start */}
           <div className="product mt-28 ml-5 mr-5 lg:ml-2 lg:mr-2 space-y-5">
             <div>
-              <h4 className='text-5xl font-bold ' >Featured <span className='text-orange-500 font-bold'>Product</span> </h4>
+              <h4 className='text-5xl font-bold ' >Available <span className='text-orange-500 font-bold'>Product</span> </h4>
             </div>
 
             <div className="productcard">
@@ -160,7 +161,7 @@ export default function Home() {
 
 
           {/* Contact Start */}
-          <div className='testimonial mt-28 space-y-4 mb-8 '>
+          <div className='testimonial mt-28 space-y-6 mb-8 '>
             <div className='space-y-6'>
               <h4 className='text-5xl font-bold text-center' ><span className='text-orange-500 font-bold'>Customer</span> review </h4>
               <h4 className='text-2xl font-bold text-center' >What our customer saying...... </h4>
@@ -176,12 +177,12 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="content px-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis quis mauris vel faucibus. Sed ut dui eget lacus interdum bibendum. Integer vel massa arcu. Nunc at ipsum eget nibh ullamcorper pulvinar.</p>
+                    <p>I am so grateful for Women's Rising! As a stay-at-home mom, I always wanted to find a way to earn some extra money and contribute to my family's finances. But I didn't know how to start selling the things I made. Women's Rising made it so easy! Now, I can share my homemade pickles with others and earn some extra cash. Thank you for creating such a wonderful platform!</p>
                   </div>
                   <span className="inline-block h-1 w-10 rounded bg-orange-500 mt-8 mb-6"></span>
                   <div>
-                    <h2 className="text-orange-500 font-medium title-font tracking-wider text-sm">Aryan Sharma</h2>
-                    <p className="text-gray-500">Manager</p>
+                    <h2 className="text-orange-500 font-medium title-font tracking-wider text-sm">Urmila Devi</h2>
+                    <p className="text-gray-500">Customer</p>
                   </div>
                 </div>
               </div>
@@ -195,23 +196,24 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="content px-6">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sagittis quis mauris vel faucibus. Sed ut dui eget lacus interdum bibendum. Integer vel massa arcu. Nunc at ipsum eget nibh ullamcorper pulvinar.</p>
+                    <p>I love Women's Rising! As someone who lives in a rural area, it can be hard to find buyers for the products I make. But Women's Rising connects me with people all over the country who are interested in my handmade bags. Plus, I feel good knowing that I'm supporting other women entrepreneurs by buying products from them. I recommend Women's Rising to anyone who wants to buy or sell handmade goods!</p>
                   </div>
                   <span className="inline-block h-1 w-10 rounded bg-orange-500 mt-8 mb-6"></span>
                   <div>
-                    <h2 className="text-orange-500 font-medium title-font tracking-wider text-sm">Jane Doe</h2>
-                    <p className="text-gray-500">CEO</p>
+                    <h2 className="text-orange-500 font-medium title-font tracking-wider text-sm">Priyanka Singh</h2>
+                    <p className="text-gray-500">Customer</p>
                   </div>
                 </div>
               </div>
-
-
             </div>
-
           </div>
-
         </div>
       </div>
+
+      <div className="footer">
+        <Footer />
+      </div>
+
     </div>
   )
 }

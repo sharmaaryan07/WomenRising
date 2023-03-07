@@ -14,13 +14,12 @@ const sellSchema = new Schema({
         type: String, 
         required: true, 
     },
-    // required: true
     description: { 
         type: String, 
         required: true, 
     },
     price: { 
-        type: Number, 
+        type: String, 
         required: true, 
     },
     phone: { 

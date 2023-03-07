@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import blogContext from '../context/product/blogContext';
 import Yourcard from './Yourcard'
 import Navbar from './Navbar';
+import Footer from './Footer';
 
 
 
@@ -19,7 +20,10 @@ export default function Blogs() {
 
     return (
         <div >
-            <Navbar />
+            <div className="nav">
+
+                <Navbar />
+            </div>
 
             <div>
                 <div className='text-center space-x-5 mt-9 text-2xl font-bold'>
@@ -36,6 +40,10 @@ export default function Blogs() {
 
 
                 })}
+            </div>
+
+            <div className="footer">
+                <Footer />
             </div>
         </div>
     )

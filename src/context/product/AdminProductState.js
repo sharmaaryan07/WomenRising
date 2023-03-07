@@ -38,7 +38,7 @@ const AdminProductState = (props) => {
         setProducts(products.concat(response))
     }
 
-    //Route 1: fetch all Product
+    //Route 1: Delete Product
     const deleteadminProduct = async (id) => {
 
         // API Call

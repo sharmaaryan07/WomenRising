@@ -39,7 +39,7 @@ export default function Home() {
         {/* Carousel Start */}
 
         <div className="h-56  lg:h-[40rem]  ">
-          <Carousel slideInterval={180}>
+          <Carousel slideInterval={140}>
             <div className='flex justify-center bg-gray-300 py-7'>
               <img
                 src={gif1}

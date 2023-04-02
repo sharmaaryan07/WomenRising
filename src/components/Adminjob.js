@@ -12,7 +12,7 @@ function Adminjob(props) {
   const { jobs, getadminJobs } = Context;
 
   useEffect(() => {
-// if admin is logged in then only admin can view job page otherwise it will redirect to login page.
+    // if admin is logged in then only admin can view job page otherwise it will redirect to login page.
     if (localStorage.getItem('token')) {
       getadminJobs();
     } else {
@@ -23,6 +23,7 @@ function Adminjob(props) {
 
   return (
     <div className='pl-32' >
+
       {/* Navbar start */}
       <div className="nav">
         <Navadmin />
@@ -30,15 +31,20 @@ function Adminjob(props) {
       {/* Navbar end */}
 
       {/* Job contant start */}
-      <div className="container text-center mt-5 text-3xl font-bold">
-        <span className='text-orange-500 ' >Job</span>  page
-      </div>
-      <div className="jobCard pl-36 space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:mt-12 lg:grid lg:grid-cols-3">
-        {jobs.map((job) => {
-          return <Adminjobcard key={job._id} job={job} />
-        })}
+      <div className="main">
+
+        <div className="container text-center mt-5 text-3xl font-bold">
+          <span className='text-orange-500 ' >Job</span>  page
+        </div>
+
+        <div className="jobCard pl-36 space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:mt-12 lg:grid lg:grid-cols-3">
+          {jobs.map((job) => {
+            return <Adminjobcard key={job._id} job={job} />
+          })}
+        </div>
       </div>
       {/* Job contant end */}
+
 
     </div>
   )

@@ -26,7 +26,8 @@ const Blogdetail = (props) => {
             setBlogs(data);
         };
         fetchBlog();
-    }, [id]);
+    },// eslint-disable-next-line 
+        [id]);
 
     // created a variable date that will show on which date that blog has been added.
     const date = new Date(blogs.date);
@@ -41,8 +42,9 @@ const Blogdetail = (props) => {
         <>
             <div className="nav">
                 <Navbar />
-
             </div>
+
+
             <div className='mt-9 mr-8 ml-8 space-y-6'>
                 <div className="heading text-center text-4xl font-semibold">
                     {blogs.title}
@@ -57,12 +59,12 @@ const Blogdetail = (props) => {
 
                     <div className="header">
                         <div className="right ">
-                           <span className='font-bold'   >Name:</span>  {blogs.username}
+                            <span className='font-bold'   >Name:</span>  {blogs.username}
                         </div>
 
                         <div className="header">
                             <div className="right text-right">
-                            <span className='font-bold' >Date:</span>    {formattedDate}
+                                <span className='font-bold' >Date:</span>    {formattedDate}
                             </div>
                         </div>
                     </div>

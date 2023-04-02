@@ -17,8 +17,6 @@ const router = express.Router();
 const jwtSecret = "screctforauthen$ication";
 
 
-
-
 // ROUTE 1: create User 
 router.post('/createadmin', [
     // Using Validation
@@ -27,7 +25,7 @@ router.post('/createadmin', [
     body('password', 'Enter password min 4 character').isLength({ min: 4 }),
 
 ], async (req, res) => {
-    let success=false;
+    let success = false;
     // It will send Error if input is not correctly given
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -61,7 +59,7 @@ router.post('/createadmin', [
         const authToken = jwt.sign(data, jwtSecret);
 
         // It will give OP as authToken
-        success=true;
+        success = true;
         res.json({ success, authToken });
         // res.json(user);
     } catch (error) {
@@ -80,7 +78,7 @@ router.post('/loginadmin', [
     body('password', 'Enter password min 4 character').isLength({ min: 4 }),
 
 ], async (req, res) => {
-    let success=true;
+    let success = true;
     // It will send Error if input is not correctly given
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -93,7 +91,7 @@ router.post('/loginadmin', [
 
         let user = await User.findOne({ email });
         if (!user) {
-            success=false
+            success = false
             return res.status(400).json({ success, error: "Please try to login with correct credentials" });
         }
 
@@ -101,7 +99,7 @@ router.post('/loginadmin', [
         //const passwordCompare = bcrypt.compare(it will compare 'password enter by user' , and 'actual users password');
         const passwordCompare = await bcrypt.compare(password, user.password);
         if (!passwordCompare) {
-            success=false
+            success = false
             return res.status(400).json({ success, error: "Please try to login with correct credentials" });
         }
 

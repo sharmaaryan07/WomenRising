@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 export default function Productitems(props) {
     const { product } = props;
 
-    
+
     return (
         <div>
             {/* Product Card Start */}
+
             {/* Card 1 Start */}
-             <section className="text-gray-600 body-font  rounded-sm">
-                 <div className="container px-5 py-4 mx-auto shadow-sm">
+            <section className="text-gray-600 body-font  rounded-sm">
+                <div className="container px-5 py-4 mx-auto shadow-sm">
                     <div className="flex flex-wrap -m-4">
                         <div className=" p-4 w-full">
                             <div className="block relative h-80 rounded overflow-hidden">
@@ -28,7 +29,7 @@ export default function Productitems(props) {
                         </div>
                     </div>
                 </div>
-            </section> 
+            </section>
             {/* Card 1 End */}
             {/* Product Card End */}
         </div>

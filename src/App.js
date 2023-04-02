@@ -82,30 +82,54 @@ function App() {
                     <Translator />
                     <Routes>
                       <Route path='/' element={<Home />} />
+
                       <Route path='/login' element={<Login setProgress={setProgress} showAlert={showAlert} />} />
+
                       <Route path='/signup' element={<Signup setProgress={setProgress} showAlert={showAlert} />} />
+
                       <Route path='/job' element={<Job setProgress={setProgress} showAlert={showAlert} />} />
+
                       <Route path='/product' element={<Product showAlert={showAlert} />} />
+
                       <Route path='/sellproduct' element={<Sellproduct setProgress={setProgress} showAlert={showAlert} />} />
+
                       <Route path='/productdetail/:id' element={<Productdetail setProgress={setProgress} showAlert={showAlert} />} />
+
                       <Route path='/jobdetail/:id' element={<Jobdetail setProgress={setProgress} />} />
+
                       <Route path='/cart' element={<Cart />} />
+
                       <Route path='/blogs' element={<Blogs setProgress={setProgress} showAlert={showAlert} />} />
+
                       <Route path='/addjob' element={<Addjob setProgress={setProgress} showAlert={showAlert} />} />
+
                       <Route path='/blogdetail/:id' element={<Blogdetail setProgress={setProgress} showAlert={showAlert} />} />
+
                       <Route path='/addblog' element={<Addblog setProgress={setProgress} showAlert={showAlert} />} />
+
                       <Route path='/yourblog' element={<Yourblog />} />
+
                       <Route path='/apply/:id' element={<Applyjob setProgress={setProgress} showAlert={showAlert} />} />
+
                       <Route path='/contact' element={<Contact showAlert={showAlert} />} />
+
                       <Route path='/about' element={<About />} />
+
                       <Route path='/admin' element={<Admin />} />
+
                       <Route path='/adminlogin' element={<Adminlogin setProgress={setProgress} showAlert={showAlert} />} />
+
                       <Route path='/adminjob' element={<Adminjob />} />
+
                       <Route path='/adminjobdetail/:id' element={<Adminjobdetail setProgress={setProgress} showAlert={showAlert} />} />
+
                       <Route path='/adminproduct' element={<Adminproduct />} />
+
                       <Route path='/adminproductdetail/:id' element={<Adminproductdetail setProgress={setProgress} showAlert={showAlert} />} />
+
                       <Route path='/dashboard' element={<Dashboard setProgress={setProgress} showAlert={showAlert} />} />
                     </Routes>
+
                     <Chatbot />
                   </Router>
                 </BlogState>
@@ -116,8 +140,8 @@ function App() {
       </ProductState>
 
 
-      </>
-      );
+    </>
+  );
 }
 
-      export default App;
+export default App;

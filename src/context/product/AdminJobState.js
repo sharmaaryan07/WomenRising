@@ -9,22 +9,22 @@ const AdminJobState = (props) => {
     const [jobs, setJobs] = useState(jobInitial);
 
 
-  //Route 2: Add a Job
-  const addadminjob=async (ownername, title, description, location,salary, phone, email, materialImg, image)=>{
+    //Route 1: Add a Job
+    const addadminjob = async (ownername, title, description, location, salary, phone, email, materialImg, image) => {
 
-    // API Call
-    const response = await fetch(`${host}/api/adminjob/addadminjob`, {
-      method: 'POST', // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ownername, title, description, location,salary, phone, email, materialImg, image})
-    });
-    setJobs(jobs.concat(response))
-  }
+        // API Call
+        const response = await fetch(`${host}/api/adminjob/addadminjob`, {
+            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ ownername, title, description, location, salary, phone, email, materialImg, image })
+        });
+        setJobs(jobs.concat(response))
+    }
 
 
-    //Route 1: fetch all Product
+    //Route 2: fetch all Job
     const getadminJobs = async () => {
 
         // API Call
@@ -41,7 +41,7 @@ const AdminJobState = (props) => {
     }
 
 
-    //Route 1: fetch all Product
+    //Route 3: Delete Job
     const deleteadminJobs = async (id) => {
 
         // API Call
@@ -54,12 +54,12 @@ const AdminJobState = (props) => {
         const json = response.json();
         console.log(json)
 
-        const newJob = jobs.filter((note)=>{return note._id!==id})
+        const newJob = jobs.filter((note) => { return note._id !== id })
         setJobs(newJob);
     }
 
     return (
-        <adminJobContext.Provider value={{ jobs, getadminJobs,addadminjob, deleteadminJobs }}>
+        <adminJobContext.Provider value={{ jobs, getadminJobs, addadminjob, deleteadminJobs }}>
             {props.children}
         </adminJobContext.Provider>
     )

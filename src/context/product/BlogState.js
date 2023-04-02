@@ -42,7 +42,7 @@ const BlogState = (props) => {
   }
 
 
-  //Route 1: fetch all Product
+  //Route 3: fetch Specific Blog
   const specifiblog = async () => {
 
     // API Call
@@ -59,6 +59,8 @@ const BlogState = (props) => {
     setBlogs(json);
   }
 
+
+  //Route 4: Delete Blog
   const deleteblog = async (id) => {
     // API Call
     const response = await fetch(`${host}/api/blogs/deleteblog/${id}`, {
@@ -74,8 +76,6 @@ const BlogState = (props) => {
     const newBlog = blogs.filter((blog) => { return blog._id !== id })
     setBlogs(newBlog);
   }
-
-
 
 
   return (

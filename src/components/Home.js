@@ -140,9 +140,9 @@ export default function Home() {
             <div className="productcard">
               <div className="productContainer space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:grid lg:grid-cols-3 ">
                 {products.map((product) => {
-                  return <Productitems product={product} />
+                  return <Productitems key={product._id} product={product} />
                 }) ? products.map((product) => {
-                  return <Productitems product={product} />
+                  return <Productitems key={product._id} product={product} />
                 }).slice(0, 3) : ""}
 
               </div>

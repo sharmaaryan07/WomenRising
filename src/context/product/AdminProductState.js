@@ -38,7 +38,7 @@ const AdminProductState = (props) => {
         setProducts(products.concat(response))
     }
 
-    //Route 1: Delete Product
+    //Route 3: Delete Product
     const deleteadminProduct = async (id) => {
 
         // API Call
@@ -54,10 +54,6 @@ const AdminProductState = (props) => {
         const newProduct = products.filter((product) => { return product._id !== id })
         setProducts(newProduct);
     }
-
-
-
-
 
     return (
         <adminProductContext.Provider value={{ products, setProducts, addadminproduct, getadminproduct, deleteadminProduct }}>

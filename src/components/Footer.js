@@ -16,15 +16,19 @@ export default function Footer() {
                             <li>
                                 <a href="/aboutus" className="mr-4 hover:underline md:mr-6 ">Product</a>
                             </li>
+
                             <div className="border h-4 mr-2  -ml-2 border-gray-500 "></div>
+
                             <li>
                                 <a href="/" className="mr-4 hover:underline md:mr-6">Job</a>
                             </li>
+
                             <div className="border h-4 mr-2 -ml-2 border-gray-500"></div>
 
                             <li>
                                 <a href="/" className="mr-4 hover:underline md:mr-6 ">Blog</a>
                             </li>
+
                             <div className="border h-4 mr-2 -ml-2 border-gray-500"></div>
 
                             <li>
@@ -39,7 +43,9 @@ export default function Footer() {
                         </ul>
                     </div>
                 </div>
+
                 <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+
                 <span className="block text-sm text-gray-500 text-center ">© 2022 <span className="hover:underline cursor-pointer">Womens Rising™</span>. All Rights Reserved.
                 </span>
             </footer>

@@ -1,11 +1,11 @@
-import  {React, useState } from 'react'
+import { React, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import Navbar from './Navbar';
 import Footer from './Footer';
 
 
 export default function Applyjob(props) {
-  const [applyJob, setApplyJob] = useState({ name: "", email: "", address: "", age: "", phone: ""  })
+  const [applyJob, setApplyJob] = useState({ name: "", email: "", address: "", age: "", phone: "" })
   const { id } = useParams();
 
   const handleClick = async (e) => {
@@ -37,6 +37,8 @@ export default function Applyjob(props) {
 
       <div className='shadow-md p-10 w-[55rem] ml-[20rem] mt-14 space-y-8 bg-orange-50  '>
         <h2 className='text-4xl text-center font-bold '>Apply <span className='text-orange-500' >Job</span>  </h2>
+
+        {/* Form Start */}
         <form className='   grid grid-cols-2 gap-11 '>
 
           <div className="relative z-0  mb-6 group">
@@ -67,13 +69,17 @@ export default function Applyjob(props) {
 
 
         </form>
+        {/* Form End */}
+
         <div>
           <button type="submit" onClick={handleClick} className="text-white bg-orange-700  hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Apply</button>
         </div>
 
       </div>
 
-    <Footer/>
+      <div className="footer">
+        <Footer />
+      </div>
 
     </div>
   )

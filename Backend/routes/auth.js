@@ -27,7 +27,7 @@ router.post('/createuser', [
     body('password', 'Enter password min 4 character').isLength({ min: 4 }),
 
 ], async (req, res) => {
-    let success=false;
+    let success = false;
     // It will send Error if input is not correctly given
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -61,7 +61,7 @@ router.post('/createuser', [
         const authToken = jwt.sign(data, jwtSecret);
 
         // It will give OP as authToken
-        success=true;
+        success = true;
         res.json({ success, authToken });
         // res.json(user);
     } catch (error) {
@@ -81,7 +81,7 @@ router.post('/login', [
     body('password', 'Enter password min 4 character').isLength({ min: 4 }),
 
 ], async (req, res) => {
-    let success=true;
+    let success = true;
     // It will send Error if input is not correctly given
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -94,7 +94,7 @@ router.post('/login', [
 
         let user = await User.findOne({ email });
         if (!user) {
-            success=false
+            success = false
             return res.status(400).json({ success, error: "Please try to login with correct credentials" });
         }
 
@@ -102,7 +102,7 @@ router.post('/login', [
         //const passwordCompare = bcrypt.compare(it will compare 'password enter by user' , and 'actual users password');
         const passwordCompare = await bcrypt.compare(password, user.password);
         if (!passwordCompare) {
-            success=false
+            success = false
             return res.status(400).json({ success, error: "Please try to login with correct credentials" });
         }
 

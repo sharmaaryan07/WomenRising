@@ -6,7 +6,9 @@ const nodemailer = require("nodemailer");
 // importing Router form Express
 const router = express.Router();
 
-// Fetching Products
+
+
+//ROUTE 1: Fetching Products
 router.get('/fetchproduct', async (req, res) => {
     const fetchProduct = await sellProduct.find({ user: req.user });
     res.json(fetchProduct);
@@ -14,14 +16,14 @@ router.get('/fetchproduct', async (req, res) => {
 })
 
 
-// Creating Routes for selling product '/api/sell'
-router.post('/update', (req, res) => {
+//Route2: Creating Routes for selling product '/api/sell'
+router.post('/add', (req, res) => {
 
     const sellproduct = sellProduct(req.body)
     sellproduct.save((err) => {
         if (err) {
-            console.error('Error saving job posting:', err);
-            res.status(500).send('Error saving job posting');
+            console.error('Error saving Product:', err);
+            res.status(500).send('Error saving Product');
         } else {
             const transporter = nodemailer.createTransport({
                 service: 'gmail',
@@ -46,7 +48,7 @@ router.post('/update', (req, res) => {
                     res.status(500).send('Error sending email');
                 } else {
                     console.log('Email sent:', info.response);
-                    res.status(200).send('Job application saved successfully');
+                    res.status(200).send('Product saved successfully');
                 }
             });
         }

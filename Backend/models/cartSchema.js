@@ -6,16 +6,16 @@ const { Schema } = mongoose;
 
 // Creating Schema 
 const cartSchema = new Schema({
-    user:{
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
-    title: { 
-        type: String, 
-        required: true, 
+    title: {
+        type: String,
+        required: true,
     },
-    price: { 
-        type: Number, 
+    price: {
+        type: Number,
     },
     image: {
         type: String,
@@ -23,4 +23,4 @@ const cartSchema = new Schema({
 });
 
 // Exporting Schema
-module.exports=mongoose.model("cart", cartSchema);
+module.exports = mongoose.model("cart", cartSchema);

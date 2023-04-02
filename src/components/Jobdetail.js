@@ -21,7 +21,8 @@ const ProductDetail = (props) => {
       setJob(data);
     };
     fetchJob();
-  }, [id]);
+  },// eslint-disable-next-line 
+    [id]);
 
 
 
@@ -30,8 +31,9 @@ const ProductDetail = (props) => {
     <>
       <div className="nav">
         <Navbar />
-
       </div>
+
+
       <div className='ml-12 mt-12 mr-12 flex justify-items-start'>
         <div className="left space-y-7 w-[49rem] p-5">
           <div className="header text-5xl font-bold">

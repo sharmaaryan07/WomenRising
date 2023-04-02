@@ -7,7 +7,7 @@ import { CardActionArea } from '@mui/material';
 
 export default function BlogCard(props) {
 
-    const {blog}=props
+    const { blog } = props
 
     return (
         <Card sx={{ maxWidth: 345 }}>
@@ -18,14 +18,17 @@ export default function BlogCard(props) {
                     image={blog.image}
                     alt="green iguana"
                 />
+
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="div">
                         {blog.title}
                     </Typography>
+
                     <Typography variant="body2" color="text.secondary">
-                        <div dangerouslySetInnerHTML={{__html: blog.description ? blog.description.slice(0,45) : "" }} />
+                        <div dangerouslySetInnerHTML={{ __html: blog.description ? blog.description.slice(0, 45) : "" }} />
                     </Typography>
                 </CardContent>
+
             </CardActionArea>
         </Card>
     );

@@ -29,6 +29,7 @@ export default function Blogs(props) {
             <div className="nav">
                 <Navbar />
             </div>
+
             <div>
                 <div className='text-center space-x-5 mt-9 text-2xl font-bold'>
                     <Link to='/blogs'> All Blogs </Link>
@@ -43,7 +44,6 @@ export default function Blogs(props) {
                     return <Link to={`/blogdetail/${blog._id}`}> <BlogCard key={blog._id} blog={blog} /></Link>
 
                 })}
-
             </div>
 
             <div className="footer">

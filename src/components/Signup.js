@@ -11,7 +11,7 @@ export default function Signup(props) {
 
     let navigate = useNavigate();
 
-// this function will help user to get register
+    // this function will help user to get register
     const handlesubmit = async (e) => {
         e.preventDefault();
         props.setProgress(0);
@@ -51,20 +51,26 @@ export default function Signup(props) {
             <div className="nav">
                 <Navbar />
             </div>
+
+
             <div className='flex justify-center   mt-16 md:mt-0 ' >
                 <div className=' lg:grid lg:grid-cols-2 lg:gap-2 mt-6 ' >
                     <div className=' lg:flex justify-center'>
+
                         {/* Start of form */}
                         <form onSubmit={handlesubmit}  >
                             <div className="min-h-screen flex flex-col ">
                                 <div className="container   flex-1 flex flex-col items-center justify-center  ">
                                     <div className="bg-white px-6 py-8 rounded shadow-md text-black w-full  ">
+
                                         <h1 className="mb-8 text-3xl text-center font-bold">Sign<span className='text-orange-500' >up</span> </h1>
+
                                         <input type="text" className="block border border-grey-light w-full p-3 rounded mb-4" name="name" id="name" onChange={onchange} minLength="3" placeholder="Full Name" />
 
                                         <input type="email" className="block border border-grey-light w-full p-3 rounded mb-4" name="email" id="email" onChange={onchange} placeholder="Email" />
 
                                         <input type="password" className="block border border-grey-light w-full p-3 rounded mb-4" name="password" id="password" onChange={onchange} minLength="4" placeholder="Password" />
+
                                         <input type="password" onChange={onchange} className="block border border-grey-light w-full p-3   rounded mb-4" name="confirm_password" id="confirm_password" placeholder="Confirm Password" />
 
                                         <button type="submit" className="w-full text-center py-3 rounded bg-orange-600 text-white hover:bg-orange-400 focus:outline-none my-1">
@@ -96,6 +102,7 @@ export default function Signup(props) {
                     </div>
                     {/* End of form */}
 
+                    {/* Login Image */}
                     <div className="img   hidden lg:ml-20 lg:mt-11 lg:block lg:justify-center  ">
                         <img src={signupimg} alt="" className='' />
                     </div>
@@ -103,7 +110,7 @@ export default function Signup(props) {
             </div>
 
             <div className="footer">
-                <Footer/>
+                <Footer />
             </div>
         </>
     )

@@ -31,8 +31,9 @@ export default function Product(props) {
       <div className="nav">
         <Navbar />
       </div>
-      <div className='pb-9'>
 
+
+      <div className='pb-9'>
         {/* productBanner Start */}
         <div className="banner hidden lg:block ">
           <div className="image ">
@@ -56,24 +57,27 @@ export default function Product(props) {
         </div>
         {/* productBanner End */}
 
+
+        {/* Display of product */}
         <div className="header lg:hidden text-center mt-8 mb-8 ">
-            <h2 className='text-5xl text-orange-500 font-semibold'>  Products  </h2>
-          </div>
+          <h2 className='text-5xl text-orange-500 font-semibold'>  Products  </h2>
+        </div>
 
         <div className="header lg:block hidden   text-center mt-8 mb-8 ">
-            <h2 className='text-4xl  font-semibold'>  Available <span className='text-orange-500' >Products</span>   </h2>
-          </div>
+          <h2 className='text-4xl  font-semibold'>  Available <span className='text-orange-500' >Products</span>   </h2>
+        </div>
+
         <div className="productContainer space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:grid lg:grid-cols-3">
           {products.map((product) => {
             return <Productitems product={product} />
           })}
 
         </div>
-
       </div>
+
+      {/* Footer */}
       <div className="footer">
         <Footer />
-
       </div>
     </>
 

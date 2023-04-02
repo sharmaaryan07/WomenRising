@@ -50,9 +50,11 @@ export default function Login(props) {
 	return (
 		<>
 			<div>
-				<Navbar />
+				<div className="nav">
+					<Navbar />
+				</div>
 
-
+				{/* Login Options */}
 				<div className="options flex justify-center space-x-10 text-2xl font-medium mt-12  ">
 					<div className="user ">
 						<Link to="/login" className='cursor-pointer hover:text-orange-500 ' >User</Link>
@@ -60,12 +62,12 @@ export default function Login(props) {
 					<div className="admin ">
 						<Link to="/adminlogin" className='cursor-pointer hover:text-orange-500'>Admin</Link>
 					</div>
-
 				</div>
-				<div className='flex justify-center  md:mt-0  ' >
 
+				<div className='flex justify-center  md:mt-0  ' >
 					<div className=' lg:grid lg:grid-cols-2 lg:gap-2' >
 						<div className=' lg:flex justify-center  '>
+
 							{/* Start of form */}
 							<form onSubmit={submitLogin} className="lg:-mt-16" >
 								<div className="   min-h-screen flex flex-col ">
@@ -96,20 +98,22 @@ export default function Login(props) {
 									</div>
 								</div>
 							</form>
+							{/* End of form */}
 						</div>
-						{/* End of form */}
 
+						{/* Login Image */}
 						<div className='lg:flex lg:justify-center '>
-
 							<div className="img   hidden   lg:mr-3 lg:block  lg:mt-9  ">
-
 								<img src={loginImg} alt="" />
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<Footer />
+				{/* Footer */}
+				<div className="footer">
+					<Footer />
+				</div>
 
 			</div>
 		</>

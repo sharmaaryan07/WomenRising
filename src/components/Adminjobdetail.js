@@ -10,7 +10,7 @@ const ProductDetail = (props) => {
     // this useParam will fetch id from url
     const { id } = useParams();
     const [job, setJob] = useState({});
-    
+
     // this useContext will 
     const Context = useContext(jobContext)
     const { addjob } = Context;
@@ -29,10 +29,11 @@ const ProductDetail = (props) => {
             setJob(data);
         };
         fetchJob();
-    }, [id]);
+    },// eslint-disable-next-line 
+        [id]);
 
 
- // this fucntion will add job in job page.
+    // this fucntion will add job in job page.
     const handleClick = (e) => {
         e.preventDefault();
         props.setProgress(0)
@@ -48,8 +49,9 @@ const ProductDetail = (props) => {
         <>
             <div className="nav">
                 <Navbar />
-
             </div>
+
+            {/* Main Start */}
             <div className='ml-12 mt-12 mr-12 flex justify-items-start'>
                 <div className="left space-y-7 w-[49rem] p-5">
                     <div className="header text-5xl font-bold">
@@ -97,6 +99,8 @@ const ProductDetail = (props) => {
                 </div>
 
             </div>
+            {/* Main End */}
+
         </>
     );
 };

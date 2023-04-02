@@ -18,18 +18,24 @@ const Jobscard = (props) => {
                             <span>{job.title} </span>
                         </div>
                     </div>
+
+
                     <div className="text-sm text-gray-500 flex space-x-1 items-center">
                         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                         </svg>
                         <span>{job.location}</span>
                     </div>
+
+
                     <div className="text-sm text-gray-500 flex space-x-1 mt-3 items-center">
                         <span> <span className='text-orange-500 font-semibold' >Description:</span>  {job.description ? job.description.slice(0, 50) : ""}.....</span>
                     </div>
+
+
                     <div>
                         <div className="mt-5">
-                            <Link to={`/jobdetail/${job._id}`}  className="mr-2 my-1   px-2 text-orange-600 border-orange-600 hover:bg-orange-600 hover:text-white border text-sm font-semibold rounded py-1 transition transform duration-500 cursor-pointer">Detail</Link>
+                            <Link to={`/jobdetail/${job._id}`} className="mr-2 my-1   px-2 text-orange-600 border-orange-600 hover:bg-orange-600 hover:text-white border text-sm font-semibold rounded py-1 transition transform duration-500 cursor-pointer">Detail</Link>
                         </div>
                     </div>
                 </div>

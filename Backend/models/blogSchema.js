@@ -6,11 +6,11 @@ const { Schema } = mongoose;
 
 // Creating Schema 
 const blogSchema = new Schema({
-    user:{
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
-    username:{
+    username: {
         type: String,
         required: true,
     },

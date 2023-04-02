@@ -45,10 +45,9 @@ function Adminlogin(props) {
     return (
         <div>
             <div className="nav">
-
                 <Navbar />
             </div>
-
+            {/* Link Start */}
             <div className="options flex justify-center space-x-10 text-2xl font-medium mt-12  ">
                 <div className="user ">
                     <Link to="/login" className='cursor-pointer hover:text-orange-500 ' >User</Link>
@@ -57,6 +56,8 @@ function Adminlogin(props) {
                     <Link to="/adminlogin" className='cursor-pointer hover:text-orange-500'>Admin</Link>
                 </div>
             </div>
+            {/* Link End */}
+
 
             <div className=' lg:flex justify-center  '>
                 {/* Start of form */}
@@ -83,6 +84,7 @@ function Adminlogin(props) {
                         </div>
                     </div>
                 </form>
+                {/* End of form */}
             </div>
 
             <div className="footer">

@@ -32,7 +32,6 @@ export default function Job(props) {
     <>
       <div className="nav">
         <Navbar />
-
       </div>
 
       <div  >
@@ -46,7 +45,6 @@ export default function Job(props) {
 
           <div className="AboutInfo  ml-[45rem] -mt-[31rem] space-y-6 absolute text-white ">
             <div>
-
               <h2 className='text-5xl text-orange-500 font-semibold'>  JOBS  </h2>
             </div>
 
@@ -62,9 +60,10 @@ export default function Job(props) {
         {/* Job Banner End */}
 
 
-          <div className="header lg:hidden text-center mt-8 mb-8 ">
-            <h2 className='text-5xl text-orange-500 font-semibold'>  JOBS  </h2>
-          </div>
+        <div className="header lg:hidden text-center mt-8 mb-8 ">
+          <h2 className='text-5xl text-orange-500 font-semibold'>  JOBS  </h2>
+        </div>
+
         <div className="jobCard container mx-auto space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:mt-12 lg:grid lg:grid-cols-3">
           {jobs.map((job) => {
             return <Jobscard key={job._id} job={job} />

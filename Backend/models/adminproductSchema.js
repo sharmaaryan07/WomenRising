@@ -6,31 +6,31 @@ const { Schema } = mongoose;
 
 // Creating Schema 
 const adminproductSchema = new Schema({
-    name: { 
-        type: String, 
-        required: true, 
+    name: {
+        type: String,
+        required: true,
     },
-    title: { 
-        type: String, 
-        required: true, 
+    title: {
+        type: String,
+        required: true,
     },
     // required: true
-    description: { 
-        type: String, 
+    description: {
+        type: String,
     },
-    price: { 
-        type: String, 
+    price: {
+        type: String,
     },
-    phone: { 
-        type: Number, 
+    phone: {
+        type: Number,
     },
-    email: { 
-        type: String, 
+    email: {
+        type: String,
     },
     image: {
         type: String,
-      },
+    },
 });
 
 // Exporting Schema
-module.exports=mongoose.model("adminproduct", adminproductSchema);
+module.exports = mongoose.model("adminproduct", adminproductSchema);

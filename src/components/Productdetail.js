@@ -25,7 +25,8 @@ export default function Productdetail(props) {
 
         };
         fetchProduct();
-    }, [id]);
+    }, // eslint-disable-next-line 
+        [id]);
 
     // this function will add product in cart
     const handlesubmit = async (e) => {
@@ -43,15 +44,17 @@ export default function Productdetail(props) {
         });
         props.setProgress(50)
         const json = await response.json();
+        console.log(json)
         props.setProgress(100)
     }
 
     return (
         <div>
-            <div>
+            <div className='navbar'>
                 <Navbar />
             </div>
 
+            {/* Section start */}
             <section className="text-gray-600 body-font overflow-hidden">
                 <div className="container px-5 py-24 mx-auto">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap">
@@ -90,6 +93,8 @@ export default function Productdetail(props) {
                     </div>
                 </div>
             </section>
+            {/* Section End */}
+
 
             <div>
                 <Footer />

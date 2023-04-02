@@ -8,7 +8,7 @@ function Admin() {
             <Navadmin />
 
             <div>
-                <Dashboard/>
+                <Dashboard />
             </div>
         </div>
     )

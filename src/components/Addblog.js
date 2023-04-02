@@ -37,8 +37,8 @@ export default function Addjob(props) {
     const handleClick = (e) => {
         e.preventDefault();
         props.setProgress(0)
-        addblog(blogs.username,blogs.title, blogs.description, blogs.image)
-        setblogs({username: "", title: "", description: "", image: "" })
+        addblog(blogs.username, blogs.title, blogs.description, blogs.image)
+        setblogs({ username: "", title: "", description: "", image: "" })
         props.setProgress(100)
 
         props.showAlert("Blog Added", "bg-green-500", "Blog Added Successful")
@@ -60,9 +60,7 @@ export default function Addjob(props) {
             </div>
 
             <div className='flex justify-center'>
-
                 <div>
-
                     <div>
                         <div className='text-center space-x-5 mt-9 text-2xl font-bold'>
                             <Link to='/blogs'> All Blogs </Link>
@@ -73,7 +71,7 @@ export default function Addjob(props) {
 
                     <div className='shadow-md p-10 w-[45rem]  mt-14 space-y-8 bg-orange-100 '>
                         <h2 className='text-4xl text-center font-bold '><span className='text-orange-500'>ADD</span>  BLOG</h2>
-                        <form className='   '>
+                        <form>
 
 
                             <div className="relative z-0  mb-6 group space-y-4">
@@ -102,11 +100,11 @@ export default function Addjob(props) {
                             </div>
 
 
+                            <div>
+                                <button type="submit" onClick={handleClick} className="text-white bg-orange-700  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Submit</button>
+                            </div>
                         </form>
-                        <div>
-                            <button type="submit" onClick={handleClick} className="text-white bg-orange-700  hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Submit</button>
-                        </div>
-                        {/* disabled={add.company.length <= 0 || add.email.length <= 0 || add.description.length <= 0 || add.phone.length <= 0 || add.salary.length <= 0 || add.title.length <= 0 || add.material.length <= 0} */}
+
                     </div>
                 </div>
             </div>

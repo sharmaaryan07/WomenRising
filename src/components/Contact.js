@@ -8,7 +8,7 @@ function Contact(props) {
     const handleClick = (e) => {
         e.preventDefault();
         props.showAlert("Your message has been send Successfully", "bg-green-500", "Message Send")
-      }
+    }
 
 
 
@@ -17,6 +17,8 @@ function Contact(props) {
             <div className="nav">
                 <Navbar />
             </div>
+
+            
             <div className=' justify-center'>
                 <div className='contact px-11'>
                     <div className="headers text-center mt-5 space-y-5 lg:space-y-10">
@@ -42,17 +44,17 @@ function Contact(props) {
                                 </div>
 
                                 <div className="relative z-0  mb-6 group">
-                                    <input type="email" name="email" id="email"  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer" placeholder=" " required />
+                                    <input type="email" name="email" id="email" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer" placeholder=" " required />
                                     <label for="email" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-orange-600 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email</label>
                                 </div>
 
                                 <div className="relative z-0  mb-6 group">
-                                    <input type="text" name="message" id="message"  className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer" placeholder=" " required />
+                                    <input type="text" name="message" id="message" className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  dark:border-gray-600 dark:focus:border-orange-500 focus:outline-none focus:ring-0 focus:border-orange-600 peer" placeholder=" " required />
                                     <label for="message" className="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-orange-600 peer-focus:dark:text-orange-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Your Message</label>
                                 </div>
 
                                 <div className="button text">
-                                    <button type="submit" onClick={handleClick}  className="border  focus:ring-1 focus:outline-none  font-semibold rounded-lg text-base  px-3 py-2 text-center mr-2 mb-2 border-orange-500 text-orange-500 hover:text-white hover:bg-orange-600 focus:ring-orange-800">Submit</button>
+                                    <button type="submit" onClick={handleClick} className="border  focus:ring-1 focus:outline-none  font-semibold rounded-lg text-base  px-3 py-2 text-center mr-2 mb-2 border-orange-500 text-orange-500 hover:text-white hover:bg-orange-600 focus:ring-orange-800">Submit</button>
                                     <p className='text-sm font-medium text-gray-500'>We are always happy to assist you!</p>
                                 </div>
                             </form>

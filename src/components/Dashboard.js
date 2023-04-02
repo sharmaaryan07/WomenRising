@@ -47,7 +47,7 @@ function Dashboard() {
                                     return <Adminjobcard key={job._id} job={job} />
                                 }) ? jobs.map((job) => {
                                     return <Adminjobcard key={job._id} job={job} />
-                                }).slice(0,3) : ""}
+                                }).slice(0, 3) : ""}
                             </div>
                         </div>
                     </div>
@@ -60,10 +60,10 @@ function Dashboard() {
                         <div className="product">
                             <div className="productContainer space-y-4 grid justify-center items-center  md:grid md:grid-cols-2 md:space-x-3 lg:grid lg:grid-cols-3">
                                 {products.map((product) => {
-                                    return <Productitems product={product} />
+                                    return <Productitems key={product._id} product={product} />
                                 }) ? products.map((product) => {
-                                    return <Productitems product={product} />
-                                }).slice(0,3) : ""}
+                                    return <Productitems key={product._id} product={product} />
+                                }).slice(0, 3) : ""}
 
                             </div>
                         </div>

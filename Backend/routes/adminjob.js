@@ -2,7 +2,6 @@ const express = require('express')
 const job = require('../models/adminjobSchema')
 const nodemailer = require("nodemailer");
 
-
 // importing Router form Express
 const router = express.Router();
 
@@ -20,7 +19,6 @@ router.post('/addadminjob', (req, res) => {
 })
 
 
-
 // Route 2: Fetching jobs
 router.get('/fetchadminjob', async (req, res) => {
     const fetchJobs = await job.find({ user: req.user });
@@ -29,8 +27,7 @@ router.get('/fetchadminjob', async (req, res) => {
 })
 
 
-
-// Route 4: To get Perticular job Details
+// Route 3: To get Perticular job Details
 router.get('/getadminjob/:id', async (req, res) => {
 
     try {
@@ -42,6 +39,8 @@ router.get('/getadminjob/:id', async (req, res) => {
     }
 });
 
+
+// Route 4: To Delete Perticular job Details
 router.delete('/deleteadminjob/:id', async (req, res) => {
 
     try {

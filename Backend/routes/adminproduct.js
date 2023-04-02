@@ -5,7 +5,9 @@ const adminproductSchema = require('../models/adminproductSchema')
 // importing Router form Express
 const router = express.Router();
 
-// Fetching Products
+
+
+// ROUTE 1: Fetching Products
 router.get('/fetchadminproduct', async (req, res) => {
     const fetchProduct = await adminproductSchema.find({ user: req.user });
     res.json(fetchProduct);
@@ -13,7 +15,7 @@ router.get('/fetchadminproduct', async (req, res) => {
 })
 
 
-// Creating Routes for selling product '/api/sell'
+// ROUTE 2: TO add Product in website 
 router.post('/addadminproduct', (req, res) => {
 
     const sellproduct = adminproductSchema(req.body)
@@ -37,6 +39,7 @@ router.get('/getadminproduct/:id', async (req, res) => {
 });
 
 
+// ROUTE 4: TO delete the product
 router.delete('/deleteadminproduct/:id', async (req, res) => {
 
     try {

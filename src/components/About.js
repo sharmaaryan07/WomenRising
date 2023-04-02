@@ -7,17 +7,28 @@ import Footer from './Footer';
 function About() {
     return (
         <>
-            <Navbar />
+            <div className="navbar">
+                <Navbar />
+            </div>
 
+            {/* Main Div Start */}
             <div className='flex justify-center'>
                 <div className='md:mx-6  md:mt-16 lg:mx-20 shadow-md  '>
+
+                    {/* About Section Start */}
                     <section className={`text-gray-400  body-font bg-orange-50 `}>
+
                         <div className='text-center text-black text-4xl font-bold pt-10 '>
-                            About <span className='text-orange-500' >us</span> 
+                            About <span className='text-orange-500' >us</span>
                         </div>
-                        <div className="  py-14 mx-auto flex">
+
+
+                        {/* Content Start */}
+                        <div className="Content  py-14 mx-auto flex">
+
+                            {/* Info Start */}
                             <div className="xl:w-1/2 lg:w-3/4 w-full mx-auto text-center">
-                               
+
                                 <div className="leading-relaxed text-lg font-[900]">
 
                                     <p >Women's Rising is an online platform designed to empower women by providing them with a platform to sell their handmade products. Our platform was created with the aim of helping women who are illiterate or not well-educated, and who are dependent on men for their livelihoods. We believe that every woman has the potential to earn a livelihood and become financially independent.<p />
@@ -35,19 +46,30 @@ function About() {
                                         <p>    We believe that Women's Rising has the potential to create a positive impact in the lives of many women. Our platform can help women earn a livelihood and become financially independent, which can lead to greater self-esteem and confidence. We are committed to supporting women and helping them achieve their goals through our platform.</p>
                                     </p>
                                 </div>
-
                             </div>
+                            {/* Info End */}
+
+
+                            {/* Image Start */}
                             <div className="img   hidden lg:block">
                                 <img src={aboutImg} alt="" />
                             </div>
+                            {/* Image End */}
+
                         </div>
+                        {/* Content End */}
+
 
                     </section>
+                    {/* About Section End */}
+
                 </div>
             </div>
+            {/* Main Div End */}
+
 
             <div className="footer">
-                <Footer/>
+                <Footer />
             </div>
         </>
     )

@@ -12,7 +12,7 @@ import Signup from './components/Signup';
 import Job from './components/Job';
 import Product from './components/Product';
 import ProductState from './context/product/ProductState';
-import CartState from './context/product/CartState';
+import CartState from './context/product/cartState';
 import Sellproduct from './components/Sellproduct';
 import Productdetail from './components/Productdetail';
 import Alert from './components/Alert';
